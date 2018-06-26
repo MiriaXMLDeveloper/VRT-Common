@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lookups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<lookup name="lookup.document" auto="false">
+			<window width="800" height="600" displayTitle="Secondary Document Lookup"/>
+			<!-- The parameters we will be querying for -->
+				<searchCriteria blankForwardPopulate="true">
+				<criteria name="scanVendorName" startsSearch="false"  />
+				<criteria name="number" startsSearch="false" labelKey="Doc Number" />
+				<criteria name="poId" startsSearch="false" />
+				<criteria name="requester.userName" startsSearch="true" visible="false" lineItem="false" mapping="requester.userName"/>
+ 
+			</searchCriteria>
+			<renderer rendererName="com.miriasystems.ui.helpers.DocumentLookupRenderer"/>
+			<sortOrder field="number"/>
+			<provider class="com.miriasystems.ui.providers.DocumentLookupProvider"/>
+			<properties>
+				<property name="seqId" display="true" rootName="NA" backPopulate="false"	labelKey="#"/>
+				<property name="subType" display="true" rootName="NA" backPopulate="false" labelKey="SubType"/>
+				<property name="poId" display="true" rootName="NA" backPopulate="false"/>
+				<property name="number" display="true" rootName="NA" backPopulate="false" labelKey="number"/>
+				<property name="tbdString4" display="true" rootName="NA" backPopulate="false" />
+				<property name="view" display="true" rootName="NA" backPopulate="false" />
+				<property name="select" display="true" rootName="NA" backPopulate="false" />
+				<property name="wobNumber" display="false" rootName="wobNumber" backPopulate="true" />
+				<property name="ceDocumentId" display="false" rootName="ceDocumentId" backPopulate="true" />
+			 </properties>
+	</lookup>
+	
+	<lookup name="lookup.vendorHistory" auto="true">
+			<window width="800" height="700" displayTitle="Vendor History Lookup"/>
+			<!-- The parameters we will be querying for -->
+			<searchCriteria blankForwardPopulate="false">
+				<criteria name="vendorId" startsSearch="true" mapping="vendorId" />
+				<criteria name="requester.userName" startsSearch="true" visible="false" lineItem="false" mapping="requester.userName"/>
+ 
+			</searchCriteria>
+			
+			<renderer rendererName="com.miriasystems.ui.helpers.VendorHistoryLookupRenderer"/>
+			<sortOrder field="date"/>
+			<provider class="com.miriasystems.ui.providers.DocumentLookupProvider"/>
+			<properties>
+				<property name="seqId" display="true" rootName="NA" backPopulate="false"	labelKey="#"/>
+				<property name="date" display="true" rootName="NA" backPopulate="false" />
+				<property name="number" display="true" rootName="NA" backPopulate="false" />
+				<property name="type" display="true" rootName="NA" backPopulate="false" />
+				<property name="subType" display="true" rootName="NA" backPopulate="false" />
+				<property name="view" display="true" rootName="NA" backPopulate="false" />
+				<property name="wobNumber" display="false" rootName="wobNumber" backPopulate="true" />
+				<property name="ceDocumentId" display="false" rootName="ceDocumentId" backPopulate="true" />
+			 </properties>
+		</lookup>
+		
+	<lookup name="lookup.accountCode" auto="true">
+        <window width="700" height="600" displayTitle="Account Code Lookup"/>
+        <!-- The parameters we will be querying for -->
+            <searchCriteria blankForwardPopulate="false">
+            <criteria name="code" startsSearch="true" labelKey="accountCode" mapping="accountCode" lineItem="true"/>
+            <criteria name="description" startsSearch="false" labelKey="account.description" mapping="account.description" lineItem="true"/>
+			 <criteria name="preferred" startsSearch="true" labelKey="Preferred" mapping="code6" lineItem="true"/>
+            <criteria name="systemOriginator.code" startsSearch="true" visible="false" lineItem="true" mapping="accountERPId"/>
+            <criteria name="requester.userName" startsSearch="true" visible="false" lineItem="false" mapping="requester.userName"/>
+        </searchCriteria>
+        <sortOrder field="code"/>
+        <provider class="com.miriasystems.ui.providers.GLAccountLookupProvider"/>
+        <properties>
+            <property name="code" display="true" rootName="accountCode" backPopulate="true" labelKey="account.code"/>
+            <property name="description" display="true" rootName="account.description" backPopulate="true" labelKey="account.description"/>
+            <property name="code1" display="false" rootName="companyCode" backPopulate="false" lineItem="true"/>
+            <property name="code2" display="false" rootName="tbdString2" backPopulate="false" lineItem="true"/>
+            <property name="code3" display="false" rootName="tbdString3" backPopulate="false" lineItem="true"/>
+         </properties>
+    </lookup>
+	
+	
+		<lookup name="lookup.accountCodeIT" auto="true">
+        <window width="700" height="600" displayTitle="Account Code Lookup"/>
+        <!-- The parameters we will be querying for -->
+            <searchCriteria blankForwardPopulate="false">
+            <criteria name="code" startsSearch="true" labelKey="accountCode" mapping="accountCode" lineItem="true"/>
+            <criteria name="description" startsSearch="false" labelKey="account.description" mapping="account.description" lineItem="true"/>
+			 <criteria name="preferred" startsSearch="true" labelKey="Preferred" mapping="code6" lineItem="true"/>
+            <criteria name="systemOriginator.code" startsSearch="false" visible="false" lineItem="true" mapping="accountERPId" value="ITVRT"/>
+            <criteria name="requester.userName" startsSearch="true" visible="false" lineItem="false" mapping="requester.userName"/>
+        </searchCriteria>
+        <sortOrder field="code"/>
+        <provider class="com.miriasystems.ui.providers.GLAccountLookupProvider"/>
+        <properties>
+            <property name="code" display="true" rootName="accountCode" backPopulate="true" labelKey="account.code"/>
+            <property name="description" display="true" rootName="account.description" backPopulate="true" labelKey="account.description"/>
+            <property name="code1" display="false" rootName="companyCode" backPopulate="false" lineItem="true"/>
+            <property name="code2" display="false" rootName="tbdString2" backPopulate="false" lineItem="true"/>
+            <property name="code3" display="false" rootName="tbdString3" backPopulate="false" lineItem="true"/>
+			 <property name="systemOriginator.code" display="false" lineItem="true" rootName="accountERPId" backPopulate="true" defaultValue="ITVRT" />
+         </properties>
+    </lookup>
+	
+		<lookup name="lookup.expenseAccountCode" auto="true">
+        <window width="700" height="600" displayTitle="Account Code Lookup"/>
+        <!-- The parameters we will be querying for -->
+            <searchCriteria blankForwardPopulate="false">
+            <criteria name="code1" startsSearch="true" labelKey="account.code1" mapping="defaultCode1" lineItem="false"/>
+			 <criteria name="code5" startsSearch="true" labelKey="account.code5" lineItem="true"/>
+			  <criteria name="code4" startsSearch="true" labelKey="account.code4" mapping="defaultCode2" lineItem="false"/>
+            <criteria name="description" startsSearch="false" labelKey="account.description" mapping="account.description" lineItem="true"/>
+			 <criteria name="preferred" startsSearch="true" labelKey="account.code6" mapping="code6" lineItem="true"/>
+            <criteria name="systemOriginator.code" startsSearch="false" visible="false" lineItem="true" mapping="accountERPId"/>
+            <criteria name="requester.userName" startsSearch="true" visible="false" lineItem="false" mapping="requester.userName"/>
+        </searchCriteria>
+        <sortOrder field="code"/>
+        <provider class="com.miriasystems.ui.providers.GLAccountLookupProvider"/>
+        <properties>
+            <property name="code" display="true" rootName="accountCode" backPopulate="true" labelKey="account.code" lineItem="true"/>
+            <property name="description" display="true" rootName="account.description" backPopulate="true" labelKey="account.description"/>
+         </properties>
+    </lookup>
+
+	<lookup name="lookup.buyer">
+		<!-- The parameters we will be querying for -->
+		<window width="700" height="400" displayTitle="Buyer Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="userName" startsSearch="true" mapping="buyerId"/>
+			<criteria name="displayName" startsSearch="false" mapping="buyer.displayName"/>
+			<criteria name="email" visible="true"/>
+			<criteria name="phoneNumber" visible="true"/>
+		</searchCriteria>
+		<sortOrder field="displayName"/>
+		<provider class="com.miriasystems.ui.providers.UserLookupProvider"/>
+		<properties>
+			<property name="displayName" display="true" backPopulate="false"/>
+			<property name="fullUserName" display="true" rootName="buyerId" backPopulate="true"/>
+			<property name="phone" display="true" backPopulate="false"/>
+			<property name="email" display="true" backPopulate="false"/>
+		</properties>
+	</lookup>
+	
+	 <lookup name="lookup.companyCode">
+		<window width="500" height="400" displayTitle="Company Code Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="company.code" mapping="company.code" />
+			<criteria name="fullName" startsSearch="false" labelKey="company.fullName"/>
+			<!--criteria name="shortName" startsSearch="false" labelKey="company.shortName"/-->
+		</searchCriteria>
+		<sortOrder field="code"/>
+		<provider class="com.miriasystems.ui.providers.CompanyCodeLookupProvider"/>
+		<headerProperties/>
+		<properties>
+			<property name="code" display="true" labelKey="company.code" rootName="companyCode" backPopulate="true"/>
+			<property name="fullName" display="true" rootName="company.fullName" backPopulate="false" labelKey="company.fullName"/>
+		</properties>
+	</lookup>
+	
+
+	<lookup name="lookup.costObject1">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Default Approver Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="Cost Center" mapping="routingCode"/>
+			<!--<criteria name="description" startsSearch="false" labelKey="costObject.description"/>-->
+			<criteria name="tbdString2" startsSearch="false" labelKey="Initial Approver"/>
+			<criteria name="tbdNumber2" startsSearch="false" labelKey="Routing Level" visible="false" value="1"/>
+			<criteria name="costObjectTypeId1" startsSearch="true" visible="false" mapping="costObjectTypeId1"/>
+		</searchCriteria>
+		<sortOrder field="code"/>
+		<provider class="com.miriasystems.ui.providers.CostObjectLookupProvider"/>
+		<properties>
+			<property name="code" display="true" labelKey="Location" rootName="routingCode" backPopulate="true" />
+			<property name="description" display="true" backPopulate="false" />
+			<property name="tbdString2" display="true" labelKey="Initial Approver" rootName="department" backPopulate="true" />
+			<property name="costObjectType.code" display="false" rootName="costObjectType1" backPopulate="true" />
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.costObject2">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Cost Center Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="costObject.code" mapping="costObjectId2" lineItem="true"/>
+			<criteria name="description" startsSearch="false" labelKey="costObject.description" lineItem="true"/>
+			<criteria name="company.code" startsSearch="true" visible="true" mapping="companyCode" lineItem="true" />
+			<criteria name="costObjectType.code" startsSearch="true" visible="true" mapping="costObjectTypeId2" lineItem="true"/>
+		</searchCriteria>
+		<sortOrder field="code"/>
+		<provider class="com.miriasystems.ui.providers.CostObjectLookupProvider"/>
+		<properties>
+			<property name="code" display="true" rootName="costObjectId2" backPopulate="true" />
+			<property name="description" display="true" backPopulate="false" />
+			<property name="company.code" display="true" backPopulate="false" />
+			<property name="costObjectType.description" display="true" backPopulate="false" />
+			<property name="costObjectType.code" display="false" rootName="costObjectType2" backPopulate="true" />
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.currency">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Currency Code Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="currencyId" startsSearch="true"/>
+		</searchCriteria>
+		<sortOrder field="currencyId"/>
+		<provider class="com.miriasystems.ui.providers.CurrencyLookupProvider"/>
+		<properties>
+			<property name="code" display="true" rootName="currencyId" backPopulate="true" />
+			<property name="description" display="true" backPopulate="false" />
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.paymentTerm" >
+		<window width="700" height="500" displayTitle="Payment Term Lookup"/>
+		<!-- The parameters we will be querying for -->
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" mapping="paymentTermId" labelKey="paymentTerm.code"/>
+			<criteria name="description" startsSearch="true" mapping="scanVendorAddress2" labelKey="paymentTerm.lookupDescription" />
+			<!--criteria name="company.code" startsSearch="false" mapping="companyCode" /-->
+			<!--criteria name="systemOriginator.code" startsSearch="false" mapping="paymentTermERPId" /-->
+		</searchCriteria>
+		<sortOrder field="description"/>
+		<provider class="com.miriasystems.ui.providers.PaymentTermLookupProvider"/>
+		<properties>
+			<property name="code" display="true" rootName="paymentTermId" backPopulate="true" labelKey="paymentTerm.code"/>
+			<property name="description" display="true" rootName="paymentTerm.description" backPopulate="true" labelKey="paymentTerm.lookupDescription"/>
+			<property name="discount1" display="false" rootName="discountAmount" backPopulate="true" labelKey="paymentTerm.discount1" />
+			<property name="daysOffset1" display="false" rootName="discountDueDate" backPopulate="true" labelKey="paymentTerm.daysOffset1"/>
+			<property name="tbdDate2" display="false" rootName="tbdDate2" backPopulate="true" labelKey="paymentTerm.tbdDate2"/>
+			<!--property name="company.code" display="true" backPopulate="false"/-->
+			<!--property name="systemOriginator.code" display="true" backPopulate="false"/-->
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.poFromBillOfLading">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Bill of Lading Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="shippingDocumentId" startsSearch="true" mapping="shippingDocumentId" labelKey="shippingDocumentId"/>
+		</searchCriteria>
+		<sortOrder field="number"/>
+		<provider class="com.miriasystems.ui.providers.POFromBOLLookupProvider"/>
+		<properties>
+			<property name="number" display="true" rootName="poId" backPopulate="true" labelKey="poId"/>
+			<property name="date" display="true" backPopulate="false"/>
+			<property name="vendor.name" display="true" backPopulate="false"/>
+			<property name="company.code" display="true" backPopulate="false"/>
+			<property name="shippingDocumentId" display="false" backPopulate="true" rootName="shippingDocumentId"/>
+			<property name="systemOriginator.code" display="true" backPopulate="false"/>
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.requester">
+		<!-- The parameters we will be querying for -->
+		<window width="700" height="400" displayTitle="Requester Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="displayName" startsSearch="true" mapping="requesterName"/>
+			<criteria name="email" visible="true"/>
+			<criteria name="phoneNumber" visible="true"/> 
+		</searchCriteria>
+		<sortOrder field="displayName"/>
+		<provider class="com.miriasystems.ui.providers.UserLookupProvider"/>
+		<properties>
+			<property name="displayName" display="false" rootName="requesterName" backPopulate="true"/>
+			<property name="displayName" display="true" rootName="requester.displayName" backPopulate="true"/>
+			<property name="userName" display="true" rootName="requesterId" backPopulate="true"/>
+			<property name="phone" display="true" backPopulate="false"/>
+			<property name="email" display="true" rootName="requester.email" backPopulate="true"/>
+			<property name="approvalLimit" display="true" backPopulate="false"/>
+		</properties>
+	</lookup>
+	
+	<lookup name="lookup.expenseRequester">
+		<!-- The parameters we will be querying for -->
+		<window width="700" height="400" displayTitle="Requester Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="displayName" startsSearch="true" mapping="requesterName"/>
+			<criteria name="email" visible="true"/>
+			<criteria name="phoneNumber" visible="true"/> 
+		</searchCriteria>
+		<sortOrder field="displayName"/>
+		<provider class="com.miriasystems.ui.providers.UserLookupProvider"/>
+		<properties>
+			<property name="displayName" display="false" rootName="requesterName" backPopulate="true"/>
+			<property name="employeeNumber" display="true" rootName="tbdString2" labelKey="Employee Number" backPopulate="true"/>
+			<property name="displayName" display="true" rootName="requester.displayName" backPopulate="true"/>
+			<property name="userName" display="true" rootName="requesterId" backPopulate="true"/>
+			<property name="phone" display="true" backPopulate="false"/>
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.vendorCountryCode">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Country Code Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="vendor.country.code" startsSearch="true"/>
+		</searchCriteria>
+		<sortOrder field="vendor.country.code"/>
+		<provider class="com.miriasystems.ui.providers.CountryLookupProvider"/>
+		<properties>
+			<property name="code" display="true" rootName="vendor.country.code" backPopulate="true" />
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.vendorName">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="Vendor Name Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="false" labelKey="vendorId" mapping="vendorId"/>
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<!--criteria name="name2" startsSearch="false" labelKey="vendor.name2"/>
+			<criteria name="status" visible="false" enforceNull="true" startsSearch="true" mapping="scanVendorAddress2" type="String"/-->
+			<criteria name="systemOriginator.code" startsSearch="false" visible="false" mapping="vendorERPId"/>
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+				<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+				<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="hundredpercent"/>
+				<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+				<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+				<property name="address2" display="true" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+				<property name="address3" display="true" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+				<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+				<property name="state" display="false" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+				<property name="city" display="false" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+				<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+				<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+				<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+				<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+				<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+				<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+				<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+				<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+				<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+				<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+				<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+				<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+
+				<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />
+				
+				<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+				<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+				
+				<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+				<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+				<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+				<property name="approvalCode" display="false" rootName="vendor.approvalCode" backPopulate="true" />
+
+				<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+				<!--property name="paymentTerm.code" display="false" rootName="vendor.paymentTerm.code" backPopulate="true" /-->
+				<property name="paymentTerm.description" display="false" rootName="vendor.paymentTerm.description" backPopulate="true"/>
+				<property name="paymentTerm.code" display="false" rootName="paymentTermId" backPopulate="true" />
+				<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+				<property name="paymentType.code" display="false" rootName="vendor.paymentType.code" backPopulate="true" />
+				<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+				
+				<!--<property name="paymentTerm.discount1" display="false" rootName="paymentTerm.discount1" backPopulate="true" labelKey="paymentTerm.discount1" />-->
+				<!--property name="paymentTerm.daysOffset1" display="false" rootName="tbdDate1" backPopulate="true" labelKey="paymentTerm.daysOffset1"/-->
+
+				<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+				<property name="tbdDate2" display="false" rootName="vendor.tbdDate2" backPopulate="true"/>
+				<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+				<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+				<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+				<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+				<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+				<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+				<property name="tbdString2" display="false" rootName="specialHandlingCode" backPopulate="true"/>
+				<property name="tbdString3" display="true" rootName="tbdString3" backPopulate="true"/><!--vendorPhase-->
+				<!--<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>-->
+				
+
+				
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.vendorCode">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="VendorCode Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="vendorId"/>
+			<!--criteria name="tbdString2" visible="false" startsSearch="true" mapping="AFENumber" type="String"/-->
+			<!--criteria name="address1" startsSearch="false" labelKey="vendor.address1"/>
+			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
+			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/-->
+			<criteria name="systemOriginator.code" startsSearch="true" visible="false" mapping="vendorERPId"/>
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" rootName="vendorId" backPopulate="true" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="threehundred"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="city" display="true" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="state" display="true" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="approvalCode" display="true" rootName="routingCode" backPopulate="true" labelKey="vendor.approvalCode" />
+			<property name="tbdString1" display="false" rootName="department" backPopulate="true" labelKey="vendor.tbdString1" />
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address2" display="false" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="name2" display="false" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+			<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+			<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+			<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+			<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+			<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+			<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+			<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+			<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+			<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+			<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />	
+			<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+			<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+			<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+			<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+			<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+			<property name="paymentTerm.code" display="false" rootName="vendor.paymentTerm.code" backPopulate="false" />
+			<property name="paymentTerm.description" display="false" rootName="paymentTerm.description" backPopulate="true"/>
+			<property name="paymentTerm.code" display="false" rootName="paymentTermId" backPopulate="true" />
+			<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+			
+			<property name="paymentTerm.discount1" display="false" rootName="discountAmount" backPopulate="true" labelKey="paymentTerm.discount1" />			
+			<property name="paymentTerm.tbdDate2" display="false" rootName="tbdDate2" backPopulate="true" labelKey="paymentTerm.tbdDate2"/>
+
+			<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+			<property name="tbdDate2" display="false" rootName="vendor.tbdDate2`" backPopulate="true"/>
+			<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+			<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+			<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+			<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+			<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+			<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+			<property name="tbdString2" display="false" rootName="buyerName" backPopulate="true"/>
+			<property name="tbdString3" display="false" rootName="vendor.tbdString3" backPopulate="true"/>
+			<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>
+			<property name="code" display="false" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+
+			
+		</properties>
+	</lookup>
+	
+	<lookup name="lookup.portalVendorCode">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="VendorCode Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="originatorId"/>
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="threehundred"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="city" display="true" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="state" display="true" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="approvalCode" display="true" rootName="routingCode" backPopulate="true" labelKey="vendor.approvalCode" />
+			<property name="tbdString1" display="false" rootName="department" backPopulate="true" labelKey="vendor.tbdString1" />
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address2" display="false" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="name2" display="false" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+			<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+			<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+			<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+			<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+			<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+			<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+			<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+			<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+			<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+			<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />	
+			<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+			<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+			<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+			<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+			<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+			<!--property name="paymentTerm.code" display="false" rootName="vendor.paymentTerm.code" backPopulate="false" /-->
+			<property name="paymentTerm.description" display="false" rootName="scanVendorAddress2" backPopulate="true"/>
+			<property name="paymentTerm.code" display="true" rootName="paymentTermId" backPopulate="true" />
+			<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+
+			<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+			<property name="tbdDate2" display="false" rootName="vendor.tbdDate2`" backPopulate="true"/>
+			<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+			<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+			<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+			<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+			<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+			<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+			<!--property name="tbdString1" display="false" rootName="vendor.tbdString1" backPopulate="true"/-->
+			<property name="tbdString2" display="false" rootName="vendor.tbdString2" backPopulate="true"/>
+			<property name="tbdString3" display="false" rootName="vendor.tbdString3" backPopulate="true"/>
+			<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>
+		</properties>
+	</lookup>
+	
+	
+	<lookup name="lookup.vendorCodeNoTerms">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="VendorCode Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="vendorId"/>
+			<criteria name="tbdString2" visible="false" startsSearch="true" mapping="AFENumber" type="String"/>
+			<!--criteria name="address1" startsSearch="false" labelKey="vendor.address1"/>
+			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
+			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/>
+			<criteria name="systemOriginator.code" startsSearch="false" visible="false" mapping="vendorERPId"/-->
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="threehundred"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="city" display="true" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="state" display="true" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address2" display="false" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+		</properties>
+	</lookup>
+
+		<lookup name="lookup.vendorName2">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="Vendor Name Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="vendorId"/>
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="name2" startsSearch="false" labelKey="vendor.name2"/>
+			<criteria name="status" visible="false" enforceNull="true" startsSearch="true" mapping="scanVendorAddress2" type="String"/>
+			<!--criteria name="address1" startsSearch="false" labelKey="vendor.address1"/>
+			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
+			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/>
+			<criteria name="company.code" startsSearch="false" visible="true" labelKey="vendor.company.code" mapping="companyCode"/-->
+			<criteria name="systemOriginator.code" startsSearch="false" visible="false" mapping="vendorERPId"/>
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="hundredpercent"/>
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="address2" display="true" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="address3" display="true" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="state" display="false" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="city" display="false" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+			<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+			<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+			<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+			<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+			<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+			<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+			<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+			<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+			<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+
+			<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />
+			
+			<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+			<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+			
+			<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+			<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+			<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+			<property name="approvalCode" display="false" rootName="vendor.approvalCode" backPopulate="true" />
+
+			<property name="paymentTerm.description" display="false" rootName="vendor.paymentTerm.description" backPopulate="true"/>
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+			<property name="paymentTerm.description" display="false" rootName="vendor.paymentTerm.description" backPopulate="true"/>
+			<property name="paymentTerm.code" display="false" rootName="paymentTermId" backPopulate="true" />
+			<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+
+			<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+			<property name="tbdDate2" display="false" rootName="vendor.tbdDate2" backPopulate="true"/>
+			<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+			<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+			<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+			<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+			<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+			<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+			<property name="tbdString2" display="false" rootName="specialHandlingCode" backPopulate="true"/>
+			<property name="tbdString3" display="false" rootName="vendor.tbdString3" backPopulate="true"/><!--vendorPhase-->
+			<!--<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>-->
+			
+
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.vendorCode2">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="VendorCode Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="vendorId"/>
+			<criteria name="name" startsSearch="false" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="name2" startsSearch="false" labelKey="vendor.name2"/>
+			<criteria name="company.code" startsSearch="true" visible="false" mapping="companyCode" />
+			<criteria name="status" visible="false" enforceNull="true" startsSearch="true" mapping="scanVendorAddress2" type="String"/>
+			
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="hundredpercent"/>
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="address2" display="true" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="address3" display="true" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="state" display="false" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="city" display="false" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+			<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+			<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+			<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+			<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+			<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+			<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+			<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+			<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+			<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+
+			<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />
+			
+			<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+			<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+			
+			<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+			<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+			<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+			<property name="approvalCode" display="false" rootName="vendor.approvalCode" backPopulate="true" />
+
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+			<property name="paymentTerm.description" display="false" rootName="vendor.paymentTerm.description" backPopulate="true"/>
+			<property name="paymentTerm.code" display="false" rootName="paymentTermId" backPopulate="true" />
+			<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+
+			<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+			<property name="tbdDate2" display="false" rootName="vendor.tbdDate2`" backPopulate="true"/>
+			<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+			<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+			<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+			<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+			<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+			<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+			<property name="tbdString2" display="false" rootName="specialHandlingCode" backPopulate="true"/>
+			<property name="tbdString3" display="true" rootName="tbdString3" backPopulate="true"/><!--vendorPhase-->
+			<!--<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>-->
+			
+
+		</properties>
+	</lookup>
+	
+	<lookup name="lookup.expenseVendor">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="Employee Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="tbdString4" startsSearch="true" labelKey="vendorId" visible="false" mapping="tbdString2"/>
+			<!--criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/-->
+			<!--criteria name="address1" startsSearch="false" labelKey="vendor.address1"/>
+			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
+			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/>
+			<criteria name="systemOriginator.code" startsSearch="false" visible="false" mapping="vendorERPId"/-->
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="threehundred"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="city" display="true" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="state" display="true" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="approvalCode" display="true" rootName="routingCode" backPopulate="true" labelKey="vendor.approvalCode" />
+			
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address2" display="false" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="address3" display="false" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+		</properties>
+	</lookup>
+
+
+	<lookup name="lookup.taxCodeDetails">
+		<window width="500" height="400" displayTitle="Tax Code Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="code" startsSearch="true" labelKey="taxCode.code" mapping="taxId" />
+			<criteria name="tbdString3" startsSearch="true" labelKey="taxCode.tbdString3" mapping="taxCode.tbdString3"/>
+			<criteria name="tbdString2" startsSearch="true" labelKey="taxCode.tbdString2" mapping="taxCode.tbdString2"/>
+			<criteria name="tbdString1" startsSearch="true" labelKey="taxCode.tbdString1" mapping="taxCode.tbdString1"/>
+			<criteria name="systemOriginator.code" startsSearch="false" visible="false" mapping="taxERPId"/>
+			<criteria name="tbdNumber1" startsSearch="true" visible="false" mapping="taxCode.tbdNumber1"/>
+			<criteria name="taxAmount1" startsSearch="true" visible="false" mapping="taxAmount1"/>
+		</searchCriteria>
+		<sortOrder field="code"/>
+		<provider class="com.miriasystems.ui.providers.TaxCodeLookupProvider"/>
+		<properties>
+			<property name="code" display="true" labelKey="taxCode.code" rootName="taxId" backPopulate="true"/>
+			<property name="tbdString3" display="true" labelKey="taxCode.tbdString3" backPopulate="false"/>
+			<property name="tbdString2" display="true" labelKey="taxCode.tbdString2" backPopulate="false"/>
+			<property name="tbdString1" display="true" labelKey="taxCode.tbdString1" backPopulate="false"/>
+			<property name="systemOriginator.code" display="false" rootName="taxERPId" backPopulate="true" />
+			<property name="tbdNumber1" display="false" rootName="taxCode.tbdNumber1" backPopulate="false"/>
+			<property name="taxAmount1" display="false" rootName="taxAmount1" backPopulate="false"/>
+		</properties>
+	</lookup>
+	
+		<lookup name="lookup.creditCardDetails">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Credit Card Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<!--criteria name="ccNumber" startsSearch="true"  mapping="creditCardNumber" visible="false"/-->
+			<criteria name="userId" startsSearch="true" mapping="requesterName" visible="true"/>
+		</searchCriteria>
+		<sortOrder field="ccNumber"/>
+		<provider class="com.miriasystems.ui.providers.CreditCardLookupProvider"/>
+		<properties>
+			<property name="ccNumber" display="true" rootName="processCode" backPopulate="true" labelKey="CC #"  />
+			<property name="type" display="true" rootName="subType" backPopulate="true" labelKey="Card Type"/>
+		</properties>
+	</lookup>
+	
+	<lookup name="lookup.prepaidCardDetails">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Pre-Paid Card Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<!--criteria name="ccNumber" startsSearch="true"  mapping="tbdString2" visible="true"/-->
+			<!--criteria name="userId" startsSearch="true" mapping="originatorName" visible="true"/-->
+			<criteria name="type" visible="true" enforceNull="true" startsSearch="true" mapping="afeNumber" type="String"/>
+			<criteria name="assigned" visible="false" enforceNull="true" labelKey="Assigned" startsSearch="true" mapping="tbdBoolean1"/>
+		</searchCriteria>
+		<sortOrder field="ccNumber"/>
+		<provider class="com.miriasystems.ui.providers.CreditCardLookupProvider"/>
+		<properties>
+			<property name="ccNumber" display="true" rootName="processCode" backPopulate="true" />
+		</properties>
+	</lookup>
+	
+	<lookup name="lookup.availablePrepaid">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Pre-Paid Card Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<!--criteria name="ccNumber" startsSearch="true"  mapping="tbdString2" visible="true"/-->
+			<criteria name="type" visible="false" startsSearch="true" mapping="afeNumber" type="String"/>
+			<criteria name="assigned" visible="true" enforceNull="true" labelKey="Assigned" startsSearch="true" mapping="tbdBoolean1"/>
+		</searchCriteria>
+		<sortOrder field="ccNumber"/>
+		<provider class="com.miriasystems.ui.providers.CreditCardLookupProvider"/>
+		<properties>
+			<property name="ccNumber" display="true" rootName="processCode" backPopulate="true" />
+		</properties>
+	</lookup>
+
+	<lookup name="lookup.delegate">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="Delegate Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="delegateUserName" startsSearch="true"  mapping="originatorId" />
+		</searchCriteria>
+		<sortOrder field="displayName"/>
+		<provider class="com.miriasystems.ui.providers.DelegateLookupProvider"/>
+		<properties>
+			<property name="displayName" display="true" rootName="requesterName" backPopulate="true"/>
+			<property name="fullUserName" display="false"  backPopulate="true"/>
+			<property name="phone" display="true" backPopulate="false"/>
+			<property name="email" display="false" backPopulate="false"/>
+			<property name="userName" display="false" rootName="requesterId" backPopulate="true"/>
+			<property name="employeeNumber" display="false" rootName="tbdString2" backPopulate="true"/>
+			<property name="tbdString2" display="false"  rootName="defaultCode2" backPopulate="true"/>
+            <property name="userCompany" display="false"  rootName="defaultCode1" backPopulate="true"/>
+		</properties>
+	</lookup>
+
+		<lookup name="lookup.external">
+		<!-- The parameters we will be querying for -->
+		<window width="550" height="400" displayTitle="External Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="delegateCustomerName" startsSearch="true"  mapping="tbdString1" labelKey="Customer Number"/>
+		</searchCriteria>
+		<provider class="com.miriasystems.ui.providers.CustomerLookupProvider"/>
+		<properties>
+			<property name="tbdString3" display="true" rootName="tbdString1" labelKey="Customer Id" backPopulate="true"/>
+			<property name="tbdString4" display="true" rootName="custom1.tbdString4" backPopulate="true" labelKey="CustomerName"/>
+			<property name="tbdString5" display="true" rootName="custom1.tbdString5" backPopulate="true" labelKey="Address"/><!--Address-->
+			<property name="tbdString6" display="false" rootName="custom1.tbdString6" backPopulate="true"/><!--City-->
+			<property name="tbdString7" display="false" rootName="custom1.tbdString7" backPopulate="true"/><!--State-->
+			<property name="tbdString3" display="false" rootName="custom1.tbdString3" backPopulate="true"/><!--Customer Id -->
+			<property name="tbdString8" display="false" rootName="custom1.tbdString8" backPopulate="true"/><!--Zip -->
+			<property name="tbdString9" display="false" rootName="custom1.tbdString9" backPopulate="true"/><!--E-Mail -->
+			<property name="tbdString21" display="false" rootName="custom1.tbdString21" backPopulate="true"/><!--Contact -->
+		</properties>
+	</lookup>
+	
+<lookup name="lookup.locationCode">
+                                <window width="500" height="400" displayTitle="Location Code Lookup"/>
+                                <searchCriteria blankForwardPopulate="false">
+                                                <criteria name="locationNamecode" startsSearch="true" labelKey="location.code" mapping="defaultCode2" visible="true"/>
+                                                <criteria name="companyNameCode" startsSearch="true" labelKey="location.fullName" mapping="defaultCode1" visible="false"/>
+                                                
+                                </searchCriteria>
+                                <sortOrder field="code"/>
+                                <provider class="com.miriasystems.ui.providers.LocationCodeLookupProvider"/>
+                                <headerProperties/>
+                                <properties>
+                                                <property name="code4" display="true" rootName="defaultCode2" labelKey="location.code" backPopulate="true"/>
+                                                
+                                </properties>
+                </lookup>
+
+	
+	
+	
+	
+	
+	<lookup name="lookup.logoRequester">
+<!-- The parameters we will be querying for -->
+<window width="700" height="400" displayTitle="Requester Lookup"/>
+<searchCriteria blankForwardPopulate="false">
+<criteria name="displayName" startsSearch="true" mapping="custom1.tbdString19"/>
+<criteria name="tbdString1" startsSearch="true" visible="false" mapping="custom1.tbdString25"/>
+<!--criteria name="email" visible="true"/>
+<criteria name="phoneNumber" visible="true"/--> 
+</searchCriteria>
+<sortOrder field="displayName"/>
+<provider class="com.miriasystems.ui.providers.UserLookupProvider"/>
+<properties>
+<property name="displayName" display="true" rootName="custom1.tbdString19" backPopulate="true"/>
+<property name="phone" display="true" backPopulate="false"/>
+</properties>
+</lookup>
+
+<lookup name="lookup.logoGraphicArtist">
+<!-- The parameters we will be querying for -->
+<window width="700" height="400" displayTitle="Requester Lookup"/>
+<searchCriteria blankForwardPopulate="false">
+<criteria name="displayName" startsSearch="true" mapping="custom1.tbdString24"/>
+<criteria name="tbdString1" startsSearch="true" visible="false" mapping="custom1.tbdString26"/>
+<!--criteria name="email" visible="true"/>
+<criteria name="phoneNumber" visible="true"/--> 
+</searchCriteria>
+<sortOrder field="displayName"/>
+<provider class="com.miriasystems.ui.providers.UserLookupProvider"/>
+<properties>
+<property name="displayName" display="true" rootName="custom1.tbdString24" backPopulate="true"/>
+<property name="phone" display="true" backPopulate="false"/>
+</properties>
+</lookup>
+
+</lookups>

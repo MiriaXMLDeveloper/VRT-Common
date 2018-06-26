@@ -1,0 +1,15 @@
+<navigation name="section.VPnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<initpage href="/filenet/search.do?searchName=PortalInboxSearch"/>
+				
+		<section name="section.VPPortal" collapsed="false" >
+				<action href="/filenet/search.do?searchName=PortalInboxSearch" target="right" image="/images/ico_queue.gif" name="action.VPMessageCenter" searchName="PortalInboxSearch"/>	
+				<action href="/filenet/upload.do?view=upload-portal-view.xml" target="right" image="/images/ico_upload.gif" name="action.VPUploadInvoice"/>    
+				<action href="/filenet/upload.do?view=upload-address-view.xml" target="right" image="/images/ico_upload.gif" name="action.VPChgAddress"/>  
+				<action href="/filenet/upload.do?view=upload-faq-view.xml" target="right" image="/images/ico_upload.gif" name="action.VPMiscRequest"/>  			
+				<action href="/filenet/upload.do?view=upload-address-view.xml" target="right" image="/images/ico_upload.gif" name="action.VPSubmitW9"/>   <!-- Not Real -->
+				<action href="/filenet/upload.do?view=upload-address-view.xml" target="right" image="/images/ico_upload.gif" name="action.VPSubmitTaxCert"/>   <!-- Not Real -->
+				<action href="/document/portalsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.VPInvoiceSearch"/>
+
+
+		</section>
+</navigation>

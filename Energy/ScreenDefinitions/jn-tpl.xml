@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="group" value ="Store/Location"/>
+		<label name="department" value ="Department"/>
+		<label name="tbdString2" value ="Auto Reverse"/>
+		<label name="tbdString1" value ="Interco code"/>
+		<label name="number" value ="Journal #"/>
+		<label name="taxAmount" value ="Total CR"/>
+		<label name="netAmount" value ="Total DR"/>
+		<label name="voucherComments" value ="Journal Description"/>
+		<label name="poId" value ="Journal Template"/>
+		<label name="tbdBoolean1" value ="Save As Template"/>
+	</locale>
+	</labels>
+	
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<text row="1" col="2" name="originatorName" readonly="true"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<getNext name="next" readonly="true" showLabel="false" visible="false" toLeft="true"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Journal Header" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<text row="1" col="2" name="poId" readonly="true" />
+			<text row="2" col="1" name="number" readonly="true" validation="required"/>
+			<checkbox row = "2" col="2" name="tbdBoolean1" readonly="true"/>	
+			<dropDown row="3" col="1" name="tbdString1" choiceList="choice.interco" readonly="true" styleClass="onehundredpercent"/>
+			<dropDown row="3" col="2" name="tbdString2" choiceList="choice.truncated" readonly="true" styleClass="onehundredpercent"/>
+			<text row="4" col="1" name="voucherComments" readonly="true" validation="required" styleClass="fourhundred"/>
+			<dropDown row="4" col="2" name="tbdString3" choiceList="choice.frequency" readonly="true" styleClass="onehundredpercent"/>
+		</properties>
+		<actions>
+			<postingReplyAction name="postings" icon="/images/ico_mp.gif" width="16" height="16" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="emailLogoattachments" icon="/images/attachment_add.png" width="16" height="16" link="javascript:openEmailLogoAttachmentsWindow('$contextPath$', '$wobNumber$','emailLogo','$seqId$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_print.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>	
+	
+	<section name="Journal Lines" visible="true" collapsible="true" collapsed="false">
+		<lineItemProperties showTotal="true" showTaxTotal="true">
+			<lookup row="1" col="1" name="accountCode" lookupType="lookup.accountCode" readonly="false" validation="required" styleClass="onefifty"/>
+			<text row="1" col="2" name="account.description" readonly="true" styleClass="twohundred"/>
+			<text row="1" col="3" name="itemDescription" readonly="false" labelKey="Additonal Description"  styleClass="threehundred"/>
+			<currency row="1" col="4" name="taxAmount" readonly="false" styleClass="currency" labelKey="CR"/>
+			<currency row="1" col="5" name="lineTotal" readonly="false" styleClass="currency" labelKey="DR" />
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+			<lineItemHidden row="0" col="0" name="account.type" defaultValue="%" />
+		</lineItemProperties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+		    <button name="addLineItem" command="addLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="a"/>
+			<button name="removeLineItem" command="deleteLineItem" type="submit" isAnchored="true" hotKey="r"/>
+		</actions>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="type" defaultValue="JN" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="group" defaultValue="JN" forceDefault="true"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+    </processors>
+</propertyTemplate>

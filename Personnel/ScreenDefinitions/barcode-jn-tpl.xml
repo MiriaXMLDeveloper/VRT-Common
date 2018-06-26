@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="grossAmount" value ="Invoice Amount"/>
+		<label name="group" value ="Store/Location"/>
+		<label name="department" value ="Department"/>
+		<label name="tbdString2" value ="Auto Reverse"/>
+		<label name="tbdString1" value ="Interco code"/>
+		<label name="number" value ="Journal #"/>
+		<label name="taxAmount" value ="Total CR"/>
+		<label name="netAmount" value ="Total DR"/>
+		<label name="voucherComments" value ="Journal Description"/>
+	</locale>
+	</labels>
+
+	<section name="Journal Coversheet" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="custom1.tbdComment1" labelKey="" defaultValue="Please submit your support documentation following the steps below." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<barcode row="1" col="2" name=""/>
+			<text row="2" col="1-2" name="custom1.tbdComment2" labelKey="" defaultValue="•	Click on the Print Icon and print a hard copy of this form" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="3" col="1-2" name="custom1.tbdComment3" labelKey="" defaultValue="•	Once the barcoded coversheet has printed, click Complete to submit your journal" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1-2" name="custom1.tbdComment6" labelKey="" defaultValue="•	Fax your documentation to 555-255-3911, ensuring the barcode is displayed on page 1" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="5" col="1-2" name="custom1.tbdComment7" labelKey="" defaultValue="•	Or scan and e-mail the coversheet and documentation to M$Pdocs@support.com" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="6" col="1-2" name="custom1.tbdComment8" labelKey="" defaultValue="•	The supporting documentation will automatically be stored with your journal" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+		</properties>
+		<actions>
+		    <iconAction name="print" icon="/images/icon_printer.png" width="16" height="16" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+			<button name="forward" command="close" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Journal Header" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<text row="1" col="2" name="number" readonly="true" validation="required"/>
+			<dropDown row="2" col="1" name="tbdString1" choiceList="choice.interco" readonly="true" styleClass="onehundredpercent"/>
+			<dropDown row="2" col="2" name="tbdString2" choiceList="choice.truncated" readonly="true" styleClass="onehundredpercent"/>
+			<text row="3" col="1-2" name="voucherComments" readonly="true" validation="required" styleClass="sixhundred"/>
+		</properties>
+	</section>
+	
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="2" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.cabelas.processors.DueDateProcessor"/>
+    </processors>
+</propertyTemplate>

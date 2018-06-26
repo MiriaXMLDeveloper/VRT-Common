@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-cleared-view" template="nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="vendorDetails" visible="true" collapsed="false"/>
+		<section name="lineItems" visible="true" />		
+	</section-overrides>
+	
+	<property-overrides>
+		<lookup name="vendorId" readonly="true" validation=""/>
+		<dropDown name="type" readonly="true"/>	
+		<lookup name="vendor.name" readonly="true" />
+		<lookup name="paymentTermId" readonly="true" />
+		<text name="number" readonly="true" />
+		<date name="date" readonly="true" />
+		<date name="dueDate" validation=""/>
+		<currency name="grossAmount" readonly="true"/>
+		<currency name="freightAmount1" readonly="true" />
+		<currency name="taxAmount1" readonly="true" />
+		<currency name="taxAmount2" readonly="true" />
+		<text name="voucherComments" readonly="true" />
+		<text name="tbdString2" readonly="true" />
+		<text name="routingCode" readonly="true" />
+		<text name="scanAmount" readonly="true" />
+		<text name="tbdBoolean1" readonly="true" />
+		<currency name="specialHandlingCode" readonly="true" />
+		<text name="scanVendorAddress2" readonly="true" />
+		<text name="paymentTypeId" readonly="true" />
+		<text name="tbdBoolean2" readonly="true" />
+		<text name="tbdString1" readonly="true" />
+		<text name="subType" readonly="true" />
+		<text name="tbdString3" readonly="true" />
+		<text name="checkStubMessage" readonly="true" />
+	</property-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" visible="false"/>
+		<button name="addLineItem" readonly="true" visible="false"/>
+		<button name="removeLineItem" readonly="true" visible="false"/>
+		<button name="update" readonly="true" visible="false"/>
+	</action-overrides>
+	
+	<lineItem-overrides>
+		<text name="accountCode" readonly="true" validation=""/>
+		<currency name="lineTotal" readonly="true" validation=""/>
+		<text name="tbdString1" readonly="true" validation=""/>
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+		<reason name="Stop Payment" commentsRequired="true" note="message.stopPayment">
+		</reason>
+		</rejectionReasons>
+	</documentRejection>
+	
+	<validations>
+
+	</validations>
+</view>

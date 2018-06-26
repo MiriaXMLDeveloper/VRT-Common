@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<view name="portal-nonpo-view" template="portal-nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+			<label name="reject" value="Early Pay"/>
+		</locale>
+	</labels>
+
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+	
+	<property-overrides>
+		<lookup name="netAmount" readonly="false"/>
+	</property-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Early Pay" commentsRequired="true" note="message.earlyPayment">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+</view>

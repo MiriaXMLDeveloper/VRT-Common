@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-postingcleared-view" template="po-posting-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+	</section-overrides>
+
+	<property-overrides>
+		<currency name="freightAmount1" readonly="true" validation="" />
+		<currency name="freightAmount2" readonly="true" validation="" />
+		<currency name="tbdCurrency1" readonly="true" validation="" />
+		<currency name="grossAmount" readonly="true" validation="" />
+		<currency name="taxAmount1" readonly="true"/><!--sales tax-->
+		<currency name="taxAmount2" readonly="true" validation="" />
+		<date name="date" readonly="true" validation="" />
+		<dropDown name="specialHandlingCode" readonly="true" />
+		<dropDown name="subType" readonly="true" validation="" />
+		<dropDown name="tbdString4" readonly="true" validation="" />
+		<dropDown name="type" readonly="true" validation="" />
+		<dynamicDropDown name="paymentTermId" readonly="true" validation="" />
+		<poNumber name="poId" readonly="true" validation="" />
+		<text  name="number" readonly="true" validation="" />
+		<text name="number" readonly="true" validation="" />
+		<dropDown name="checkStubMessage" readonly="true"/>
+		<text name="tbdString1" readonly="true" />
+		<text name="voucherComments" readonly="true" />
+
+	</property-overrides>
+
+
+	<action-overrides>
+		<button name="release" readonly="false" visible="true"/>
+		<button name="update" readonly="true" visible="false"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</documentRejection>
+
+	<validations>
+		
+	</validations>
+</view>
+

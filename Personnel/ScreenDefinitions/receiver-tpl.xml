@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+        <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+ 
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>		
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<dropDown row="1" col="1" name="type" choiceList="choice.invoiceTypes" readonly="true" />
+		<poNumber row="2" col="1" name="poId" readonly="true" validation="required"/>
+		<text row="2" col="2" name="shippingDocumentId" readonly="true" validation="required"/>
+		<text row="3" col="1" name="number" readonly="true"/>
+        <date row="3" col="2" name="date" styleClass="date" readonly="true"/>
+		<currency row="4" col="1" name="grossAmount" readonly="true"/>
+		<text row="4" col="2" name="tbdString2" readonly="true" />  <!--Contract #-->
+		</properties>
+		<actions>
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="print" icon="/images/ico_search.gif" width="20" height="20" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	
+	<section name="vendorDetails" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<lookup row="1" col="1-2" name="vendor.name" lookupType="lookup.vendorCode" readonly="true" styleClass="fulllookup"/>
+			<lookup row="2" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="true"/>
+			<text row="3" col="1-4" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1" name="vendor.city" readonly="true" />
+			<text row="4" col="2" name="vendor.state" readonly="true"/>
+			<text row="4" col="3" name="vendor.postalCode" readonly="true"/>
+			<text row="5" col="1" name="vendor.address2" readonly="true"/>
+			<text row="5" col="2-4" name="vendor.address3" readonly="true" styleClass="fulllookup"/>
+	    </properties>
+	</section>
+	
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="batchNumber" readonly="true"/>
+		</properties>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+        <hidden name="paymentTermERPId" defaultValue="JDA"/>
+        <hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="alternateVendor"/>
+		<hidden name="costObjectTypeId1" defaultValue="COS1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="processInformation.comment"/>
+    </hiddenFields>
+
+	<processors>
+		
+    </processors>
+</propertyTemplate>

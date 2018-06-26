@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nospaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+			
+			
+			<label name="receiveDate" value="Invoice Received"/>
+			<label name="image" value="Image Window"/>
+		</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<!-- The following section is standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true"/>
+			<date row="1" col="2" name="processInformation.deadline" readonly="true" styleClass="date"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<textArea row="3" col="1-2" name="processInformation.comment" styleClass="comment"/>
+		</properties>
+		<actions>
+			<iconAction name="image" icon="/images/image-window.png" width="16" height="16" link="javascript:parent.openImage()" alwaysActive="true"/>
+			<getNext name="next" readonly="false" showLabel="true" toLeft="true"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="type" readonly="true"/>
+			<text row="1" col="3" name="poId" readonly="true"/>
+			<lookup row="2" col="1-2" name="vendor.name" lookupType="lookup.CAvendorName" readonly="false" styleClass="fulllookup"/>
+			<invisibleLookup row="2" col="3" name="vendorId" lookupType="lookup.CAvendorCode" readonly="false" />
+			<text row="3" col="1-3" name="vendor.name2" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1-3" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="5" col="1-3" name="vendor.address2" readonly="true" styleClass="fulllookup"/>
+			<text row="6" col="1-3" name="vendor.address3" readonly="true" styleClass="fulllookup"/>
+			<text row="7" col="1-3" name="vendor.address4" readonly="true" styleClass="fulllookup"/>
+			<text row="8" col="1-3" name="vendor.city" readonly="true" styleClass="fulllookup"/>
+			<text row="9" col="1" name="vendor.payToCode" readonly="true"/>
+			<!--text row="9" col="2" name="vendor.tbdString3" readonly="true"/-->
+			<text row="9" col="2" name="vendor.ten99Code" readonly="true"/>
+			<text row="9" col="3" name="vendor.taxId" readonly="true"/>
+			<text row="10" col="1" name="number" readonly="true" />
+			<currency row="10" col="2" name="grossAmount" readonly="true" styleClass="seven"/>
+			<text row="10" col="3" name="docPriority" readonly="true" />
+			<date row="11" col="1" name="date" readonly="true" styleClass="date"/>
+			<text row="11" col="2" name="vendor.paymentTerm.code" readonly="true"/>
+		</properties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<iconAction name="email" icon="/images/ico_email.gif" width="16" height="16" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="16" height="16" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_search.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="16" height="16" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="16" height="16" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm')" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="true">
+		<properties>
+			<date row="1" col="1" name="scanDate" showTime="true" readonly="true" styleClass="date"/>
+			<date row="1" col="2" name="lastModifiedDate" showTime="true" readonly="true" styleClass="date"/>
+			<text row="2" col="1" name="scanType" readonly="true"/>
+			<text row="2" col="2" name="scanSource" readonly="true"/>
+			<text row="3" col="1" name="batchNumber" readonly="true"/>
+			<text row="3" col="2" name="batchOrdinal" readonly="true"/>
+			<text row="3" col="3" name="group" readonly="true"/>
+
+		</properties>
+	</section>
+
+	<hiddenFields>
+		<hidden name="newBatchNumber"/>
+		<hidden name="requesterId"/>
+		<hidden name="postingERPId"/>
+		<hidden name="vendorERPId"/>
+		
+	</hiddenFields>
+
+	<processors>
+	</processors>
+</propertyTemplate>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="ca-w9-readonly-view" template="ca-w9-readonly-tpl.xml" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+    <!-- View permutations:
+          -view: This is the standard view
+          -viewM: Payment Type 'MC' has been selected
+          -viewP: Payment Type 'PC' has been selected
+    -->
+
+    <section-overrides>
+    </section-overrides>
+
+    <property-overrides>
+    </property-overrides>
+
+    <lineItem-overrides>
+    </lineItem-overrides>
+
+    <action-overrides>
+        <getNext name="next" readonly="true" visible="false"/>
+        <rejectButton name="reject" readonly="true" visible="false"/>
+	<button name="forward" readonly="true" visible="false"/>
+        <button name="update" readonly="true" visible="false"/>
+	<button name="release" readonly="true" visible="false"/>
+	<iconAction name="email" visible="false"/>
+     </action-overrides>
+
+</view>

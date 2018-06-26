@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+The file names listed in here will be search *in order* for a label.  The first file
+in this list must also define the default locale.  Subsequent attempts to redefine the
+default locale will be ignored.
+
+User Roles mapping:
+Friendly Name	             		  Role Name
+Mailroom Processor	                  MP_Scanner1 
+AP Indexer	                          MP_Indexer1 
+AP Processor Pre-Approved	          MP_Processor3
+AP Processor Cost Center	          MP_Processor1
+Approver 	                          MP_Approver1 
+AP Supervisor Review	              MP_Confirmer1
+AP Manager	                          MP_Confirmer2
+Fixed Assets Review	                  MP_Confirmer3
+General Exception	                  MP_Processor8
+Vendor Maintenance	                  MP_VendorMaintenance1
+Waiting Rescan	                      MP_Processor9
+Terminate	                          MP_Processor10
+Administrator 1	                      MP_Administrator1
+Administrator 2	                      MP_Administrator2
+Administrator 3	                      MP_Administrator3
+Search Only	                          MP_Search1
+Use Tax Processor	                  MP_Auditor1
+Use Tax Manager	                      MP_Auditor2
+Internal Use Tax Auditor	          MP_Auditor3
+External Use Tax Auditor	          MP_Auditor4
+-->
+
+<root>
+
+<apps>
+	<app name="Common" default="true" roles="">
+		<dcApp name="Null" url="index.jsp?app=" target="_parent" desktop="Null" disableImg="Null" order="8"/>
+	</app>
+	
+	<app name="Pay"  roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4, MP_Approver2, MP_Approver3, MP_Approver4, MP_Confirmer1, MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Processor8, MP_Processor9, MP_Processor10, MP_VendorMaintenance1, MP_VendorMaintenance2">
+		<dcApp name="Pay" url="index.jsp?app=" target="_parent" desktop="Pay" disableImg="Pay" order="1"/>
+	</app>
+	
+	
+   	<app name="Mailroom"  roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4 ,MP_Scanner1, MP_Scanner2">
+		<dcApp name="Mailroom" url="http://10.212.212.86:9080/navigator/?desktop=" target="_blank" desktop="Veritiv" disableImg="Mailroom" order="2"/>
+	</app>
+	
+	<app name="Expense"  roles="MP_Administrator4"> <!--added ms-->
+		<dcApp name="Expense" url="index.jsp?app=" target="_parent" desktop="Expense" disableImg="Expense" order="3"/>
+	</app>
+	
+	
+	<app name="Doc"  roles="MP_Administrator4">
+		<dcApp name="Doc" url="index.jsp?app=" target="_parent" desktop="Doc" disableImg="Doc" order="4"/>
+	</app>
+	
+	
+	<app name="Search"  roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4, MP_Approver2, MP_Approver3, MP_Approver4, MP_Confirmer1, MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Processor8, MP_Processor9, MP_Processor10, MP_VendorMaintenance1, MP_VendorMaintenance2">
+		<dcApp name="Search" url="index.jsp?app=" target="_parent" desktop="Search" disableImg="Search" order="5"/>
+	</app>
+	
+	<app name="Tax"  roles="MP_Administrator4">
+		<dcApp name="Tax" url="index.jsp?app=" target="_parent" desktop="Tax" disableImg="Tax" order="6"/>
+	</app>
+	
+	<app name="VeritivSearch"  roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4, MP_Approver2, MP_Approver4, MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Processor9, MP_Processor10, MP_VendorMaintenance1, MP_VendorMaintenance2" >
+	<dcApp name="VeritivSearch" url="http://qsl52:9082/navigator/?desktop=" target="_blank" desktop="ActiveSearch" disableImg="VeritivSearch" order="7"/>
+	</app>
+	
+		
+	<app name="BankPay" roles="MP_Administrator4" >
+		<dcApp name="BankPay" url="index.jsp?app=" target="_parent" desktop="BankPay" disableImg="BankPay" order="8"/>
+	</app>	
+	
+	
+	<app name="Report"  roles="MP_Administrator4" >
+		<dcApp name="Report" url="https://app.powerbi.com/groups/me" target="_blank" desktop="Report" disableImg="Report" order="9"/>
+	</app>
+	
+	<!--<app name="Portal" roles="MP_Portal, MP_VendorMaintenance2, MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4" >
+		<dcApp name="Portal" url="indexportal.jsp?app=" target="_parent" desktop="Portal" disableImg="Portal" order="9"/>
+	</app>-->
+	
+	<app name="Admin" roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4">	
+		<dcApp name="Null" url="index.jsp?app=" target="_parent" desktop="Null" disableImg="" order="10"/>	
+	</app>	
+	
+	
+	
+</apps>
+
+<DocumentTypes>
+
+	
+	<app type="PO"  name="Pay"/>
+	<app type="TAX" name="Pay"/>
+	<app type="NON-TRADE"  name="Pay"/>
+	<app type="INF NON-TRADE"  name="Pay"/>
+	<app type="CHECK"  name="Pay"/>
+	<app type="TRADE"  name="Pay"/>
+	<app type="AR"  name="Pay"/>
+	<app type="ITApproval"  name="Pay"/>
+	<app type="GL"  name="Pay"/>
+	<app type="AP"  name="Pay"/>
+	
+	
+</DocumentTypes>
+
+</root>
+

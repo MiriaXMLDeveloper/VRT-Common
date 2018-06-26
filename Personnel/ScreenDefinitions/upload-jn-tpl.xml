@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="grossAmount" value ="Invoice Amount"/>
+		<label name="group" value ="Store/Location"/>
+		<label name="department" value ="Department"/>
+		<label name="tbdString2" value ="Auto Reverse"/>
+		<label name="tbdString1" value ="Interco code"/>
+		<label name="tbdString3" value ="Frequency"/>
+		<label name="number" value ="Journal #"/>
+		<label name="taxAmount" value ="Total CR"/>
+		<label name="netAmount" value ="Total DR"/>
+		<label name="voucherComments" value ="Description"/>
+		<label name="poId" value ="Template Id"/>
+		<label name="tbdBoolean1" value ="Save As Template"/>
+		<label name="tbdBoolean2" value ="Save As Draft"/>
+	</locale>
+	</labels>
+	
+	<section name="Journal Header" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<poNumber row="1" col="2" name="poId" readonly="false" />
+			<checkbox row = "1" col="3" name="tbdBoolean1"/>
+			<text row="2" col="1" name="number" readonly="false" validation="required"/>
+			<dropDown row="2" col="2" name="tbdString1" choiceList="choice.interco" readonly="false" styleClass="onehundredpercent"/>
+			<dropDown row="2" col="3" name="tbdString2" choiceList="choice.truncated" readonly="false" defaultValue="0" styleClass="onehundredpercent"/>
+			<text row="3" col="1" name="voucherComments" readonly="false" validation="required" styleClass="threehundred"/>
+			<dropDown row="3" col="2" name="tbdString3" choiceList="choice.frequency" readonly="false" styleClass="onehundredpercent"/>
+			<checkbox row = "3" col="3" name="tbdBoolean2"/>
+		</properties>
+		<actions>
+				<iconAction name="selectApprovers" icon="/images/ico_routing.gif" width="20" height="20" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openUploadRoutingWindow('/ManagedPay/custom', 'routing/upload.action','nonPo')" alwaysActive="true" readonly="false"/>
+				<iconAction name="print" icon="/images/ico_search.gif" width="20" height="20" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+				<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+				<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+				<button name="forward" command="showSamePageBarcode" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>	
+	
+	<section name="Journal Lines" visible="true" collapsible="true" collapsed="false">
+		<lineItemProperties showTotal="true" showTaxTotal="true">
+			<lookup row="1" col="1" name="accountCode" lookupType="lookup.accountCode" readonly="false" validation="required" styleClass="onefifty"/>
+			<text row="1" col="2" name="account.description" labelKey="Account Description" readonly="true" styleClass="twohundred"/>
+			<text row="1" col="3" name="itemDescription" readonly="false" labelKey="Additonal Description"  styleClass="threehundred"/>
+			<currency row="1" col="4" name="taxAmount" readonly="false" styleClass="currency" labelKey="CR"/>
+			<currency row="1" col="5" name="lineTotal" readonly="false" styleClass="currency" labelKey="DR" />
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+			<lineItemHidden row="0" col="0" name="account.type" defaultValue="%" />
+		</lineItemProperties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+		    <button name="addLineItem" command="addLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="a"/>
+			<button name="removeLineItem" command="deleteLineItem" type="submit" isAnchored="true" hotKey="r"/>
+		</actions>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="type" defaultValue="JN" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="3" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="group" defaultValue="JN" forceDefault="true"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+    </processors>
+</propertyTemplate>

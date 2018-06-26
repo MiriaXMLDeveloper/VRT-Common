@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+		<label name="processCode" value="Status"/>
+		<label name="requester.displayName" value="Set-up Specialist"/>
+		<label name="routingCode" value="Over-ride Status"/>
+		<label name="tbdString1" value="Logo Id"/>
+		<label name="subType" value="Type"/>
+		<label name="poId" value="Order #"/>
+		<label name="vendorId" value="Customer Id"/>
+		<label name="number" value="Logo Id"/>
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<text row = "1" col="1" name="seqId" readonly="true"/>
+			<valueAlias row="1" col="2" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<text row="2" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+			<lookup row="3" col="1" name="requesterName" lookupType="lookup.requester" readonly="true"/>
+			<lookup row="2" col="2" name="custom1.tbdString24" lookupType="lookup.logoGraphicArtist"/>
+			<dropDown row="3" col="2" name="routingCode" choiceList="choice.logoStatus"/>
+		</properties>
+		<actions>
+			<button name="update" command="update" readonly="false" type="submit" isAnchored="false"/>
+			<button name="release" command="release" readonly="false" type="submit" isAnchored="false"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Customer Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<lookup row="1" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="true" validation="required"/>
+			<text row="2" col="1-2" name="scanVendorName" lookupType="lookup.vendorCode" readonly="true" styleClass="fulllookup"/> <!-- customer Name-->
+			<text row="3" col="1-3" name="custom1.tbdString3" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1" name="custom1.tbdString4" readonly="true"/>
+			<text row="4" col="2" name="custom1.tbdString5" readonly="true"/>
+			<text row="4" col="3" name="custom1.tbdString6" readonly="true"/>
+			<text row="5" col="1" name="custom1.tbdString7" readonly="true" />
+			<text row="5" col="2" name="custom1.tbdString8" readonly="true"/>
+			<text row="5" col="3" name="custom1.tbdString9" readonly="true"/>
+		</properties>
+		<actions>
+			<rejectButton name="reject" readonly="false" visible ="true" isAnchored="false" hotKey="r"/>
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_print.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+		</actions>
+	</section>
+	
+<section name="Logo Details" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<dropDown row="1" col="1" name="docPriority" choiceList="choice.logoPriority" readonly="true"/> <!-- Logo Priority-->
+			<text row="1" col="2" name="tbdString1" readonly="true"/> <!-- Logo Id-->
+			<text row="1" col="3" name="custom1.tbdString23"/> <!-- stitch count-->
+			<dropDown row="2" col="1" name="subType" choiceList="choice.logoType" readonly="true"/> <!-- Logo Type-->
+			<currency row="2" col="2" name="custom1.tbdCurrency1" readonly="true"/> <!-- Logo Fee-->
+			<text row="3" col="1-2" name="custom1.tbdString10" styleClass="fulllookup" readonly="true"/> <!--Logo Name-->
+			<text row="4" col="1-2" name="custom1.tbdString11" styleClass="fulllookup" readonly="true"/>  <!-- Location-->
+			<text row="5" col="1" name="poId" readonly="true"/> <!--Order Number-->
+			<textArea row="6" col="1-2" name="custom1.tbdComment1" styleClass="comment"/>
+		</properties>
+	</section>
+
+	<section name="Approval Status" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<label row="1" col="1" name="Design Approval" position="left"/>
+			<label row="2" col="1" name="-------------------" position="left"/>
+			<date row="3" col="1" name="custom1.tbdDate1" readonly="true"/>
+			<dropDown row="3" col="2" name="tbdString2" readonly="true" choiceList="choice.approved"/>
+			<text row="3" col="3" name="tbdNumber1" readonly="true"/>
+			<label row="4" col="1" name="Sample Approval" position="left"/>
+			<label row="5" col="1" name="-------------------" position="left"/>
+			<date row="6" col="1" name="custom1.tbdDate2" readonly="true"/>
+			<dropDown row="6" col="2" name="tbdString3" readonly="true" choiceList="choice.approved"/>
+			<text row="6" col="3" name="tbdNumber2" readonly="true"/>
+		</properties>
+	</section>
+	
+	<hiddenFields>
+		<hidden name="requesterId"/>
+		<hidden name="newBatchNumber"/>
+        <hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="originatorName"/>
+		<hidden name="type" defaultValue="LOGO"/>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+		<hidden name="custom1.tbdString25" defaultValue="MP_Approver3"/>
+		<hidden name="custom1.tbdString26" defaultValue="MP_Processor10"/>
+	</hiddenFields>
+
+	<processors>
+		
+    </processors>
+</propertyTemplate>

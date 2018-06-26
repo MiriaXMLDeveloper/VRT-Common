@@ -1,0 +1,43 @@
+<navigation name="section.mpnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+                <initpage href="/filenet/search.do?searchName=InboxSearchExpense"/>
+                <action href="/filenet/search.do?searchName=InboxSearchExpense" target="right" image="/images/ico_inbox.gif" name="action.myinbox" searchName="InboxSearchExpense"/>
+                
+                
+        <section name="section.requests" collapsed="false">
+                <action href="/filenet/upload.do?view=upload-exp-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload2" />     
+				 <action href="/filenet/upload.do?view=upload-pexp-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload6"/>  								
+                <action href="/filenet/upload.do?view=upload-cash-view.xml" target="right" image="/images/ico_upload.gif" name="action.expensecash"/>           
+        </section>
+                
+                
+        <section name="section.expensequeues" collapsed="false" >
+                <action href="/filenet/search.do?searchName=ExpenseReceiptsSearch" target="right" image="/images/ico_queue.gif" name="action.expensereceipts" searchName="ExpenseReceiptsSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseExceptionSearch" target="right" image="/images/ico_queue.gif" name="action.expenseexception" searchName="ExpenseExceptionSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCardSearch" target="right" image="/images/ico_queue.gif" name="action.expensecard" searchName="ExpenseCardSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseSendSearch" target="right" image="/images/ico_queue.gif" name="action.expensesend" searchName="ExpenseSendSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCleanSearch" target="right" image="/images/ico_queue.gif" name="action.expenseclean" searchName="ExpenseCleanSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCloseSearch" target="right" image="/images/ico_queue.gif" name="action.expenseclose" searchName="ExpenseCloseSearch"/>
+        </section>
+		
+		<section name="section.getnext" roles="MP_Confirmer1, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Processor1, MP_Processor3,MP_Processor4, MP_Auditor1, MP_VendorMaintenance1,MP_Administrator4" collapsed="true" >
+       
+		</section>
+    
+				
+        <section name="section.search" collapsed="false">
+			<!--documentsearch target="right" showPoSearch="true" showVendorSearch="true"/-->
+            <action href="/document/advancedsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.advancedinvoicesearch"/>
+            <action href="/document/headerInvoiceSearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.searchsave"/>
+            <action href="/document/expenseadvancedsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.advancedexpensesearch"/>                      
+        </section>
+
+        <section name="section.tools" collapsed="false" roles="MP_Confirmer1, MP_Confirmer2, MP_Confirmer3, MP_Confirmer4, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Indexer4, MP_Processor1,MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Auditor1, MP_Auditor2, MP_Auditor3, MP_VendorMaintenance1, MP_Approver1" >
+            <action href="/documents/reassign.do?userIsSelf=true&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignSelf"/>
+            <action href="/documents/reassign.do?userIsSelf=false&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignDelegate"/>
+            <action href="/protected/preferences.do" target="right" image="/images/ico_configuration.gif" name="action.preferences"/>
+        </section>
+		 <section name="section.applications" collapsed="false" roles="MP_Administrator1,MP_Administrator2">
+            <action href="" target="_blank" image="/images/ico_configuration.gif" name="action.adminmodule" roles="MP_Administrator1, MP_Processor4" contextPath="/ManagedPay/admin/index.jsp"/>
+        </section>
+                
+</navigation>

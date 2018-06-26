@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-mgifreight-indexing-view" template="po-upgrade2-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+			<label name="Dropped" value="Dropped"/>
+			<label name="Awaiting" value="Awaiting Receipts"/>
+			<label name="Exception" value="Exception"/>
+			<label name="Reject" value="Workflow Complete"/>
+			<label name="EquipmentQueue" value="Send to Equipment Process"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+
+	</section-overrides>
+
+	<property-overrides>
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		
+	</action-overrides>
+
+	<hidden-overrides>
+	<hidden name="processInformation.response" defaultValue="Complete"/>	
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Exception" commentsRequired="false" note="message.returnException"> <!-- Exception-->
+			</reason>
+			<reason name="Rescan" commentsRequired="false" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="false" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Dropped" commentsRequired="false" note="message.dropped">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" />
+		<validation name="validation.validVendor" note="message.validVendorValidation"/>
+	</validations>
+</view>

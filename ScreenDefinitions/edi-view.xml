@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="edi-view" template="po-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+		
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+	
+	<action-overrides>
+		<rejectButton name="reject" command="reject" readonly="true" visible="false" type="submit"/>
+		<button name="update" command="update" readonly="true" visible="false" type="submit"/>
+		<button name="addLineItem" readonly="true" visible="false"/>
+		<button name="removeLineItem" readonly="true" visible="false"/>
+	</action-overrides>
+	
+	<property-overrides>
+		<text name="type" readonly="true"/>
+		<text name="number" readonly="true"/>
+        <date name="date" readonly="true"/>
+		<text name="tbdNumber1" readonly="true"/>
+		<text name="poId" readonly="true"/>
+		<checkbox name="tbdBoolean1" readonly="true"/>
+		<lookup name="vendor.name" readonly="true"/>
+		<lookup name="vendorId" readonly="true"/>
+		<dropDown name="tbdString3" readonly="true"/>
+		<text name="tbdString1" readonly="true"/>
+		<currency name="freightAmount1" readonly="true"/>
+		<currency name="freightAmount2" readonly="true"/>
+		<currency name="taxAmount2" readonly="true"/>
+		<currency name="taxAmount1" readonly="true"/>
+		<currency name="tbdCurrency1" readonly="true" />
+		<currency name="tbdCurrency2" readonly="true" />
+		<currency name="grossAmount" readonly="true"/>
+		<currency name="discountAmount" readonly="true" />
+		<dynamicDropDown name="paymentTermId" readonly="true"/>
+		<date name="dueDate" readonly="true"/>
+		<text name="paymentTerm.daysDue" readonly="true"/>
+		<text name="paymentterms.discount1" readonly="true"/>
+		<textArea name="voucherComments" readonly="true"/>
+	</property-overrides>
+		
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+	
+	</documentRejection>
+
+	<validations>
+		
+	</validations>
+</view>

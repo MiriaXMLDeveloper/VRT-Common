@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="mn-w9-exception-view" template="mn-w9-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+    <!-- View permutations:
+          -view: This is the standard view
+          -viewM: Payment Type 'MC' has been selected
+          -viewP: Payment Type 'PC' has been selected
+    -->
+
+    <labels default="en">
+        <locale name="en">
+            <label name="forward" value="Complete"/>
+            <label name="Restart" value="Restart WorkFlow Process"/>
+            <label name="Vendor Maintenance" value="Inactive Vendor"/>
+        </locale>
+    </labels>
+
+   <section-overrides>
+    </section-overrides>
+
+    <property-overrides>
+         <dropDown name="docPriority" readonly="false" />
+         <date name="date" readonly="false" />
+    </property-overrides>
+
+    <action-overrides>
+    </action-overrides>
+
+    <hidden-overrides>
+        <hidden name="processInformation.response" defaultValue="Complete"/>
+    </hidden-overrides>
+
+     <documentRejection>
+        <rejectionReasons>
+            <reason name="Reject" commentsRequired="true" note="message.terminate">
+                <subReason name="No authorization on file"/>
+                <subReason name="Duplicate invoice"/>
+                <subReason name="Other error"/>
+            </reason>
+            <reason name="Rescan" commentsRequired="false" note="message.rescan">
+            </reason>
+            <reason name="Vendor Maintenance" commentsRequired="false" note="message.returnVendorMaintenance">
+            </reason>
+            <reason name="Restart" commentsRequired="false" note="message.restart">
+            </reason>
+        </rejectionReasons>
+    </documentRejection>
+
+    <validations>
+        <validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateW9InvoiceValidation"/>
+        <validation name="validation.validVendor" />
+    </validations>
+</view>

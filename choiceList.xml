@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<choiceLists xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+		<!-- Veritiv Choices-->
+	<list name="choice.priority">
+	<!-- This choicelist is mandatory for use in the advanced search. The name of this list must NOT be changed. -->
+	<!-- Default value of 0, is used as empty due to being assigned to Priority -->
+		<choice value="0" label=""/>
+		<choice value="1" label="Regular"/>
+		<choice value="2" label="Urgent"/>
+	</list>
+	
+	<list name="choice.approvalException.type.search">
+		<choice value="0" label="--None--"/>
+		<choice value="APPROVE" label="Approval"/>
+		<choice value="GL REVIEW" label="GL Review Accounts"/>
+		<choice value="FIXED ASSET" label="FXA Accounts"/>
+	</list>
+	
+	<list name="choice.received">
+		<choice value="0" label="No"/>
+		<choice value="1" label="Yes"/>
+	</list>
+	
+	<list name="choice.nontradeDivision">
+		<choice value="NON-TRADE 1" label="Non-Trade 1"/>
+		<choice value="NON-TRADE 2" label="Non-Trade 2"/>
+		<choice value="NON-TRADE 3" label="Non-Trade 3"/>
+		<choice value="NON-TRADE VLS" label="Non-Trade VLS"/>
+		<choice value="NON-TRADE TAX" label="Non-Trade Tax"/>
+	</list>
+	
+	<list name="choice.category">
+		<choice value="AR Backup" label="AR Backup"/>
+		<choice value="Credit Cards" label="Credit Cards"/>
+		<choice value="Bank Statement" label="Bank Statement"/>
+	</list>
+	
+	<!--added ms-->
+	<list name="choice.subType">
+		<choice value="Hardware Maintenance" label="Hardware Maintenance"/>
+		<choice value="Software Maintenance" label="Software Maintenance"/>
+		<choice value="Hardware" label="Hardware"/>
+		<choice value="Software" label="Software"/>
+		<choice value="Professional services" label="Professional services"/>
+		<choice value="Data Network Services" label="Data Network Services"/>
+		<choice value="Hosting" label="Hosting"/>
+		<choice value="Other" label="Other"/>
+	</list>
+	
+		<!--added ms-->
+	<list name="choice.INFsubType">
+		<choice value="EXPENSE" label="Expense"/>
+		<choice value="CORPORATE" label="Corporate"/>
+	</list>
+	
+<!--added ms-->
+	<list name="choice.email">
+		<choice value="corporateaccountspay@veritivcorp.com" label="corporateaccountspay@veritivcorp.com"/>
+		<choice value="Maxmailinvoices@veritivcorp.com" label="Maxmailinvoices@veritivcorp.com"/>
+		<choice value="GRP_FL101.APExpense@veritivcorp.com" label="GRP_FL101.APExpense@veritivcorp.com"/>
+		<choice value="dturner@miriasystems.com" label="dturner@miriasystems.com"/>
+		<choice value="msirianni@miriasystems.com" label="msirianni@miriasystems.com"/>
+		<choice value="rchidambram@miriasystems.com" label="rchidambram@miriasystems.com"/>
+		<choice value="dbogert@miriasystems.com" label="dbogert@miriasystems.com"/>
+		<choice value="nbanko@miriasystems.com" label="nbanko@miriasystems.com"/>
+		<choice value="Jennifer.tinch@veritivcorp.com" label="Jennifer.tinch@veritivcorp.com"/>
+		<choice value="Becky.smith@veritivcorp.com" label="Becky.smith@veritivcorp.com"/>
+		<choice value="Francesca.venturella@veritivcorp.com" label="Francesca.venturella@veritivcorp.com"/>
+		<choice value="gnikonenko@miriasystems.com" label="gnikonenko@miriasystems.com"/>
+	</list>
+	
+	
+	
+	<list name="choice.apType">
+		<choice value="W-9" label="W-9"/>
+		<choice value="STMT" label="Statements"/>
+		<choice value="AP MISC" label="AP Misc."/>
+		<choice value="RTN CKS" label="Rtn Cks"/>
+		<choice value="PENNY VOUCHERS" label="Penny Vouchers"/>
+		<choice value="INT-NAV" label="International-NAV"/>
+	</list>
+	
+	<list name="choice.glType">
+		<choice value="JE" label="JE"/>
+		<choice value="FEEDS" label="Feeds"/>
+		<choice value="TAX" label="Tax"/>
+	</list>	
+	
+	<list name="choice.states">
+		<choice value="AL" label="Alabama"/>
+		<choice value="AK" label="Alaska"/>
+		<choice value="AB" label="Alberta"/>
+		<choice value="AZ" label="Arizona"/>
+		<choice value="AR" label="Arkansas"/>
+		<choice value="CA" label="California"/>
+		<choice value="CO" label="Colorado"/>
+		<choice value="CT" label="Connecticut"/>
+		<choice value="DE" label="Delaware"/>
+		<choice value="DC" label="District of Columbia"/>
+		<choice value="FL" label="Florida"/>
+		<choice value="." label="Foreign Vendor"/>
+		<choice value="GA" label="Georgia"/>
+		<choice value="HI" label="Hawaii"/>
+		<choice value="ID" label="Idaho"/>
+		<choice value="IL" label="Illinois"/>
+		<choice value="IN" label="Indiana"/>
+		<choice value="IA" label="Iowa"/>
+		<choice value="KS" label="Kansas"/>
+		<choice value="KY" label="Kentucky"/>
+		<choice value="LA" label="Louisiana"/>
+		<choice value="ME" label="Maine"/>
+		<choice value="MD" label="Maryland"/>
+		<choice value="MA" label="Massachusetts"/>
+		<choice value="MI" label="Michigan"/>
+		<choice value="MN" label="Minnesota"/>
+		<choice value="MS" label="Mississippi"/>
+		<choice value="MO" label="Missouri"/>
+		<choice value="MT" label="Montana"/>
+		<choice value="NE" label="Nebraska"/>
+		<choice value="NV" label="Nevada"/>
+		<choice value="NH" label="New Hampshire"/>
+		<choice value="NJ" label="New Jersey"/>
+		<choice value="NM" label="New Mexico"/>
+		<choice value="NY" label="New York"/>
+		<choice value="NC" label="North Carolina"/>
+		<choice value="ND" label="North Dakota"/>
+		<choice value="OH" label="Ohio"/>
+		<choice value="OK" label="Oklahoma"/>
+		<choice value="OR" label="Oregon"/>
+		<choice value="PA" label="Pennsylvania"/>
+		<choice value="RI" label="Rhode Island"/>
+		<choice value="SC" label="South Carolina"/>
+		<choice value="SD" label="South Dakota"/>
+		<choice value="TN" label="Tennessee"/>
+		<choice value="TX" label="Texas"/>
+		<choice value="UT" label="Utah"/>
+		<choice value="VT" label="Vermont"/>
+		<choice value="VA" label="Virginia"/>
+		<choice value="WA" label="Washington"/>
+		<choice value="WV" label="West Virginia"/>
+		<choice value="WI" label="Wisconsin"/>
+		<choice value="WY" label="Wyoming"/>
+		<choice value="Multi" label="Multiple"/>
+		<choice value="Foreign" label="Foreign"/>
+	</list>
+
+	<list name="choice.attachmentTypes">
+		<!-- This choicelist is mandatory for use in the Attachments function. The name of this list must not be changed. -->
+		<!-- Note that option value 0 is reserved -->
+		<!-- Note that option value 15 is internally used for attachments that are based on ad-hoc emails -->
+		<choice value="15" label="Email"/>
+		<!-- Customize options here -->
+	</list>
+	
+	<list name="choice.attachmentLogoTypes">
+		<!-- This choicelist is mandatory for use in the Attachments function. The name of this list must not be changed. -->
+		<!-- Note that option value 0 is reserved -->
+		<!-- Note that option value 15 is internally used for attachments that are based on ad-hoc emails -->
+		<choice value="15" label="Email"/>
+		<!-- Customize options here -->
+	</list>
+	
+	<list name="choice.invoiceTypes">
+		<!-- This choicelist is mandatory for use in the advanced search. The name of this list must not be changed.
+				Although this choicelist may not be used for the individual view implementation (can be replaced by more specific invoice types that are dependant on group
+				it should always contain the total number of invoice types in the implementation as it will be used for reporting -->
+		<choice value="TRADE" label="Trade"/>
+		<choice value="NON-TRADE" label="Non-Trade"/>
+		<choice value="AP" label="AP"/>
+		<choice value="ITApproval" label="IT Approval"/>
+		<choice value="INF NON-TRADE" label="Infinium Non-Trade"/>
+	</list>
+
+	<list name="choice.Types">
+		<choice value="TRADE" label="Trade"/>
+		<choice value="NON-TRADE" label="Non-Trade"/>
+		<choice value="INF NON-TRADE" label="INF Non-Trade"/>
+		<choice value="AP" label="AP"/>
+		<choice value="AR" label="AR"/>
+		<choice value="TAX" label="TAX"/>
+		<choice value="GL" label="GL"/>
+	</list>
+	
+	<list name="choice.nonTradeTypes">
+		<choice value="NON-TRADE" label="Non-Trade"/>
+		<choice value="INF NON-TRADE" label="INF Non-Trade"/>
+	</list>
+	
+	
+	<list name="choice.invoiceSubTypes">
+		<choice value="DIRECT" label="Direct"/>
+		<choice value="WAREHOUSE" label="Warehouse"/>
+		<choice value="EQUIPMENT" label="Equipment"/>
+		<choice value="UNIDENTIFIED" label="Unidentified"/>
+		<choice value="CREDIT" label="Credit"/>
+		<choice value="SUPPLIER" label="Supplier Specific Indexing"/>
+		<choice value="W-9" label="W-9"/>
+		<choice value="STMT" label="Statements"/>
+		<choice value="AP MISC" label="AP Misc."/>
+		<choice value="RTN CKS" label="Rtn Cks"/>
+		<choice value="PENNY VOUCHERS" label="Penny Vouchers"/>
+		<choice value="INT-NAV" label="International-NAV"/>
+		<choice value="CORPORATE" label="Corporate"/>
+		<choice value="EXPENSE" label="Expense"/>
+		<choice value="FREIGHT-VOS" label="3rd Party Freight VOS"/>
+		<choice value="FREIGHT-MAX" label="3rd Party Freight MAX"/>
+		<choice value="MGIFREIGHT" label="MGI Freight"/>
+		<choice value="ROLLSOURCE" label="Rollsource"/>
+		<choice value="REBATE" label="Rebate"/>
+		<choice value="CREDIT-VOS" label="Credit-VOS"/>
+		<choice value="EXPENSE" label="Expense"/>
+		<choice value="CORPORATE" label="Corporate"/>
+	</list>
+	
+	<list name="choice.tradeSubTypes">
+		<choice value="DIRECT" label="Direct"/>
+		<choice value="WAREHOUSE" label="Warehouse"/>
+		<choice value="EQUIPMENT" label="Equipment"/>
+		<choice value="UNIDENTIFIED" label="Unidentified"/>
+		<choice value="CREDIT" label="Credit"/>
+		<choice value="SUPPLIER" label="Supplier Specific Indexing"/>
+		<choice value="ROLLSOURCE" label="Rollsource"/>
+		<choice value="REBATE" label="Rebate"/>
+		<choice value="CREDIT-VOS" label="Credit-VOS"/>
+		<choice value="FREIGHT-VOS" label="3rd Party Freight VOS"/>
+		<choice value="FREIGHT-MAX" label="3rd Party Freight MAX"/>
+		<choice value="MGIFREIGHT" label="MGI Freight"/>
+	</list>
+	
+	<list name="choice.jdetradeSubTypes">
+		<choice value="DIRECT" label="Direct"/>
+		<choice value="WAREHOUSE" label="Warehouse"/>
+		<choice value="EQUIPMENT" label="Equipment"/>
+		<choice value="UNIDENTIFIED" label="Unidentified"/>
+		<choice value="CREDIT" label="Credit"/>
+		<choice value="SUPPLIER" label="Supplier Specific Indexing"/>
+		<choice value="FREIGHT-MAX" label="3rd Party Freight MAX"/>
+	</list>
+	
+	<list name="choice.businessUnit">
+		<choice value="Albany - MAX" label="Albany - MAX"/>
+		<choice value="Alexandria - MAX" label="Alexandria - MAX"/>
+		<choice value="Ankeny - MAX" label="Ankeny - MAX"/>
+		<choice value="Atlanta - MAX" label="Atlanta - MAX"/>
+		<choice value="Baltimore MDC - MAX" label="Baltimore MDC - MAX"/>
+		<choice value="Billings - MAX" label="Billings - MAX"/>
+		<choice value="Birmingham - MAX" label="Birmingham - MAX"/>
+		<choice value="Bloomington MDC - MAX" label="Bloomington MDC - MAX"/>
+		<choice value="Boise - MAX" label="Boise - MAX"/>
+		<choice value="Buffalo - MAX" label="Buffalo - MAX"/>
+		<choice value="Buffalo Grove MDC - MAX" label="Buffalo Grove MDC - MAX"/>
+		<choice value="Charlotte - MAX" label="Charlotte - MAX"/>
+		<choice value="Chicago - MAX" label="Chicago - MAX"/>
+		<choice value="Cincinnati - MAX" label="Cincinnati - MAX"/>
+		<choice value="Cleveland - MAX" label="Cleveland - MAX"/>
+		<choice value="Cleveland MDC - MAX" label="Cleveland MDC - MAX"/>
+		<choice value="Columbia MO - MAX" label="Columbia MO - MAX"/>
+		<choice value="Columbia SC - MAX" label="Columbia SC - MAX"/>
+		<choice value="Dallas - MAX" label="Dallas - MAX"/>
+		<choice value="Denver - MAX" label="Denver - MAX"/>
+		<choice value="Denver MDC - MAX" label="Denver MDC - MAX"/>
+		<choice value="Downey - MAX" label="Downey - MAX"/>
+		<choice value="El Paso - MAX" label="El Paso - MAX"/>
+		<choice value="Erie - MAX" label="Erie - MAX"/>
+		<choice value="Fairfax MDC - MAX" label="Fairfax MDC - MAX"/>
+		<choice value="Fairfield - MAX" label="Fairfield - MAX"/>
+		<choice value="FedEx Atlanta - MAX" label="FedEx Atlanta - MAX"/>
+		<choice value="FedEx Chicago - MAX" label="FedEx Chicago - MAX"/>
+		<choice value="FedEx Clifton - MAX" label="FedEx Clifton - MAX"/>
+		<choice value="FedEx Dallas - MAX" label="FedEx Dallas - MAX"/>
+		<choice value="FedEx Downey - MAX" label="FedEx Downey - MAX"/>
+		<choice value="FedEx Memphis - MAX" label="FedEx Memphis - MAX"/>
+		<choice value="FedEx Nor Cal - MAX" label="FedEx Nor Cal - MAX"/>
+		<choice value="FedEx Toronto - MAX" label="FedEx Toronto - MAX"/>
+		<choice value="FedEx Vancouver - MAX" label="FedEx Vancouver - MAX"/>
+		<choice value="Fidelity - MAX" label="Fidelity - MAX"/>
+		<choice value="Flint MDC - MAX" label="Flint MDC - MAX"/>
+		<choice value="Fort Smith - MAX" label="Fort Smith - MAX"/>
+		<choice value="Fresno - MAX" label="Fresno - MAX"/>
+		<choice value="Fresno Saalfeld - MAX" label="Fresno Saalfeld - MAX"/>
+		<choice value="Grand Rapids - MAX" label="Grand Rapids - MAX"/>
+		<choice value="Greensboro - MAX" label="Greensboro - MAX"/>
+		<choice value="Hanover - MAX" label="Hanover - MAX"/>
+		<choice value="Harrisburg - MAX" label="Harrisburg - MAX"/>
+		<choice value="Hawaii - MAX" label="Hawaii - MAX"/>
+		<choice value="Houston - MAX" label="Houston - MAX"/>
+		<choice value="Indianapolis - MAX" label="Indianapolis - MAX"/>
+		<choice value="Joplin - MAX" label="Joplin - MAX"/>
+		<choice value="Kansas City MDC - MAX" label="Kansas City MDC - MAX"/>
+		<choice value="Knoxville - MAX" label="Knoxville - MAX"/>
+		<choice value="La Mirada - MAX" label="La Mirada - MAX"/>
+		<choice value="Lakeland - MAX" label="Lakeland - MAX"/>
+		<choice value="Las Vegas - MAX" label="Las Vegas - MAX"/>
+		<choice value="Little Rock - MAX" label="Little Rock - MAX"/>
+		<choice value="Livonia - MAX" label="Livonia - MAX"/>
+		<choice value="Livonia MDC - MAX" label="Livonia MDC - MAX"/>
+		<choice value="Louisville - MAX" label="Louisville - MAX"/>
+		<choice value="Loveland Parts - MAX" label="Loveland Parts - MAX"/>
+		<choice value="Lynchburg - MAX" label="Lynchburg - MAX"/>
+		<choice value="Memphis - MAX" label="Memphis - MAX"/>
+		<choice value="Metro NY - MAX" label="Metro NY - MAX"/>
+		<choice value="Miami - MAX" label="Miami - MAX"/>
+		<choice value="Minneapolis - MAX" label="Minneapolis - MAX"/>
+		<choice value="NA Imports - MAX" label="NA Imports - MAX"/>
+		<choice value="Nashville - MAX" label="Nashville - MAX"/>
+		<choice value="National Accounts - MAX" label="National Accounts - MAX"/>
+		<choice value="Nebraska - MAX" label="Nebraska - MAX"/>
+		<choice value="NorCal Converting - MAX" label="NorCal Converting - MAX"/>
+		<choice value="Northeast Converting Warehouse - MAX" label="Northeast Converting Warehouse - MAX"/>
+		<choice value="Oklahoma City - MAX" label="Oklahoma City - MAX"/>
+		<choice value="Olathe - MAX" label="Olathe - MAX"/>
+		<choice value="Philadelphia MDC - MAX" label="Philadelphia MDC - MAX"/>
+		<choice value="Phoenix - MAX" label="Phoenix - MAX"/>
+		<choice value="Pittsburgh - MAX" label="Pittsburgh - MAX"/>
+		<choice value="Port Huron - MAX" label="Port Huron - MAX"/>
+		<choice value="Portland ME - MAX" label="Portland ME - MAX"/>
+		<choice value="Portland OR - MAX" label="Portland OR - MAX"/>
+		<choice value="Raleigh - MAX" label="Raleigh - MAX"/>
+		<choice value="Reno - MAX" label="Reno - MAX"/>
+		<choice value="Richmond - MAX" label="Richmond - MAX"/>
+		<choice value="Roanoke - MAX" label="Roanoke - MAX"/>
+		<choice value="Rochester - MAX" label="Rochester - MAX"/>
+		<choice value="Salt Lake City - MAX" label="Salt Lake City - MAX"/>
+		<choice value="Salt Lake City MDC - MAX" label="Salt Lake City MDC - MAX"/>
+		<choice value="Seattle - MAX" label="Seattle - MAX"/>
+		<choice value="Shreveport - MAX" label="Shreveport - MAX"/>
+		<choice value="Springfield - MAX" label="Springfield - MAX"/>
+		<choice value="St Louis - MAX" label="St Louis - MAX"/>
+		<choice value="St Louis MDC - MAX" label="St Louis MDC - MAX"/>
+		<choice value="Syracuse - MAX" label="Syracuse - MAX"/>
+		<choice value="Tallahassee - MAX" label="Tallahassee - MAX"/>
+		<choice value="Troy MDC - MAX" label="Troy MDC - MAX"/>
+		<choice value="West Haven - MAX" label="West Haven - MAX"/>
+		<choice value="Westampton - MAX" label="Westampton - MAX"/>
+		<choice value="Wichita - MAX" label="Wichita - MAX"/>
+		<choice value="Willow Grove MDC - MAX" label="Willow Grove MDC - MAX"/>
+		<choice value="Wilmington - MAX" label="Wilmington - MAX"/>
+		<choice value="Wisconsin - MAX" label="Wisconsin - MAX"/>
+		<choice value="Yakima - MAX" label="Yakima - MAX"/>
+	</list>
+	
+	<list name="choice.sensitivity">
+		<!-- This choicelist is mandatory for use in the advanced search. The name of this list must NOT be changed. -->
+		<choice value="1" label="Normal"/>
+		<choice value="5" label="Sensitive"/>
+		<choice value="10" label="Confidential"/>
+	</list>
+	
+	<list name="choice.division">
+		<choice value="Albany - MAX" label="Albany - MAX"/>
+		<choice value="Alexandria - MAX" label="Alexandria - MAX"/>
+		<choice value="Ankeny - MAX" label="Ankeny - MAX"/>
+		<choice value="Atlanta - MAX" label="Atlanta - MAX"/>
+		<choice value="Baltimore MDC - MAX" label="Baltimore MDC - MAX"/>
+		<choice value="Billings - MAX" label="Billings - MAX"/>
+		<choice value="Birmingham - MAX" label="Birmingham - MAX"/>
+		<choice value="Bloomington MDC - MAX" label="Bloomington MDC - MAX"/>
+		<choice value="Boise - MAX" label="Boise - MAX"/>
+		<choice value="Buffalo - MAX" label="Buffalo - MAX"/>
+		<choice value="Buffalo Grove MDC - MAX" label="Buffalo Grove MDC - MAX"/>
+		<choice value="Charlotte - MAX" label="Charlotte - MAX"/>
+		<choice value="Chicago - MAX" label="Chicago - MAX"/>
+		<choice value="Cincinnati - MAX" label="Cincinnati - MAX"/>
+		<choice value="Cleveland - MAX" label="Cleveland - MAX"/>
+		<choice value="Cleveland MDC - MAX" label="Cleveland MDC - MAX"/>
+		<choice value="Columbia MO - MAX" label="Columbia MO - MAX"/>
+		<choice value="Columbia SC - MAX" label="Columbia SC - MAX"/>
+		<choice value="Dallas - MAX" label="Dallas - MAX"/>
+		<choice value="Denver - MAX" label="Denver - MAX"/>
+		<choice value="Denver MDC - MAX" label="Denver MDC - MAX"/>
+		<choice value="Downey - MAX" label="Downey - MAX"/>
+		<choice value="El Paso - MAX" label="El Paso - MAX"/>
+		<choice value="Erie - MAX" label="Erie - MAX"/>
+		<choice value="Fairfax MDC - MAX" label="Fairfax MDC - MAX"/>
+		<choice value="Fairfield - MAX" label="Fairfield - MAX"/>
+		<choice value="FedEx Atlanta - MAX" label="FedEx Atlanta - MAX"/>
+		<choice value="FedEx Chicago - MAX" label="FedEx Chicago - MAX"/>
+		<choice value="FedEx Clifton - MAX" label="FedEx Clifton - MAX"/>
+		<choice value="FedEx Dallas - MAX" label="FedEx Dallas - MAX"/>
+		<choice value="FedEx Downey - MAX" label="FedEx Downey - MAX"/>
+		<choice value="FedEx Memphis - MAX" label="FedEx Memphis - MAX"/>
+		<choice value="FedEx Nor Cal - MAX" label="FedEx Nor Cal - MAX"/>
+		<choice value="FedEx Toronto - MAX" label="FedEx Toronto - MAX"/>
+		<choice value="FedEx Vancouver - MAX" label="FedEx Vancouver - MAX"/>
+		<choice value="Fidelity - MAX" label="Fidelity - MAX"/>
+		<choice value="Flint MDC - MAX" label="Flint MDC - MAX"/>
+		<choice value="Fort Smith - MAX" label="Fort Smith - MAX"/>
+		<choice value="Fresno - MAX" label="Fresno - MAX"/>
+		<choice value="Fresno Saalfeld - MAX" label="Fresno Saalfeld - MAX"/>
+		<choice value="Grand Rapids - MAX" label="Grand Rapids - MAX"/>
+		<choice value="Greensboro - MAX" label="Greensboro - MAX"/>
+		<choice value="Hanover - MAX" label="Hanover - MAX"/>
+		<choice value="Harrisburg - MAX" label="Harrisburg - MAX"/>
+		<choice value="Hawaii - MAX" label="Hawaii - MAX"/>
+		<choice value="Houston - MAX" label="Houston - MAX"/>
+		<choice value="Indianapolis - MAX" label="Indianapolis - MAX"/>
+		<choice value="Joplin - MAX" label="Joplin - MAX"/>
+		<choice value="Kansas City MDC - MAX" label="Kansas City MDC - MAX"/>
+		<choice value="Knoxville - MAX" label="Knoxville - MAX"/>
+		<choice value="La Mirada - MAX" label="La Mirada - MAX"/>
+		<choice value="Lakeland - MAX" label="Lakeland - MAX"/>
+		<choice value="Las Vegas - MAX" label="Las Vegas - MAX"/>
+		<choice value="Little Rock - MAX" label="Little Rock - MAX"/>
+		<choice value="Livonia - MAX" label="Livonia - MAX"/>
+		<choice value="Livonia MDC - MAX" label="Livonia MDC - MAX"/>
+		<choice value="Louisville - MAX" label="Louisville - MAX"/>
+		<choice value="Loveland Parts - MAX" label="Loveland Parts - MAX"/>
+		<choice value="Lynchburg - MAX" label="Lynchburg - MAX"/>
+		<choice value="Memphis - MAX" label="Memphis - MAX"/>
+		<choice value="Metro NY - MAX" label="Metro NY - MAX"/>
+		<choice value="Miami - MAX" label="Miami - MAX"/>
+		<choice value="Minneapolis - MAX" label="Minneapolis - MAX"/>
+		<choice value="NA Imports - MAX" label="NA Imports - MAX"/>
+		<choice value="Nashville - MAX" label="Nashville - MAX"/>
+		<choice value="National Accounts - MAX" label="National Accounts - MAX"/>
+		<choice value="Nebraska - MAX" label="Nebraska - MAX"/>
+		<choice value="NorCal Converting - MAX" label="NorCal Converting - MAX"/>
+		<choice value="Northeast Converting Warehouse - MAX" label="Northeast Converting Warehouse - MAX"/>
+		<choice value="Oklahoma City - MAX" label="Oklahoma City - MAX"/>
+		<choice value="Olathe - MAX" label="Olathe - MAX"/>
+		<choice value="Philadelphia MDC - MAX" label="Philadelphia MDC - MAX"/>
+		<choice value="Phoenix - MAX" label="Phoenix - MAX"/>
+		<choice value="Pittsburgh - MAX" label="Pittsburgh - MAX"/>
+		<choice value="Port Huron - MAX" label="Port Huron - MAX"/>
+		<choice value="Portland ME - MAX" label="Portland ME - MAX"/>
+		<choice value="Portland OR - MAX" label="Portland OR - MAX"/>
+		<choice value="Raleigh - MAX" label="Raleigh - MAX"/>
+		<choice value="Reno - MAX" label="Reno - MAX"/>
+		<choice value="Richmond - MAX" label="Richmond - MAX"/>
+		<choice value="Roanoke - MAX" label="Roanoke - MAX"/>
+		<choice value="Rochester - MAX" label="Rochester - MAX"/>
+		<choice value="Salt Lake City - MAX" label="Salt Lake City - MAX"/>
+		<choice value="Salt Lake City MDC - MAX" label="Salt Lake City MDC - MAX"/>
+		<choice value="Seattle - MAX" label="Seattle - MAX"/>
+		<choice value="Shreveport - MAX" label="Shreveport - MAX"/>
+		<choice value="Springfield - MAX" label="Springfield - MAX"/>
+		<choice value="St Louis - MAX" label="St Louis - MAX"/>
+		<choice value="St Louis MDC - MAX" label="St Louis MDC - MAX"/>
+		<choice value="Syracuse - MAX" label="Syracuse - MAX"/>
+		<choice value="Tallahassee - MAX" label="Tallahassee - MAX"/>
+		<choice value="Troy MDC - MAX" label="Troy MDC - MAX"/>
+		<choice value="West Haven - MAX" label="West Haven - MAX"/>
+		<choice value="Westampton - MAX" label="Westampton - MAX"/>
+		<choice value="Wichita - MAX" label="Wichita - MAX"/>
+		<choice value="Willow Grove MDC - MAX" label="Willow Grove MDC - MAX"/>
+		<choice value="Wilmington - MAX" label="Wilmington - MAX"/>
+		<choice value="Wisconsin - MAX" label="Wisconsin - MAX"/>
+		<choice value="Yakima - MAX" label="Yakima - MAX"/>
+		<choice value="NON-TRADE 1" label="Non-Trade 1"/>
+		<choice value="NON-TRADE 2" label="Non-Trade 2"/>
+		<choice value="NON-TRADE 3" label="Non-Trade 3"/>
+		<choice value="NON-TRADE VLS" label="Non-Trade VLS"/>
+		<choice value="NON-TRADE TAX" label="Non-Trade Tax"/>
+	</list>
+	
+	
+	<list name="choice.entity">
+		<choice value="Ix" label="xpedx"/>
+		<choice value="Vx" label="xpedx, LLC"/>
+		<choice value="Vv" label="Veritiv Operating Company"/>
+	</list>
+	
+	<list name="choice.lineitemsdropdown">
+		<choice value="5" label="5"/>
+		<choice value="10" label="10"/>
+		<choice value="20" label="20"/>
+	</list>
+	
+		<list name="choice.INFSubTypes">
+		<choice value="EXPENSE" label="Expense"/>
+		<choice value="CORPORATE" label="Corporate"/>
+	</list>
+	<!--
+	<list name="choice.INFRouteCodes">
+		<choice value="BOA" label="BOA USTCD PAYMENTS"/>
+		<choice value="CAR" label="Freight Carrier Route Code"/>
+		<choice value="DEDPAY" label="Deductions from Payroll"/>
+		<choice value="EDI" label="ROUTE CODE FOR EDI 820"/>
+		<choice value="EFT" label="EFT VENDOR PAYMENT"/>
+		<choice value="EXPV" label="Regular Expense vendors 99"/>
+		<choice value="EXPV1" label="EXP VEND TIME SENSITIVE 99"/>
+		<choice value="EXPV2" label="EXP VEND STRETCH  99"/>
+		<choice value="E820DETAIL" label="EDI Detail File"/>
+		<choice value="E820VLSQP" label="VLS EDI QUICK PAY"/>
+		<choice value="GARN" label="GARNISHMENTS TO CLEAR"/>
+		<choice value="GEHK" label="GEHK Goldeast Route code"/>
+		<choice value="INT" label="UNISOURCE INTERCOMPANY LIVE CK"/>
+		<choice value="INTRAN" label="INTRANSIT 680.450.0306.3201"/>
+		<choice value="INV" label="INVENTORY VENDOR 14 &amp; 29 99"/>
+		<choice value="INV1" label="INVENTORY DISCOUNT VENDOR"/>
+		<choice value="INV2" label="INVENTORY NON DISCOUNT VENDOR"/>
+		<choice value="MAN" label="Prepaid Vouchers"/>
+		<choice value="MCARD" label="MEETING CARD TEA"/>
+		<choice value="PAMEX" label="PROCUREMENT AMERICAN EXPRESS"/>
+		<choice value="PCARD" label="PURCHASE CARD ROUTE CODE"/>
+		<choice value="PREPAID" label="PREPAID GOLDEAST NINGBO"/>
+		<choice value="RUSH" label="Rush checks pay immediately 01"/>
+		<choice value="SPEC" label="SPECIAL HANDLING 04"/>
+		<choice value="SPEC_T&amp;E" label="SPECIAL HANDLING FOR T&amp;E 04"/>
+		<choice value="STORA" label="Stora invoices factored UPP"/>
+		<choice value="T&amp;E" label="Employee expense reimburseme99"/>
+		<choice value="TAMEX" label="TRAVEL CARD AMERICAN EXPRESS"/>
+		<choice value="TAX" label="TAX VENDOR PAYMENTS"/>
+		<choice value="TCARD" label="TRAVEL CARD ROUTE CODE"/>
+		<choice value="TCARD" label="AMERICAN EXPRESS EDI"/>
+		<choice value="UWW" label="UNISOURCE INTERCOMPANY AR ELIM"/>
+		<choice value="VLSQP" label="VLS Quick Pay"/>
+		<choice value="WIRE" label="PREVIOUSLY PAID VIA DOC COLL"/>
+		<choice value="WIRE1" label="VENDOR PAID BY WIRE ONLY"/>
+		<choice value="WIRE2" label="NON US WIRES IN USD"/>
+		<choice value="WIRE3" label="NON US WIRES IN FOREIGN CURR"/>
+		<choice value="WIRE4" label="UIH WIRES IN FOREIGN CUR"/>
+		<choice value="ZERO" label="ZERO DOLLAR ROUTE CODE"/>
+	</list>
+	-->
+	<list name="choice.INFRouteCodes">
+		<choice value="BOA" label="BOA"/>
+		<choice value="CAR" label="CAR"/>
+		<choice value="DEDPAY" label="DEDPAY"/>
+		<choice value="EDI" label="EDI"/>
+		<choice value="EFT" label="EFT"/>
+		<choice value="EXPV" label="EXPV"/>
+		<choice value="EXPV1" label="EXPV1"/>
+		<choice value="EXPV2" label="EXPV2"/>
+		<choice value="E820DETAIL" label="E820DETAIL"/>
+		<choice value="E820VLSQP" label="E820VLSQP"/>
+		<choice value="GARN" label="GARN"/>
+		<choice value="GEHK" label="GEHK"/>
+		<choice value="INT" label="INT"/>
+		<choice value="INTRAN" label="INTRAN"/>
+		<choice value="INV" label="INV"/>
+		<choice value="INV1" label="INV1"/>
+		<choice value="INV2" label="INV2"/>
+		<choice value="MAN" label="MAN"/>
+		<choice value="MCARD" label="MCARD"/>
+		<choice value="PAMEX" label="PAMEX"/>
+		<choice value="PCARD" label="PCARD"/>
+		<choice value="PREPAID" label="PREPAID"/>
+		<choice value="RUSH" label="RUSH"/>
+		<choice value="SPEC" label="SPEC"/>
+		<choice value="SPEC_T&amp;E" label="SPEC_T&amp;E"/>
+		<choice value="STORA" label="STORA"/>
+		<choice value="T&amp;E" label="T&amp;E"/>
+		<choice value="TAMEX" label="TAMEX"/>
+		<choice value="TAX" label="TAX"/>
+		<choice value="TCARD" label="TCARD"/>
+		<choice value="UWW" label="UWW"/>
+		<choice value="VLSQP" label="VLSQP"/>
+		<choice value="WIRE" label="WIRE"/>
+		<choice value="WIRE1" label="WIRE1"/>
+		<choice value="WIRE2" label="WIRE2"/>
+		<choice value="WIRE3" label="WIRE3"/>
+		<choice value="WIRE4" label="WIRE4"/>
+		<choice value="ZERO" label="ZERO"/>
+	</list>
+	
+</choiceLists>
+    
+

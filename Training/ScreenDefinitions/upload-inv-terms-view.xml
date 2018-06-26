@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="upload-nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		<section name="New Vendor Details" visible="false"/>
+</section-overrides>
+
+<property-overrides>
+	<date name="dueDate" readonly="false" validation="required"/>
+	<text name="custom2.name" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address1" defaultValue="" forceDefault="true"/>
+	<text name="custom2.city" defaultValue="" forceDefault="true"/>
+	<text name="custom2.state" defaultValue="" forceDefault="true"/>
+	<text name="custom2.postalCode" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address2" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address3" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtName" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtAddress1" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtCity" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtState" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtPostalCode" defaultValue="" forceDefault="true"/>
+</property-overrides>
+
+
+<validations>
+	<validation name="validation.accountCode"/>
+	<validation name="validation.lineItemAmount"/>
+	<validation name="validation.capex"/>
+	<validation name="validation.duedate.check"/>
+	<!--validation name="validation.vendortype.check"/-->
+	<validation name="validation.facilities" messageType="warning"/>
+	<validation name="validation.ApproverUserValidation"/>
+	<!--<validation name="validation.upload.approvercheck"/>-->
+	<validation name="validation.check.requester.approver"/>
+	<validation name ="validation.check.originator.approver"/>
+</validations>
+
+</view>
+
+

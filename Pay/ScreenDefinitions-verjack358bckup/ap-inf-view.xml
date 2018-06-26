@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="ap-view" template="ap-inf-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="Dropped" value="Dropped"/>
+			<label name="Rescan" value="Rescan"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<property-overrides>
+
+</property-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<documentRejection>
+		<rejectionReasons>
+			<reason name="Rescan" commentsRequired="false" note="message.rescan">
+			</reason>
+			<reason name="Dropped" commentsRequired="false" note="message.dropped">
+			</reason>
+		</rejectionReasons>
+</documentRejection>
+
+<validations>
+     
+</validations>
+
+</view>
+
+

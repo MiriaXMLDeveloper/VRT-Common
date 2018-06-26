@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-process-credit-view" template="po-voucher-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="vendorDetails" visible="true" collapsed="false"/>	
+		<section name="lineItems" visible="true" collapsed="false"/>	
+	</section-overrides>
+		
+	<property-overrides>
+		<lookup name="vendor.name" readonly="false"/>
+		<lookup name="vendorId" readonly="false"/>
+	</property-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" visible="false"/>
+		<iconAction name="postings" visible="true"/>
+	</action-overrides>
+	
+	<lineItem-overrides>
+		
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Terminate" commentsRequired="true" note="message.terminate">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+	<validations>
+		<validation name="validation.validVendor"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.lineItemAmount"/>
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+</view>

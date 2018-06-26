@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-exception-view" template="nonpo-except-cor-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+			<section name="lineItems" collapsed="false"/>
+	</section-overrides>
+
+	<property-overrides>
+			<date name="dueDate" readonly="false" validation="required"/>
+			<currency name="grossAmount" readonly="true"/>
+			<currency name="taxAmount2" readonly="true"/>
+			<dynamicDropDown name="companyCode" readonly="true"/>
+			<text name="routingCode" readonly="true"/>
+			<text name="department" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+		<text name="accountCode" readonly="false" validation="required"/>
+		<text name="lineTotal" readonly="false" validation="required"/>
+		<text name="tbdString1" readonly="false"/>	 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" visible="false"/>
+		<iconAction name="postings" visible="true"/>
+		<button name="addLineItem" visible="true"/>
+		<button name="removeLineItem" visible="true"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<!--<hidden name="taxAmount2"/>-->
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.terminate">
+				<subReason name="Duplicate"/>
+				<subReason name="Incorrect Amount/ Invalid Charges"/>
+				<subReason name="Incomplete documentation"/>
+				<subReason name="Other"/>
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.capex"/>
+		<!--validation name="validation.vendortype.check"/-->
+		<validation name="validation.accountCode"/>
+		<validation name="validation.lineItemAmount"/>
+	</validations>
+</view>

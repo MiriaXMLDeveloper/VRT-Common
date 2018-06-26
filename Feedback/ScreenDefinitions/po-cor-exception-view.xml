@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-cor-view" template="po-cor-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="vendorDetails" visible="true" collapsed="false"/>	
+		<section name="lineItems" visible="true" collapsed="false"/>	
+	</section-overrides>
+		
+	<property-overrides>
+		<lookup name="vendor.name" readonly="false"/>
+		<lookup name="vendorId" readonly="false"/>
+		<dropDown name="companyCode" readonly="false" validation="required"/>
+		<text name="scanVendorAddress2" readonly="true" defaultValue="NET 1 DAY" forceDefault="true"/>
+	</property-overrides>
+
+	<action-overrides>
+				
+	</action-overrides>
+	
+	<lineItem-overrides>
+		
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<hidden name="paymentTermId" defaultValue="112" forceDefault="true"/> 
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.terminate">
+				<subReason name="Duplicate invoice"/>
+				<subReason name="Not a GenuineInvoice"/>
+				<subReason name="Other"/>
+			</reason>
+			<reason name="Return to Requester" commentsRequired="true" note="message.returnRequester">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="true" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Expense Invoice" commentsRequired="true" note="message.expenseInvoice">
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.validVendor"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.lineItemAmount"/>
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+</view>

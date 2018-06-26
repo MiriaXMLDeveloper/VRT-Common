@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="logos-active-13-view" template="logo-13-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Override"/>
+			<label name="release" value="Unlock"/>
+			<label name="update" value="Lock"/>
+			<label name="reject" value="Forward"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<documentRejection>
+		<rejectionReasons>
+			<reason name="Send To PDC Shipping" commentsRequired="true" note="message.terminate">
+			</reason>
+		</rejectionReasons>
+</documentRejection>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<validations>
+     
+</validations>
+
+</view>
+
+

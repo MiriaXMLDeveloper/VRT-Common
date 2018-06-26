@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+        <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+	<label name="number" value="Logo Id"/>
+ 
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+		</properties>
+		<actions>
+				<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Customer Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<lookup row="1" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="false"/>
+			<text row="2" col="1-2" name="custom1.tbdString1" readonly="false" styleClass="fulllookup"/> <!-- customer Name-->
+			<text row="3" col="1-3" name="custom1.tbdString3" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1" name="custom1.tbdString4" readonly="true"/>
+			<text row="4" col="2" name="custom1.tbdString5" readonly="true"/>
+			<text row="4" col="3" name="custom1.tbdString6" readonly="true"/>
+			<text row="5" col="1" name="custom1.tbdString7" readonly="true" />
+			<text row="5" col="2" name="custom1.tbdString8" readonly="true"/>
+			<text row="5" col="3" name="custom1.tbdString9" readonly="true"/>
+		</properties>
+		<actions>
+			<iconAction name="print" icon="/images/ico_search.gif" width="20" height="20" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+		</actions>
+	</section>
+	
+<section name="Logo Details" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<dropDown row="1" col="1" name="docPriority" choiceList="choice.logoPriority"/> <!-- Logo Priority-->
+			<text row="1" col="2" name="number"/> <!-- Logo Id-->
+			<dropDown row="2" col="1" name="subType" choiceList="choice.logoType"/> <!-- Logo Type-->
+			<currency row="2" col="2" name="custom1.tbdNumber1"/> <!-- Logo Fee-->
+			<text row="3" col="1-2" name="custom1.tbdString10" styleClass="fulllookup"/> <!--Logo Name-->
+			<text row="4" col="1-2" name="custom1.tbdString11" styleClass="fulllookup"/>  <!-- Location-->
+			<text row="5" col="1" name="poId"/> <!--Order Number-->
+			<textArea row="6" col="1-2" name="custom1.tbdComment1" styleClass="comment"/>
+		</properties>
+	</section>
+
+	<section name="Approval Status" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<label row="1" col="1" name="Design Approval" position="left"/>
+			<label row="2" col="1" name="-------------------" position="left"/>
+			<date row="3" col="1" name="custom1.tbdDate1" readonly="true"/>
+			<dropDown row="3" col="2" name="custom1.tbdString12" choiceList="choice.approved"/>
+			<label row="4" col="1" name="Sample Approval" position="left"/>
+			<label row="5" col="1" name="-------------------" position="left"/>
+			<date row="6" col="1" name="custom1.tbdDate2" readonly="true"/>
+			<dropDown row="6" col="2" name="custom1.tbdString13" choiceList="choice.approved"/>
+		</properties>
+	</section>
+	
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+        <hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="originatorName"/>
+		<hidden name="type" defaultValue="LOGO"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Logo" forceDefault="true"/>
+		<hidden name="processCode" defaultValue="00" forceDefault="true"/>	
+		<hidden name="custom1.tbdString20" defaultValue="."/>
+	</hiddenFields>
+
+	<processors>
+		
+    </processors>
+</propertyTemplate>

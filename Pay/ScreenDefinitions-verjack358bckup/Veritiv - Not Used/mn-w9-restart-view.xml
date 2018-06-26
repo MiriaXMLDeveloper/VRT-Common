@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="mn-w9-restart-view" template="mn-w9-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+    <!-- View permutations:
+          -view: This is the standard view
+          -viewM: Payment Type 'MC' has been selected
+          -viewP: Payment Type 'PC' has been selected
+    -->
+
+    <labels default="en">
+        <locale name="en">
+            <label name="forward" value="Restart"/>
+            <label name="Restart" value="Wrong invoice type or group"/>
+        </locale>
+    </labels>
+
+    <section-overrides>
+    </section-overrides>
+    
+    <property-overrides>
+        <dropDown name="docPriority" readonly="false" />
+        <dropDown name="group" readonly="false" validation="required" defaultValue="MN"/>
+        <dropDown name="type" readonly="false" validation="required"/>
+
+	<lookup name="vendor.name" validation="" />
+	<lookup name="vendorId" validation="" />
+	<text name="number" validation=""/>
+	<date name="date" validation="required" />
+	<currency name="grossAmount" readonly="false" validation="positiveDecimal"/>
+    </property-overrides>
+
+    <action-overrides>
+    </action-overrides>
+
+    <hidden-overrides>
+        <hidden name="processInformation.response" defaultValue="Complete"/>
+    </hidden-overrides>
+
+     <documentRejection>
+        <rejectionReasons>
+            <reason name="Reject" commentsRequired="true" note="message.terminate">
+            </reason>
+        </rejectionReasons>
+    </documentRejection>
+
+    <validations>
+    </validations>
+</view>

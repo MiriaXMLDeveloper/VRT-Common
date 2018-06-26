@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+            	<label name="forward" value="Complete"/>
+            	<label name="tbdString1" value="Credit Card #"/>
+            	<label name="date" value="Required By"/>
+				<label name="originatorName" value="Submitter"/>
+				<label name="processCode" value="Credit Card"/>
+            	<label name="seqId" value="Report #"/>
+				<label name="grossAmount" value="$ Requested"/>
+				<label name="tbdDate1" value="Travel(From)"/>
+				<label name="tbdDate2" value="Travel(To)"/>
+            </locale>
+	</labels>
+	
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<text row="1" col="2" name="originatorName" readonly="true"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+		</actions>
+	</section>
+	
+	<section name="Cash Advance Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="seqId" readonly="true" validation="required"/>
+			<lookup row="1" col="2" name="processCode" lookupType="lookup.prepaidCardDetails" readonly="true"/>
+			<date row="2" col="1" name="tbdDate1" styleClass="date" validation="required" readonly="true"/>
+			<date row="2" col="2" name="tbdDate2" styleClass="date" validation="required" readonly="true"/>
+			<currency row="3" col="1" name="grossAmount" validation="required" readonly="true"/>
+			<date row="3" col="1" name="date" validation="required" styleClass="date" readonly="true"/>
+			<text row="4" col="1-2" name="voucherComments" styleClass="fulllookup" validation="required" readonly="true"/>
+		</properties>
+		<actions>
+			<iconAction name="editRouting" icon="/images/ico_routing.gif" width="20" height="20" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" alwaysActive="true" readonly="true"/>			
+			<iconAction name="print" icon="/images/ico_print.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	
+		<section name="lineItems" visible="false" collapsible="false" collapsed="true">
+			<lineItemProperties showTotal="true">
+			<dropDown row="1" col="1" name="tbdString1" labelKey="Type" choiceList="choice.expenseLineTypes" styleClass="onehundred" readonly="true"/>
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+			<lineItemHidden row="0" col="0" name="costObjectTypeId1" defaultValue="CC" />
+			<lineItemHidden row="0" col="0" name="account.type" defaultValue="E" />
+			<lineItemHidden row="0" col="0" name="code6" defaultValue="Yes" />
+			</lineItemProperties>
+		</section>
+	
+	
+	<hiddenFields>
+	    <!--hidden name="requesterId"/-->
+	    <hidden name="type" defaultValue='CASH'/>
+		<hidden name="tbdBoolean1" defaultValue='1' forceDefault="true"/>
+	    <hidden name="postingERPId" defaultValue="ERP1"/>
+	    <hidden name="vendorERPId" defaultValue="ERP1"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<!--hidden name="requesterId" validation="required"/-->
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="afeNumber" defaultValue="pre-paid" forceDefault="true"/>
+		<hidden name="subType"/>
+    </hiddenFields>
+
+    <processors>
+    	
+     </processors>
+
+</propertyTemplate>

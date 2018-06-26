@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="tax-readonly-view" template="tax-readonly-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+		
+		<property-overrides>
+					<dropDown name="lineitemsdropdown" readonly="true" visible="false"/>
+	</property-overrides>	
+		
+	<action-overrides>		
+		<button name="update"  readonly="true" visible="false"/>
+		<button name="release"  readonly="true" visible="false"/>
+		<rejectButton name="reject" command="reject" readonly="true" visible="false" type="submit"/>
+		<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		<button name="update" command="update" readonly="true" visible="false" type="submit"/>
+		<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		<iconAction name="addLineItem" readonly="true" visible="false"/>
+		<iconAction name="removeLineItem" readonly="true" visible="false"/>
+		<iconAction name="selectTemplate" readonly="true" visible="false"/>		
+		<iconAction name="RemoveAllItems" readonly="true" visible="false"/>
+		<iconAction name="RemoveMarkedItems" readonly="true" visible="false"/>
+		<iconAction name="RemoveUnMarkedItems" readonly="true" visible="false"/>
+	</action-overrides>
+	
+		
+	<hidden-overrides>
+		
+	</hidden-overrides>
+
+	<documentRejection>
+	
+	</documentRejection>
+
+	<validations>	
+	</validations>
+</view>

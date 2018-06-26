@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+            	<label name="forward" value="Complete"/>
+            	<label name="date" value="Expense Date"/>
+				<label name="vendor.name" value="Payee"/>
+               	<label name="vendor.address1" value="Address"/>
+            	<label name="date" value="Report Date"/>
+				<label name="originatorName" value="Submitter"/>
+				<label name="requesterName" value="Claimant"/>
+            	<label name="seqId" value="Report #"/>
+            	</locale>
+	</labels>
+	
+	<section name="Expense Receipt Guidelines" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="custom1.tbdComment1" labelKey="" defaultValue="Please submit your expense receipts ASAP following the steps below." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<barcode row="1" col="2" name=""/>
+			<text row="2" col="1-2" name="custom1.tbdComment2" labelKey="" defaultValue="•	Click on the Print Icon and print a hard copy of this form" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="3" col="1-2" name="custom1.tbdComment3" labelKey="" defaultValue="•	Once the barcoded coversheet has printed, click Complete to submit your expense report." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1-2" name="custom1.tbdComment4" labelKey="" defaultValue="•	You will receive a confirmation email. If you experienced difficulties printing" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="5" col="1-2" name="custom1.tbdComment5" labelKey="" defaultValue="	the barcoded coversheet,the email may be used as a substitute." forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="6" col="1-2" name="custom1.tbdComment6" labelKey="" defaultValue="•	Fax your documentation to 308-255-3911, ensuring the barcode is displayed on page 1" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="7" col="1-2" name="custom1.tbdComment7" labelKey="" defaultValue="•	Or scan and e-mail the coversheet and receipts to M$Pdocs@support.com" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="8" col="1-2" name="custom1.tbdComment8" labelKey="" defaultValue="•	Once the supporting documentation is faxed the expense report will be routed for approval" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+		</properties>
+		<actions>
+		    <iconAction name="print" icon="/images/icon_printer.png" width="16" height="16" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+			<button name="forward" command="close" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Expense Report" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<text row="1" col="2" name="requesterName" readonly="true"/>
+			<date row="1" col="3" name="date" readonly="true"/>
+		</properties>
+	</section>
+	
+	<section name="Payment Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1-3" name="custom1.tbdComment8" labelKey="" defaultValue="Any reimbursable amount will be paid to the following:" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+		<text row="2" col="1-3" name="custom1.tbdComment9" labelKey="" defaultValue="If this is blank or incorrect, please contact Accounts Payable at 308-255-2442 or expenseinquiry@cabelas.com" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+		<text row="3" col="1-3" name="vendor.name" readonly="true" styleClass="fulllookup"/>
+		<text row="4" col="1-3" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+		<text row="5" col="1" name="vendor.city" readonly="true" />
+		<text row="5" col="2" name="vendor.state" readonly="true"/>
+		<text row="5" col="3" name="vendor.postalCode" readonly="true"/>	
+		</properties>
+	</section>
+	
+	
+	<section name="Expense Items" visible="true" collapsible="false" collapsed="false">
+			<lineItemProperties showTotal="false">
+			<date row="1" col="1" name="tbdDate1" labelKey="Expense Date" readonly="true" validation="required" showTime="false" styleClass="date"/>
+			<text row="1" col="2" name="tbdString3" labelKey="Business Name" readonly="true" styleClass="onehundred"/> 
+			<currency row="1" col="3" name="lineTotal" readonly="true" validation="required, nonZero" styleClass="currency" />
+			</lineItemProperties>
+	</section>
+	
+	
+	<hiddenFields>
+	    <!--hidden name="requesterId"/-->
+	    <hidden name="type" defaultValue='EXP'/>
+	    <hidden name="postingERPId" defaultValue="ERP1"/>
+	    <hidden name="vendorERPId" defaultValue="ERP1"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="requesterId"/>
+		<hidden name="originatorId"/>
+    </hiddenFields>
+
+</propertyTemplate>

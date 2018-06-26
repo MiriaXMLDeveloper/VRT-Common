@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-freightmax-indexing-view" template="po-freightmax-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Terminate"/>
+			<label name="Reject" value="Exception"/>
+			<label name="Index" value="Send to Indexing"/>
+			
+			
+			<!--<label name="forward" value="Complete"/>
+			<label name="Dropped" value="Dropped"/>
+			<label name="Awaiting" value="Awaiting Receipts"/>
+			<label name="Exception" value="Exception"/>
+			<label name="Reject" value="Workflow Complete"/>
+			<label name="EquipmentQueue" value="Send to Equipment Process"/>
+			<label name="discountDueDate" value="Net Due Date"/>-->
+		</locale>
+	</labels>
+
+	<section-overrides>	
+
+	</section-overrides>
+
+	<property-overrides>
+			<dropDown name="subType" choiceList="choice.tradeSubTypes" readonly="true"/>
+			<text name="tbdNumber2" visable="false"/>
+			<text name="number" readonly="true"/>
+			<date name="date" readonly="true"/>
+			<text name="tbdNumber1" readonly="true" />
+			<text name="poId"  readonly="true"/>
+			<checkbox name="tbdBoolean1" readonly="true"/>
+			<lookup name="vendor.name" readonly="true" />
+			<invisibleLookup name="vendorId" lookupType="lookup.vendorCode" styleClass="twohundred" readonly="true" inputReadonly="true"/>
+			<dropDown name="tbdString3" choiceList="choice.businessUnit" readonly="true" validation="required"/>
+			<text row="3" col="2" name="tbdString1" readonly="true"/>
+			<currency name="freightAmount1" readonly="true"/>
+			<currency name="freightAmount2" readonly="true"/>
+			<currency name="taxAmount2" readonly="true" />
+			<currency name="taxAmount1" readonly="true" />
+			<currency name="tbdCurrency1" readonly="true" />
+			<currency name="tbdCurrency2" readonly="true" />
+			<currency name="grossAmount" styleClass="currency" readonly="true"/>
+			<dynamicDropDown name="paymentTermId" providerClass="com.miriasystems.ui.providers.PaymentTermChoiceListProvider" readonly="true" />
+			<textArea name="voucherComments" styleClass="comment" readonly="true"/>
+			<text name="tbdString2" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		
+	</action-overrides>
+
+	<hidden-overrides>
+	<hidden name="processInformation.response" defaultValue="Complete"/>	
+	<hidden name="vendorERPId" defaultValue="VRT"/>
+	<hidden name="paymentTermERPId" defaultValue="VRT"/>
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+		
+		<reason name="Reject" commentsRequired="false" note="message.returnException">
+            </reason>
+            <reason name="Index" commentsRequired="false" note="message.returnIndex">
+            </reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" />
+		<validation name="validation.validVendor" note="message.validVendorValidation"/>
+	</validations>
+</view>

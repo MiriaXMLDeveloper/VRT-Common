@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels default="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!-- ONLY ADD CUSTOMER LABEL OVER RIDES TO THSI FILE -->
+
+		<locale name="en">
+		<label name="tbdString4" value="First Approver"/>
+		   
+		   
+		   	<label name="batchOrdinal" value="Inv # Truncated"/>
+			<label name="businessUnit" value="Scanned Terms"/>
+			<label name="buyerId" value="Buyer"/>
+		    <label name="costObjectId2" value="Not in use"/>
+		    <label name="group" value="Group"/>
+		    <label name="lineTotal" value="Amount"/>
+		    <label name="paymentTermId" value="Terms Code"/>
+		    <label name="paymentTerm.tbdQuantity2" value="# Pages Scanned"/>
+			<label name="po.amount" value="Amount"/>
+			<label name="po.type" value="PO Type"/>
+			<label name="po.vendor.name" value="Vendor"/>
+			<label name="receivedDate" value="Date in Queue"/>
+			<label name="receiveDate" value="Queued"/>
+			<label name="scanAmount" value="Gross Amount"/>
+			<label name="scanVendorAddress1" value="Check Number"/>
+			<label name="scanVendorAddress2" value="Payment Terms"/>
+			<label name="seqId" value="Ref #"/>
+			<label name="tbdBoolean1" value="Manually Received"/>
+			<label name="tbdBoolean2" value="Print On Pay"/>
+			<label name="tbdString1" value="Assigned"/>
+			<label name="tbdString2" value="Customer Name"/>
+			<label name="tbdString3" value="Division"/>
+			<label name="tbdString4" value="Statement#"/>
+			<label name="tbdNumber1" value="# Pages Scanned"/>
+			<label name="uploadRef" value="Scan Ref"/>
+			<label name="vendorId" value="Vendor Number"/>
+			<label name="vendor.code" value="Vendor ID"/>
+			<label name="voucherComments" value="Message"/>
+			
+			<label name="chooseChoiceList" value="Please select a value."/>
+			<label name="processInformation.comment" value="Special In &lt;br&gt;(80 characters)"/>
+			<label name="processInformation.previousComment" value="Comment"/>
+			
+		
+			<!-- Queue name overrides (valueAlias) -->
+			<label name="MP_CustomWP" value="Busy in Workflow (MP_CustomWP)"/>
+			<label name="MP_EmailWP" value="Busy in Workflow (MP_EmailWP)"/>
+			<label name="MP_InvoiceWP" value="Busy in Workflow (MP_InvoiceWP)"/>
+			<label name="MP_POWP" value="Busy in Workflow (MP_POWP)"/>
+			<label name="MP_ProcessWP" value="Busy in Workflow (MP_ProcessWP)"/>
+			<label name="POProcessEven" value="Indexing"/>
+			<label name="POProcessingOdd" value="PO Invoice Indexing"/>
+			<label name="POExceptions" value="Exceptions"/>
+			<label name="POAudit" value="PO Audit"/>
+			<label name="AutoTradeAudit" value="PO Audit"/>
+			<label name="AutoPostTax" value="Post-Posting Tax Audit"/>
+			<label name="FailedPosting" value="Posting Failed"/>
+			<label name="PostingFailed" value="Posting Failed"/>
+			<label name="PostingPayment" value="Awaiting Payment"/>
+			<label name="APSupervisor" value="AP Supervisor"/>
+			<label name="CRD" value="CRD"/>
+			<label name="Process" value="With Submitter"/>
+			<label name="Indexing" value="Indexing"/>
+			<label name="Statements001" value="Statements"/>
+			<label name="CreditAP" value="AP Credits"/>
+			<label name="CreditBoat" value="Boat Warranty Credits"/>
+			<label name="CreditRTV" value="RTV Credits"/>
+			<label name="CreditRebate" value="Rebate Credits"/>
+			<label name="PreTaxAudit" value="Pre-Posting Tax Audit"/>
+			<label name="PostTaxAudit" value="Post-Posting Tax Audit"/>
+			<label name="CancelledInvoice" value="Cancelled From JDA"/>
+			<label name="CorpFacilities" value="Facilities"/>
+			<label name="MP_RulesWP" value="Busy in Workflow (MP_RulesWP)"/>
+			<label name="AutoMatch" value="Awaiting Match"/>
+			<label name="MatchBad" value="Match Failed"/>
+			<label name="MatchForce" value="Force Match"/>
+			<label name="MP_SynchronizationWP" value="Busy in Workflow (MP_SynchronizationWP)"/>
+			<label name="MP_UserWP" value="Busy in Workflow (MP_UserWP)"/>
+			<label name="MP_VendorWP" value="Busy in Workflow (MP_VendorWP)"/>
+			<label name="InstructionSheetInterpreter" value="System Step"/>
+			<label name="Delay" value="Delay (Workflow Step)"/>
+			<label name="RematchHold" value="Approver Hold"/>
+			<label name="RematchReceivables" value="Rematch (Receivables)"/>
+			<label name="RematchVendor" value="Rematch (Vendor)"/>
+			<label name="GeneralException" value="Expense Exception"/>
+			<label name="AutoClear" value="Awaiting Clearance"/>
+			<label name="AutoPay" value="Awaiting Payment"/>
+			<label name="ExpenseReceipts" value="Awaiting Support Documents"/>
+			<label name="VendorMaintenance" value="Vendor Maintenance"/>
+			<label name="ExpenseSend" value="Dispatch Card"/>
+			<label name="ExpenseClean" value="Confirm Card Receipt"/>
+			<label name="ExpenseDraft" value="Draft Request"/>
+			<label name="ExpenseCard" value="Assign Card"/>
+			<label name="ExpenseClose" value="Clear Comdata Balance"/>
+			<label name="AutoJournalPost" value="Awaiting Journal Posting"/>
+			<label name="AutoJournalFail" value="Allocation Journal Failed"/>
+			<label name="SpecialInstructions" value="Special Instructions"/>
+
+			<!-- Custom Objects-->
+			<!-- These labels are for custom objects that are specific to a particular implementation. -->
+			
+			<!-- Document Upload Table. -->			
+			<label name="custom1.seqId" value="seqId"/>
+			<label name="custom1.uploadRefId" value="uploadRefId"/>
+			<label name="custom1.docSeqId" value="docSeqId"/>
+			<label name="custom1.tbdString1" value="Current Task"/>
+			<label name="custom1.tbdString2" value="Over-ride"/>
+			<label name="custom1.tbdString3" value="Customer Id"/>
+			<label name="custom1.tbdString4" value="Business Name"/>
+			<label name="custom1.tbdString5" value="Address"/>
+			<label name="custom1.tbdString6" value="City"/>
+			<label name="custom1.tbdString7" value="State"/>
+			<label name="custom1.tbdString8" value="Zip"/>
+			<label name="custom1.tbdString9" value="E-Mail"/>
+			<label name="custom1.tbdString10" value="Order #"/>
+			<label name="custom1.tbdString11" value="Phone #"/>
+			<label name="custom1.tbdString12" value="Logo Id"/>
+			<label name="custom1.tbdString13" value="Logo Type"/>
+			<label name="custom1.tbdString14" value="Rush Level"/>
+			<label name="custom1.tbdString15" value="Location(s)"/>
+			<label name="custom1.tbdString16" value="Rush Level"/>
+			<label name="custom1.tbdString17" value="Approval Status"/>
+			<label name="custom1.tbdString18" value="Approval Status"/>
+			<label name="custom1.tbdString19" value="Specialist"/>
+			<label name="custom1.tbdString20" value="Next Step"/>
+			<label name="custom1.tbdString21" value="Contact"/>
+			<label name="custom1.tbdString22" value="Next Step"/>
+			<label name="custom1.tbdString23" value="Stitch Count"/>
+			<label name="custom1.tbdString24" value="Graphic Artist"/>
+			<label name="custom1.tbdString25" value="Specialist Role"/>
+			<label name="custom1.tbdString26" value="Artist Role"/>
+			<label name="custom1.tbdNumber1" value="Application Fee"/>
+			<label name="custom1.tbdNumber2" value="Times Sent"/>
+			<label name="custom1.tbdNumber3" value="Times Sent"/>
+			<label name="custom1.tbdNumber4" value="tbdNumber4"/>
+			<label name="custom1.tbdNumber5" value="tbdNumber5"/>
+			<label name="custom1.tbdNumber6" value="tbdNumber6"/>
+			<label name="custom1.tbdNumber7" value="tbdNumber7"/>
+			<label name="custom1.tbdNumber8" value="tbdNumber8"/>
+			<label name="custom1.tbdNumber9" value="tbdNumber9"/>
+			<label name="custom1.tbdNumber10" value="tbdNumber10"/>
+			<label name="custom1.tbdCurrency1" value="Application Fee"/>
+			<label name="custom1.tbdCurrency2" value="tbdCurrency2"/>
+			<label name="custom1.tbdCurrency3" value="tbdCurrency3"/>
+			<label name="custom1.tbdCurrency4" value="tbdCurrency4"/>
+			<label name="custom1.tbdCurrency5" value="tbdCurrency5"/>
+			<label name="custom1.tbdBoolean1" value="tbdBoolean1"/>
+			<label name="custom1.tbdBoolean2" value="tbdBoolean2"/>
+			<label name="custom1.tbdBoolean3" value="tbdBoolean3"/>
+			<label name="custom1.tbdBoolean4" value="tbdBoolean4"/>
+			<label name="custom1.tbdBoolean5" value="tbdBoolean5"/>
+			<label name="custom1.tbdBoolean6" value="tbdBoolean6"/>
+			<label name="custom1.tbdBoolean7" value="tbdBoolean7"/>
+			<label name="custom1.tbdBoolean8" value="tbdBoolean8"/>
+			<label name="custom1.tbdBoolean9" value="tbdBoolean9"/>
+			<label name="custom1.tbdBoolean10" value="tbdBoolean10"/>
+			<label name="custom1.tbdDate1" value="Preapproval Sent"/>
+			<label name="custom1.tbdDate2" value="Sample Approval Sent"/>
+			<label name="custom1.tbdDate3" value="Create Date"/>
+			<label name="custom1.tbdDate4" value="Queued"/>
+			<label name="custom1.tbdDate5" value="tbdDate5"/>
+			<label name="custom1.tbdDate6" value="tbdDate6"/>
+			<label name="custom1.tbdDate7" value="tbdDate7"/>
+			<label name="custom1.tbdDate8" value="tbdDate8"/>
+			<label name="custom1.tbdDate9" value="tbdDate9"/>
+			<label name="custom1.tbdDate10" value="tbdDate10"/>
+			<label name="custom1.tbdComment1" value="Logo Notes"/>
+			<label name="custom1.tbdComment2" value=""/>
+			<label name="custom1.tbdComment3" value="Logo Name"/>
+			<label name="custom1.tbdComment4" value="Location(s)"/>
+			<label name="custom1.tbdComment5" value=""/>
+			
+			<!-- One Time Vendor Table. -->
+			
+			<label name="custom2.address1" value="Address1"/>
+			<label name="custom2.address2" value="Factor Code"/>
+			<label name="custom2.address3" value="Factor Name"/>
+			<label name="custom2.address4" value="Factor Name"/>
+			<label name="custom2.approvalCode" value="Location"/>
+			<label name="custom2.bankAccountNumber" value="Bank Account Number"/>
+			<label name="custom2.bankName" value="Bank Name"/>
+			<label name="custom2.city" value="City"/>
+			<label name="custom2.code" value="Code"/>
+			<label name="custom2.contact" value="Contact"/>
+			<label name="custom2.createDate" value="Create Date"/>
+			<label name="custom2.deleteFlag" value="Delete Flag"/>
+			<label name="custom2.email" value="E-mail"/>
+			<label name="custom2.fax" value="Fax"/>
+			<label name="custom2.lastModifiedDate" value="Last Modified Date"/>
+			<label name="custom2.mpSeqId" value="mpSeqId"/>
+			<label name="custom2.name" value="Name"/>
+			<label name="custom2.name2" value="Name 2"/>
+			<label name="custom2.payBlock" value="Pay Block"/>
+			<label name="custom2.payToCode" value="Pay To Code"/>
+			<label name="custom2.phone" value="Phone"/>
+			<label name="custom2.postalCode" value="Zip"/>
+			<label name="custom2.postBlock" value="Post Block"/>
+			<label name="custom2.rmtAddress1" value="Address1"/>
+			<label name="custom2.rmtAddress2" value="Address2"/>
+			<label name="custom2.rmtCity" value="City"/>
+			<label name="custom2.rmtName" value="Name"/>
+			<label name="custom2.rmtPostalCode" value="Zip"/>
+			<label name="custom2.rmtState" value="State"/>
+			<label name="custom2.seqId" value="seqId"/>
+			<label name="custom2.state" value="State"/>
+			<label name="custom2.status" value="Status"/>
+			<label name="custom2.taxId" value="Tax Id"/>
+			<label name="custom2.tbdBoolean1" value="tbdBoolean1"/>
+			<label name="custom2.tbdBoolean2" value="tbdBoolean2"/>
+			<label name="custom2.tbdCurrency1" value="tbdCurrency1"/>
+			<label name="custom2.tbdCurrency2" value="tbdCurrency2"/>
+			<label name="custom2.tbdDate1" value="tbdDate1"/>
+			<label name="custom2.tbdDate2" value="tbdDate2"/>
+			<label name="custom2.tbdNumber1" value="tbdNumber1"/>
+			<label name="custom2.tbdNumber2" value="tbdNumber2"/>
+			<label name="custom2.tbdQuantity1" value="tbdQuantity1"/>
+			<label name="custom2.tbdQuantity2" value="tbdQuantity2"/>
+			<label name="custom2.tbdString1" value="SWIFT"/>
+			<label name="custom2.tbdString2" value="Other Routing"/>
+			
+			<!--added ms-->
+			<label name="custom2.tbdString3" value="Sub Type"/>
+			
+			
+			<label name="custom2.tbdString4" value="tbdString4"/>
+			<label name="custom2.ten99Code" value="ten99Code"/>
+			<label name="custom2.ten99Flag" value="ten99Flag"/>
+			<label name="expenseLineTypes.creditOnly" value="The itemize function can only be used on credit lines."/>
+			<label name="invoiceInclude" value="Include"/>
+			<label name="invoiceAnnotations" value="Annotations"/>
+            <label name="invoiceAttachments" value="Attachments"/>
+			<label name="ccNumber" value="CC #"/>
+			<label name="expense.creditcardisnull" value="You must select a credit card before retrieving card transactions"/>
+			
+            
+			<!--Logo Config-->
+			<label name="LogosActive" value = "Active Request"/>
+			<label name="LogosComplete" value = "Archived Request"/>
+			<label name="LogosHold" value = "Request On Hold"/>
+			<label name="LogosInitialize" value = "Launching Request"/>
+			
+			
+			<!--AR config-->
+			<label name="AR1" value = "Review Invoice"/>
+			<label name="AR2" value = "AR2"/>
+			<label name="AR3" value = "Awaiting Settlement"/>
+			<label name="AR4" value = "Dispute Resolution"/>
+			<label name="AR5" value = "Invoice Exceptions"/>
+			<label name="JOURNAL1" value = "Review Journal"/>
+			<label name="JOURNAL2" value = "Post Journal"/>
+			<label name="JOURNAL3" value = "Awaiting Archive"/>
+			<label name="CREDIT1" value = "CREDIT1"/>
+			<label name="CREDIT2" value = "CREDIT2"/>
+			<label name="CREDIT3" value = "CREDIT3"/>
+			<label name="deleteMainLineItem.noLinesMessage" value="No lines found to delete."/>
+			
+			
+			<!-- Portal config-->   
+		</locale>
+</labels>
+
+

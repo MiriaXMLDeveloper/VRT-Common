@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="date" value ="Submission Date"/>
+		<label name="originatorName" value ="Submitter"/>
+		<label name="approverName" value ="Approver"/>
+		<label name="tbdBoolean1" value ="Save As Draft"/>
+		<label name="seqId" value ="Report #"/>
+		<label name="itemCode" value ="Type"/>
+		<label name="forward" value ="Complete"/>
+		<label name="tbdDate1" value ="Period Ending"/>
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+					<text row="1" col="1" name="custom1.tbdComment1" labelKey="" defaultValue="Please submit your expense receipts asap following the steps below." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+					<barcode row="1" col="2" name=""/>
+					<text row="2" col="1-2" name="custom1.tbdComment2" labelKey="" defaultValue="Click on the Print Icon and print a hard copy of this form." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+					<text row="3" col="1-2" name="custom1.tbdComment3" labelKey="" defaultValue="Attach your receipts to it, using additonal blank pages if required." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+					<text row="4" col="1-2" name="custom1.tbdComment4" labelKey="" defaultValue="Fax your report to 555-555-5555, ensuring the bar code features on the first page." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+					<text row="5" col="1-2" name="custom1.tbdComment5" labelKey="" defaultValue="Once you have printed the bar-coded coversheet, you can click Complete to submit your expense report." forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+					<text row="6" col="1-2" name="custom1.tbdComment6" labelKey="" defaultValue="You will receive a confirmation e-mail. If you failed to print out the coversheet, print out the e-mail to use as a substitute" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+		</properties>
+		<actions>
+		    <iconAction name="print" icon="/images/icon_printer.png" width="16" height="16" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+			<button name="forward" command="close" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Expense Report" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<dynamicDropDown row="1" col="1" name="companyCode" providerClass="com.miriasystems.ui.providers.CompanyChoiceListProvider" readonly="true" validation="required"/>
+		<date row="1" col="2" name="date" readonly="true" validation="required" styleClass="date"/>
+		<text row="2" col="1" name="originatorName" readonly="true" styleClass="fulllookup"/>
+		<!--lookup row="2" col="1" name="requester.displayName" lookupType="lookup.requester" readonly="true"/-->
+		<text row="3" col="1-3" name="voucherComments" readonly="true" styleClass="fulllookup" />
+		</properties>
+	</section>
+	
+	
+	<section name="lineItems" visible="true" collapsible="true" collapsed="false">
+		<lineItemProperties showTotal="true" showTaxTotal="false">
+			<dropDown row="1" col="1" name="tbdString1" choiceList="choice.lineTypes" validation="required" styleClass="fifty"/>
+			<date row="1" col="2" name="tbdDate1" readonly="true" labelKey="Date" validation="required" styleClass="date"/>
+			<text row="1" col="3" name="itemDescription" readonly="true" labelKey="Description" validation="required" styleClass="twohundred"/>
+			<text row="1" col="4" name="tbdString2" readonly="true" labelKey="Travel To" styleClass="onehundred"/>
+			<text row="1" col="5" name="tbdString3" readonly="true" labelKey="Travel From" styleClass="onehundred"/>
+			<dropDown row="1" col="6" name="tbdString4" readonly="true" choiceList = "choice.expenseType" labelKey="Expense Type" validation="required"/>
+			<currency row="1" col="7" name="lineTotal" readonly="true" validation="required"/>
+			<text row="1" col="8" name="itemCode" readonly="true" labelKey="Claim #" styleClass="eighty"/>
+			<dropDown row="1" col="9" name="costObjectId2" readonly="true" labelKey="Training" choiceList = "choice.training" defaultValue="1" validation="required" styleClass="fifty"/>
+			<text row="1" col="10" name="tbdQuantity1" readonly="true" labelKey="Miles" validation="required" styleClass="fifty"/>
+			<text row="1" col="11" name="tbdQuantity2" readonly="true" labelKey="Rate" validation="required" styleClass="fifty"/>
+			<lookup row="1" col="12" name="costObjectId1" lookupType="lookup.costObject1" readonly="true" labelKey="Project" styleClass="fifty"/>
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+		</lineItemProperties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<button name="addLineItem" command="addLineItem" type="submit" visible="false" isAnchored="true" allowTabIndex="true" hotKey="a"/>
+			<button name="removeLineItem" command="deleteLineItem" type="submit" visible="false" isAnchored="true" hotKey="d"/>
+		</actions>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="EAS"/>
+		<hidden name="vendorERPId" defaultValue="EAS"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="EAS"/>
+		<hidden name="paymentTypeERPId" defaultValue="EAS"/>
+       	<hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="type" defaultValue="EXP"/>
+		<hidden name="processInformation.comment"/>
+	</hiddenFields>
+	
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.miriasystems.processors.LineItemTypeProcessor"/>
+		<processor name="com.miriasystems.processors.MileageRateProcessor"/>
+		<processor name="com.miriasystems.processors.CalculateExpenseProcessor"/>
+    </processors>
+</propertyTemplate>
+

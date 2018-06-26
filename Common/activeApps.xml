@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+The file names listed in here will be search *in order* for a label.  The first file
+in this list must also define the default locale.  Subsequent attempts to redefine the
+default locale will be ignored.
+-->
+
+<apps>
+	<app name="Common" default="true" roles="" />
+	<app name="Expense" default="true" roles="MP_Expense" />
+	<app name="Pay"  roles="MP_Administrator1,MP_Approver1,MP_Processor1,MP_Indexer3, MP_Indexer4, MP_Processor3" />
+	<app name="Portal" roles="MP_Portal"/>
+	<app name="Admin" roles="MP_Administrator1, MP_Administrator2,MP_Administrator3"/>
+</apps>
+

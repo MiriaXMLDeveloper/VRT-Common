@@ -1,0 +1,45 @@
+<navigation name="section.mpnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+                <initpage href="/filenet/search.do?searchName=InboxSearchLedger"/>
+				<action href="/filenet/search.do?searchName=InboxSearchLedger" target="right" image="/imagesA/ico-inbox.png" name="action.myinbox" searchName="InboxSearchLedger"/>
+          
+		<section name="Task Queues" roles="MP_Processor2,MP_Indexer1, MP_Indexer2, MP_Confirmer4, MP_Administrator3" collapsed="false" >
+				<action href="/filenet/upload.do?view=upload-jn-view.xml" target="right" image="/imagesA/ico_add_doc.png" name="action.uploadJournal" roles="MP_Processor2, MP_Confirmer4, MP_Administrator3"/> 
+				<action href="/filenet/upload.do?view=upload-jn1-view.xml" target="right" image="/imagesA/ico_add_doc.png" name="action.uploadJournal1" roles="MP_Processor2,  MP_Confirmer4, MP_Administrator3"/>      				
+                <action href="/filenet/search.do?searchName=WIPSearch" target="right" image="/imagesA/ico_queue.gif" name="action.wip" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="WIPSearch"/>
+				<action href="/filenet/search.do?searchName=JournalSearchLedger" target="right" image="/imagesA/ico_queue.gif" name="action.jnsearch" roles="MP_Indexer1,  MP_Confirmer4, MP_Administrator3" searchName="JournalSearchLedger"/>
+				<action href="/filenet/search.do?searchName=AccrualSearchLedger" target="right" image="/imagesA/ico_queue.gif" name="action.acsearch" roles="MP_Indexer2,  MP_Confirmer4, MP_Administrator3" searchName="AccrualSearchLedger"/>
+				<action href="/filenet/search.do?searchName=JN1Search" target="right" image="/imagesA/ico_queue.gif" name="action.jn1" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="JN1Search"/>
+                <action href="/filenet/search.do?searchName=JN2Search" target="right" image="/imagesA/ico_queue.gif" name="action.jn2" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="JN2Search"/>
+                <action href="/filenet/search.do?searchName=JN3MSearch" target="right" image="/imagesA/ico_queue.gif" name="action.jn3m" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="JN3MSearch"/>
+				<action href="/filenet/search.do?searchName=JN3QSearch" target="right" image="/imagesA/ico_queue.gif" name="action.jn3q" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="JN3QSearch"/>
+				<action href="/filenet/search.do?searchName=JN3YSearch" target="right" image="/imagesA/ico_queue.gif" name="action.jn3y" roles="MP_Processor4,  MP_Confirmer4, MP_Administrator3" searchName="JN3YSearch"/>
+        </section>
+         
+		 		<!-- Custom Knight -->
+		<section name="section.knight" roles=" MP_Confirmer4, MP_Administrator3, MP_Indexer3, MP_Indexer4, MP_Buyer1,MP_Buyer2,MP_Buyer3,MP_Buyer4" collapsed="true" >
+			<action href="/filenet/upload.do?view=upload-jn-view.xml" target="right" image="/imagesA/ico_add_doc.png" name="action.uploadJournalA" roles="MP_Processor2, MP_Confirmer4, MP_Administrator3"/> 
+			<action href="/filenet/search.do?searchName=KnightIndexingSearch" target="right" image="/imagesA/ico_queue.gif" name="action.knightIncoming" roles=" MP_Confirmer4, MP_Administrator3, MP_Indexer3, MP_Indexer4, MP_Buyer1,MP_Buyer2,MP_Buyer3,MP_Buyer4" searchName="KnightIndexingSearch"/>
+			<action href="/filenet/search.do?searchName=KnightApproverSearch" target="right" image="/imagesA/ico_queue.gif" name="action.knightProcess" roles=" MP_Confirmer4, MP_Administrator3, MP_Indexer3, MP_Indexer4, MP_Buyer1,MP_Buyer2,MP_Buyer3,MP_Buyer4" searchName="KnightApproverSearch"/>
+			<action href="/filenet/search.do?searchName=KnightCompleteSearch" target="right" image="/imagesA/ico_queue.gif" name="action.knightCompleted" roles=" MP_Confirmer4, MP_Administrator3, MP_Indexer3, MP_Indexer4, MP_Buyer1,MP_Buyer2,MP_Buyer3,MP_Buyer4" searchName="KnightCompleteSearch"/>
+		</section>
+		
+		<section name="section.requests" roles="MP_Processor2,  MP_Confirmer4, MP_Administrator3" collapsed="false">
+        <action href="/filenet/upload.do?view=upload-task-view.xml" target="right" image="/imagesA/ico_upload.gif" name="action.upload4" roles="MP_Ledger,  MP_Confirmer4, MP_Administrator3"/>      
+		</section>
+    		 
+		<section name="section.search" collapsed="false" roles=" MP_Confirmer4, MP_Administrator3, MP_Processor1" >
+			<documentsearch target="right" showPoSearch="true" showVendorSearch="true"/>
+			<action href="/document/advancedsearch.do?showPoProperties=true" target="right" image="/imagesA/ico_search.gif" name="action.advancedinvoicesearch"/>
+		</section>
+		
+		
+        <section name="section.tools" collapsed="false" roles="MP_Confirmer4, MP_Administrator3" >
+				<action href="/documents/reassign.do?userIsSelf=true&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignSelf" roles="MP_Confirmer4, MP_Administrator3"/>
+                <action href="/documents/reassign.do?userIsSelf=false&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignDelegate" roles="MP_Confirmer4, MP_Administrator3"/>
+                <action href="/protected/preferences.do" target="right" image="/images/ico_configuration.gif" name="action.preferences" roles="MP_Confirmer4, MP_Administrator3"/>
+        </section>
+                
+        <section name="section.applications" collapsed="false" roles="MP_Administrator1,MP_Administrator2, MP_Confirmer4, MP_Administrator3">
+                <action href="" target="_blank" image="/imagesA/ico_configuration.gif" name="action.adminmodule" roles="MP_Administrator1, MP_Processor4, MP_Confirmer4, MP_Administrator3" contextPath="/ManagedPay/admin/index.jsp"/>
+        </section>
+</navigation>

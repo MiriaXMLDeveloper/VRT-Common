@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-indexing-view" template="nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+			<section name="lineItems" visible="true" collapsed="false"/>
+			<section name="New Vendor Details" collapsed="true"/>
+	</section-overrides>
+
+	<property-overrides>
+		<lookup name="vendorId" readonly="false" validation=""/>
+		<dropDown name="type" readonly="false"/>	
+		<dropDown name="subType" readonly="false"/>	
+		<lookup name="vendor.name" readonly="false" />
+		<date name="date" readonly="false" />
+		<text name="voucherComments" readonly="false" />
+		<text name="tbdString2" readonly="false" />
+		<text name="routingCode" readonly="false" />
+		<text name="scanAmount" readonly="false" />
+		<text name="grossAmount" readonly="false" />
+		<text name="tbdBoolean1" readonly="false" />
+		<currency name="specialHandlingCode" readonly="false" />
+		<currency name="paymentTypeId" readonly="false" />
+		<text name="tbdBoolean2" readonly="false" />
+		<text name="tbdString1" readonly="false" />
+		<text name="tbdString3" readonly="false" />	
+		<text name="checkStubMessage" readonly="false" />
+		<text name="paymentTermId" readonly="false" />
+		<text name="scanVendorAddress2" readonly="false" />
+		<text name="number" readonly="false" />
+		<text name="taxAmount2" readonly="false" />
+	</property-overrides>
+
+	<lineItem-overrides>
+		<text name="accountCode" readonly="false" validation=""/>
+		<currency name="lineTotal" readonly="false" validation=""/>
+		<text name="tbdString1" readonly="false" validation=""/>
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" readonly="false"/>
+		<iconAction name="postings" readonly="false"/>
+		<button name="addLineItem" readonly="false" visible="false"/>
+		<button name="removeLineItem" readonly="false" visible="false"/>	
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<!--<hidden name="taxAmount2"/>-->
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.terminate">
+			</reason>
+			<reason name="Return to Requester" commentsRequired="true" note="message.returnRequester">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.lineItemAmount"/>
+		<validation name="validation.capex"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.accountCode" />
+	</validations>
+</view>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-stmnt3-terms-view" template="nonpo-stmnt-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="vendorDetails" visible="true" collapsed="false"/>
+		<section name="lineItems" visible="true" />
+		
+	</section-overrides>
+	
+	<property-overrides>
+		<currency name="freightAmount1" readonly="true" />
+		<currency name="taxAmount1" readonly="false" />
+		<text name="routingCode" readonly="true" />
+		<text name="subType" readonly="true"/>
+		<text name="type" readonly="true"/>
+		<text name="tbdBoolean1" readonly="true" />
+		<text name="tbdString4" readonly="false" validation="required" />
+		<date name="dueDate" readonly="false" validation="required"/>
+	</property-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" visible="false"/>
+		<iconAction name="postings" visible="true"/>
+	</action-overrides>
+	
+	<lineItem-overrides>
+
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.returnException">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+	
+	<validations>
+		<validation name="validation.shortpay" note="message.shortPayValidation"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.lineItemAmount"/>
+		<validation name="validation.capex"/>
+		<!--validation name="validation.facilities" messageType="warning"/-->
+	</validations>
+	
+</view>
+

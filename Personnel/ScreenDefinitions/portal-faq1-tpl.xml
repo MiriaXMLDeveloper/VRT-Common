@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="grossAmount" value ="Gross Amount"/>
+		<label name="originatorId" value ="Vendor Id"/>
+		<label name="custom1.tbdComment1" value ="Enter Question (500 chars)"/>
+		<label name="custom1.tbdComment2" value ="Response"/>
+		<label name="processInformation.previousComment" value ="Additonal Comments"/>
+	</locale>
+	</labels>
+	
+	<section name="Does the response answer your question ?" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<lookup row="1" col="1" name="vendorId" lookupType="lookup.portalVendorCode" readonly="true"/>
+			<lookup row="1" col="2" name="vendor.name" lookupType="lookup.portalVendorCode" readonly="true" styleClass="fivehundred"/>
+			<textArea row="2" col="1-2" name="custom1.tbdComment1" styleClass="comment" readonly="true"/> 
+			<textArea row="3" col="1-2" name="custom1.tbdComment2" styleClass="comment" forceDefault="true" defaultValue=""/> 
+			<output row="4" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			</properties>
+		<actions>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+			<rejectButton name="reject" readonly="false" visible="false" isAnchored="false" hotKey="r"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+		</actions>
+	</section>
+	
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Portal" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="2" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="type" defaultValue="FAQ" forceDefault="true" readonly="true"/>
+		</hiddenFields>
+</propertyTemplate>

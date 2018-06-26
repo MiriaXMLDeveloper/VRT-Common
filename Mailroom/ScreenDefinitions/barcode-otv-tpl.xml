@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="grossAmount" value ="Gross Amount"/>
+	</locale>
+	</labels>
+
+	<section name="Invoice/CM Coversheet" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="custom1.tbdComment1" labelKey="" defaultValue="Please submit your support documentation following the steps below." forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<barcode row="1" col="2" name=""/>
+			<text row="2" col="1-2" name="custom1.tbdComment2" labelKey="" defaultValue="•	Click on the Print Icon and print a hard copy of this form" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="3" col="1-2" name="custom1.tbdComment3" labelKey="" defaultValue="•	Once the barcoded coversheet has printed, click Complete to submit your invoice" forceDefault="true" readonly="true" styleClass="fulllookup"/>
+			<text row="4" col="1-2" name="custom1.tbdComment4" labelKey="" defaultValue="•	You will receive a confirmation email. If you experienced difficulties printing" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="5" col="1-2" name="custom1.tbdComment5" labelKey="" defaultValue="	the barcoded coversheet,the email may be used as a substitute." forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="6" col="1-2" name="custom1.tbdComment6" labelKey="" defaultValue="•	Fax your documentation to 308-255-3911, ensuring the barcode is displayed on page 1" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="7" col="1-2" name="custom1.tbdComment7" labelKey="" defaultValue="•	Or scan and e-mail the coversheet and documentation to M$Pdocs@support.com" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+			<text row="8" col="1-2" name="custom1.tbdComment8" labelKey="" defaultValue="•	Once the supporting documentation is faxed the invoice will be routed for approval" forceDefault="true" readonly="true" styleClass="fulllookup"/>		
+		</properties>
+		<actions>
+		    <iconAction name="print" icon="/images/icon_printer.png" width="16" height="16" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+			<button name="forward" command="close" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1" name="originatorName" readonly="true"/>
+		<dropDown row="2" col="1" name="type" choiceList="choice.voucherInvoiceTypes" readonly="true" defaultValue="NON-PO" forceDefault="true"/>
+		<dropDown row="2" col="2" name="subType" choiceList="choice.invoiceSubTypes" readonly="true" validation="required" onChange="reloadPage(this)"/>
+		<text row="3" col="1" name="number" readonly="true" validation="noSpecialCharacters"/>
+        <date row="3" col="2" name="date" readonly="true" validation="required" styleClass="date"/>
+		</properties>
+	</section>
+		
+	<section name="invoiceDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1-4" name="custom2.name" readonly="true" styleClass="fulllookup"/>
+			<text row="2" col="1-4" name="custom2.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="3" col="1" name="custom2.city" readonly="true" />
+			<text row="3" col="2" name="custom2.state" readonly="true"/>
+			<text row="3" col="3" name="custom2.postalCode" readonly="true"/>
+			<currency row="4" col="1" name="grossAmount" readonly="true" styleClass="currency"/>
+			<date row="4" col="2" readonly="true" name="dueDate" styleClass="date"/>
+			<text row="5" col="1" name="checkStubMessage" readonly="true" />
+			<dynamicDropDown row="5" col="2" name="paymentTypeId" providerClass="com.miriasystems.ui.providers.PaymentTypeChoiceListProvider" readonly="true"/>
+			<textArea row="6" col="1-3" name="voucherComments" readonly="true" styleClass="comment"/>
+		</properties>
+	</section>
+	
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="2" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		</hiddenFields>
+	<processors>
+		
+    </processors>
+</propertyTemplate>

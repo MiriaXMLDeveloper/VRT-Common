@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-readonly-view" template="readonly-nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+
+		
+	<action-overrides>
+		<iconAction name="editRouting" readonly="true"/>
+		<button name="addLineItem" readonly="true" visible="false"/>
+		<button name="removeLineItem" readonly="true" visible="false"/>
+	</action-overrides>
+	
+		
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+</view>

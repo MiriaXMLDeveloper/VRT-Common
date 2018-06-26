@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels default="en">
+	<locale name="en">
+				
+		<!--  VENDOR PORTAL MANAGEMENT     * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.VPnavigation" value="Navigation"/>
+			<label name="section.VPPortal" value="Portal Actions"/>
+			<label name="action.VPMessageCenter" value="Message Center"/>
+			<label name="action.VPUploadInvoice" value="Submit Invoice"/>
+			<label name="action.VPChgAddress" value="Change of Address"/>
+			<label name="action.VPMiscRequest" value="Miscellaneous Request"/>
+			<label name="action.VPInvoiceSearch" value="Invoice Search"/>
+			<label name="action.VPSubmitW9" value="Submit W9" />
+			<label name="action.VPSubmitTaxCert" value="Submit Tax Exemption" />
+	
+		<!--  VENDOR PORTAL MANAGEMENT     * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+	</locale>
+</labels>
+

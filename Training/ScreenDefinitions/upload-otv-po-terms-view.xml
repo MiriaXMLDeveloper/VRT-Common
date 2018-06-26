@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-otv-terms-view" template="upload-trade-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+</locale>
+	</labels>
+
+<section-overrides>	
+		<section name="vendorDetails" visible="false"/>
+		<section name="Payment Information" visible="true"/>
+		<section name="New Vendor Details" visible="true"/>
+</section-overrides>
+
+
+<property-overrides>
+		<lookup name="vendorId" readonly="true" validation=""/>
+		<lookup name="vendor.name" readonly="true" />
+		<text name="custom2.name" readonly="false" validation="required" />
+		<text name="custom2.address1" readonly="false" validation="required" />
+		<text name="custom2.city" readonly="false" validation="required" />
+		<text name="custom2.state" readonly="false" validation="required" />
+		<text name="custom2.postalCode" readonly="false" validation="required" />
+		<text name="custom2.address2" readonly="false"/>
+		<text name="custom2.address3" readonly="false"/>
+		<text name="custom2.rmtName" readonly="false" />
+		<text name="custom2.rmtAddress1" readonly="false" />
+		<text name="custom2.rmtCity" readonly="false" />
+		<text name="custom2.rmtState" readonly="false" />
+		<text name="custom2.rmtPostalCode" readonly="false" />
+		<date name="dueDate" readonly="false" validation="required"/>
+</property-overrides>
+
+
+<validations>
+ 		<!--validation name="validation.vendortype.check"/-->   
+</validations>
+
+</view>
+
+

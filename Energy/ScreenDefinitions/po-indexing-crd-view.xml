@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-indexing-view" template="po-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+
+			
+	</section-overrides>
+
+	<property-overrides>
+		<lookup name="vendor.name" readonly="false" validation="required"/>
+		<lookup name="vendorId" readonly="false" validation="required"/>
+		<text name="poId" readonly="true" defaultValue="" forceDefault="true"/>
+		<text name="companyCode" readonly="true" defaultValue="011" forceDefault="true"/>
+		<lookup name="subType" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+		
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="postings" visible="true"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.returnException">
+				<subReason name="Duplicate invoice"/>
+				<subReason name="Not a GenuineInvoice"/>
+				<subReason name="Other"/>
+			</reason>
+			<reason name="Expense Invoice" commentsRequired="true" note="message.expenseInvoice">
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.duedate.check" />
+		<validation name="validation.validPaymentTerm"/>
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+</view>

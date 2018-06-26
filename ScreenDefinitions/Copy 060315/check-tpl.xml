@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+	<labels>
+			<locale name="en">
+			<label name="batchNumber" value="Lockbox"/>
+			<label name="date" value="Deposit Date"/>
+			<label name="scanVendorName" value="Batch"/>
+			<label name="tbdString4" value="Reference Doc ID"/>
+			<label name="tbdCurrency1" value="Amount"/>
+			</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="comment"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment1" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+		</actions>
+	</section>
+	
+	<section name="doc2" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1" name="type" readonly="true"/>
+		<dropDown row="2" col="1" name="batchNumber" readonly="true"/>
+		<date row="2" col="2" name="date" readonly="true" styleClass="date"/>
+		<text row="3" col="1" name="scanVendorName" readonly="true"/>
+		<text row="3" col="2" name="newBatchNumber" readonly="true"/>
+		<text row="4" col="1" name="scanVendorAddress2" readonly="true"/>
+		<text row="4" col="2" name="scanVendorAddress1" readonly="true"/>
+		<text row="5" col="1" name="tbdString4" readonly="true"/>
+		<currency row="5" col="2" name="tbdCurrency1" readonly="true"/>
+		</properties>
+		<actions>
+		</actions>
+	</section>
+
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="true">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="seqId" readonly="true"/>
+		</properties>
+	</section>
+
+	<hiddenFields>
+<hidden name="processInformation.comment"/>
+    </hiddenFields>
+
+	<processors>
+
+    </processors>
+</propertyTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="logo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Forward"/>
+			<label name="release" value="Unlock"/>
+			<label name="update" value="Lock"/>
+		</locale>
+</labels>
+
+<action-overrides>
+	<button name="forward" visible="false"/>
+	<button name="release" visible="false"/>
+	<button name="update" visible="false"/>
+</action-overrides>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<validations>
+     
+</validations>
+
+</view>
+
+

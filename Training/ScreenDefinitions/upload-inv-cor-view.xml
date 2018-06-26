@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="upload-nonpo-wo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		<section name="New Vendor Details" visible="false"/>
+</section-overrides>
+
+<property-overrides>
+		<text name="routingCode" readonly="true" validation=""/>
+		<text name="department" readonly="true"/>
+</property-overrides>
+
+<action-overrides>
+		<iconAction name="selectApprovers" visible="false"/>
+</action-overrides>
+
+<validations>
+    <validation name="validation.accountCode"/>
+	<validation name="validation.lineItemAmount"/>
+	<validation name="validation.capex"/>
+	<!--validation name="validation.vendortype.check"/-->
+	<validation name="validation.facilities" messageType="warning"/>
+</validations>
+
+</view>
+
+

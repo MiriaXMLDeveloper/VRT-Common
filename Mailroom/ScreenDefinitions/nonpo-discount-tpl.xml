@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+        <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+		<label name="grossAmount" value="Approved $"/>
+		<label name="scanAmount" value="Gross Amount"/>
+		<label name="tbdString2" value="Contract #"/>
+		<label name="tbdString3" value="Ship to State"/>
+		<label name="tbdString1" value="Pages"/>
+		<label name="voucherComments" value="Special Instructions"/>
+		<label name="release" value="Later"/>
+		<label name="forward" value="Approve"/>
+		<label name="reject" value="Reject"/>
+		<label name="freightAmount2" value="Discounted Amount"/>
+ 	</locale>
+	</labels>
+
+	<section name="invoiceDetails" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="number" readonly="true"/>
+			<date row="1" col="2" name="date" readonly="true" styleClass="date"/>
+			<currency row="2" col="1" name="grossAmount" readonly="true"/>
+			<dynamicDropDown row="2" col="2" name="paymentTypeId" providerClass="com.miriasystems.ui.providers.PaymentTypeChoiceListProvider" readonly="true"/>
+			<date row="3" col="1" name="dueDate" readonly="false" styleClass="date"/>
+			<currency row="3" col="2" name="freightAmount2" readonly="true"/>
+		</properties>
+		<actions>
+			<button name="forward" command="forward" readonly="false" visible="true" type="submit"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+		</actions>
+	</section>
+
+	<section name="vendorDetails" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<lookup row="1" col="1" name="vendorId" lookupType="lookup.vendorCodeNoTerms" readonly="true" validation="required"/>
+			<lookup row="1" col="2" name="vendor.name" lookupType="lookup.vendorCodeNoTerms" readonly="true" styleClass="threehundred"/>
+			<text row="2" col="1" name="vendor.address1" readonly="true" styleClass="threehundred"/>
+			<text row="2" col="2" name="vendor.city" readonly="true" />
+			<text row="3" col="1" name="vendor.state" readonly="true"/>
+			<text row="3" col="2" name="vendor.postalCode" readonly="true"/>
+	    </properties>
+	</section>
+	
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+        <hidden name="paymentTermERPId"/>
+		<hidden name="paymentTypeERPId"/>
+        <hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="alternateVendor"/>
+		<hidden name="costObjectTypeId1" defaultValue="COS1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="AFENumber" defaultValue="2" forceDefault="true"/>
+    </hiddenFields>
+
+	<processors>
+		<processor name="com.miriasystems.processors.ScanVendorNameProcessor"/>
+		<processor name="com.cabelas.processors.NetAmountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.cabelas.processors.DueDateProcessor"/>
+    </processors>
+</propertyTemplate>

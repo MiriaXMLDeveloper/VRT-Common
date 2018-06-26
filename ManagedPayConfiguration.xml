@@ -1,0 +1,87 @@
+<managedpay baseCurrency="USD" siteRole="VRT_MPSys_Test" isolatedRegion="2"
+            apManager="dramakrishnan"
+            itManager="dramakrishnan1@miriasystems.com"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/managedpayconfiguration.xsd">
+    <typeInformation>
+        <negativeCurrencyTypes>
+            <invoiceType>NPCREDIT</invoiceType>
+        </negativeCurrencyTypes>
+    </typeInformation>
+	<properties>
+	<property name="REPORT_ON_UPDATE">TRUE</property>
+		<!--The below q list are to over ride the base functionality to have Posting Q Editable-->
+		<property name="POSTING_RW_Q_LIST">NONPOPosting|POPosting</property>
+		
+		<property name="GROUP">NULL</property>
+
+		<property name="SYSTEM_TIME_ZONE">America/New_York</property>
+		<property name="DISPLAY_TIME_ZONE">Australia/Brisbane</property>
+
+		
+		<property name="USE_DEFAULT_BANNER">TRUE</property>		
+		<property name="APPROVAL_LIMIT_RESET">FALSE</property>		
+		<property name="CLIENT_NAME">VRT</property>	
+		<property name="ORG_SECURITY">FALSE</property>
+		
+		<!--The below property is to trigger the validation for primary documents when uploading an invoice.-->
+		<property name="PRIMARY_DOCUMENT_REQUIRED_FOR_UPLOAD">FALSE</property>
+		
+		<!--The below property is to display the image with the ICN plugin -->		
+		<property name="ICN_URL">http://qsl52:9082/navigator/launch.jsp?desktop=AP&amp;feature=ICNViewerIntegrationFeature&amp;sideChrome=0</property>
+		<property name="ICN_RepositoryId">ActivePay2</property>
+	
+	</properties>
+    <fileNet>
+        <processEngine routerUrl="QSL_CP2" username="Administrator" password="XxQE5Su1Cmo=" prefix="QSL_OS2.dbo"/>
+		<contentEngine url="iiop://localhost:2809/FileNet/Engine" wsiUrl="http://localhost:9080/wsi/FNCEWS40MTOM/" objectStore="ActivePay2" username="administrator" password="XxQE5Su1Cmo=" domain="QSL_AP" workplaceUrl="http://qsl52:9082/navigator/bookmark.jsp?desktop=AP&amp;repositoryId=ActivePay2" defaultUploadFile="DummyFile.txt"/>
+		<!--contentEngine url="iiop://localhost:2809/FileNet/Engine" wsiUrl="http://localhost:9080/wsi/FNCEWS40MTOM/" objectStore="ActivePay2" username="administrator" password="admin" domain="QSL_AP" workplaceUrl="http://qsl52:9082/WorkplaceXT" defaultUploadFile="DummyFile.txt"/-->
+    </fileNet>
+ <userLookup providerUrl="ldap://miriadevad:389" lookupUsername="Administrator" lookupPassword="XxQE5Su1Cmo=" lookupContainer="CN=Users" log="true">
+	 <namingSchema baseDn="DC=development,DC=local">
+		  <userContainer name="CN=Users" /> 
+		  <roleContainer name="OU=ManagedPay" /> 
+		 <attributes>
+		  <mapping attributeName="userPrincipalName" propertyName="fullUserName" /> 
+		  <mapping attributeName="givenName" propertyName="firstName" /> 
+		  <mapping attributeName="sn" propertyName="lastName" /> 
+		  <mapping attributeName="displayName" propertyName="displayName" /> 
+		  <mapping attributeName="distinguishedName" propertyName="distinguishedName" /> 
+		  <mapping attributeName="description" propertyName="description" /> 
+		  <mapping attributeName="telephoneNumber" propertyName="phone" /> 
+		  <mapping attributeName="mail" propertyName="email" /> 
+		  <mapping attributeName="sAMAccountName" propertyName="userName" />
+		  <mapping attributeName="manager" propertyName="tbdString4"/>  		  		  
+		  <mapping attributeName="sAMAccountName" propertyName="employeeNumber"/>
+		  </attributes>
+	  </namingSchema>
+  </userLookup>
+  <mailSettings
+		host="10.212.212.46"
+			protocol="smtp"
+			user="mpay"
+			password="mpay"
+			userEmail="mpay@mpay.com"
+	/>
+
+	<outboundMailSettings
+	    	host="10.212.212.46"
+			protocol="smtp"
+			user="mpay"
+			password="mpay"
+			userEmail="mpay@mpay.com"
+	/>
+
+    <serverSpecifics dialect="com.miriasystems.database.SQLServer2012Dialect"
+		transactionManagerClass="org.hibernate.transaction.WebSphereTransactionManagerLookup"
+       jndiInitialContextFactory="com.ibm.websphere.naming.WsnInitialContextFactory"
+       jndiURL="iiop://localhost:2811/"          
+        baseURL="http://qsl52:9082/ManagedPay"
+        logDirectory="C:\MiriaSystems\Vertiv\ActiveOps\Logs"
+        workflowLogDirectory="C:\MiriaSystems\Vertiv\ActiveOps\Logs"
+            additionalJndiProperties="com.ibm.websphere.naming.jndicache.cacheobject=none,name=value"
+        />
+
+    <paging maxResults="1000" resultsPerPage="20" linesPerPage="20"/>
+	
+</managedpay>

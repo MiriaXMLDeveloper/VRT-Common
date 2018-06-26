@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+            	<label name="forward" value="Upload"/>
+            	<label name="tbdString2" value="Employee #"/>
+            	<label name="tbdString3" value="Employee Name"/>
+            	<label name="date" value="Expense Date"/>
+            	<label name="alternatevendor" value="Save As Draft"/>
+				<label name="tbdBoolean1" value="Send To Claimant"/>
+               	<label name="vendor.address1" value="Address"/>
+            	<label name="vendor.address2" value="Location"/>
+            	<label name="vendor.address3" value="Dept"/>
+            	<label name="date" value="Report Date"/>
+            	<label name="voucherComments" value="Business Reason"/>
+				<label name="originatorName" value="Submitter"/>
+				<label name="requesterName" value="Claimant"/>
+				<label name="processCode" value="Credit Card"/>
+            	<label name="seqId" value="Report #"/>
+				<label name="tbdCurrency2" value="Tax"/>
+            	</locale>
+	</labels>
+		
+	<section name="Expense Report" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<checkbox row = "1" col="2" name="alternatevendor" onClick="reloadPage(this)"/>	
+			<lookup row="2" col="1" name="requesterName" lookupType="lookup.delegate" readonly="false" validation="required"/>
+			<date row="3" col="1" name="date" validation="required" readonly="false"/>
+			<lookupandflip row="3" col="2" name="processCode" lookupType="lookup.creditCardDetails" readonly="false"/>
+			<text row="4" col="1" name="voucherComments" readonly="false" styleClass="fulllookup" validation="required"/>
+			<text row="4" col="2" name="tbdString2" readonly="true" validation="required"/>
+			<dynamicDropDown row="5" col="1" name="defaultCode1" providerClass="com.cabelas.providers.CompaniesChoiceListProvider"  />
+			<lookup row="5" col="2" name="defaultCode2" lookupType="lookup.locationCode" />
+		</properties>
+		<actions>
+			<button name="forward" command="showSamePageBarcode" readonly="false" type="submit" isAnchored="false"/>
+			<iconAction name="selectApprovers" icon="/images/ico_routing.gif" width="20" height="20" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openUploadRoutingWindow('/ManagedPay/custom', 'routing/upload.action','nonPo')" alwaysActive="true" readonly="false"/>
+		</actions>
+	</section>
+	
+<section name="lineItems" visible="true" collapsible="false" collapsed="false">
+			<lineItemProperties showTotal="false">
+			<!--<dropDown row="1" col="1" name="tbdString4" choiceList="choice.expenseTypes" labelKey="Category" defaultValue="A" readonly="false" validation="required" styleClass="eighty"/>-->
+			<dynamicDropDown  row="1" col="1" name="tbdString4" labelKey="Expense Category" providerClass="com.miriasystems.ui.providers.CategoryChoiceListProvider" defaultValue="A" validation="required" readonly="false" styleClass="onehundred"/>
+			<date row="1" col="2" name="tbdDate1" labelKey="Date" readonly="true" validation="required" showTime="false" styleClass="date"/>
+			<currency row="1" col="3" name="taxAmount" readonly="true" validation="required, nonZero" styleClass="currency" labelKey="Tax" />
+			<currency row="1" col="4" name="lineTotal" readonly="false" isCreditreadonly="true" validation="required, nonZero" styleClass="currency" />
+			<text row="1" col="5" name="tbdString3" labelKey="Business Name" readonly="true" styleClass="twohundred"/>
+			<text row="1" col="6" name="itemDescription" labelKey="Description" readonly="false" validation="required" styleClass="twohundred"/>
+			<lookup row="1" col="7" name="accountCode" lookupType="lookup.expenseAccountCode" readonly="false" styleClass="onetwenty"/>
+			<text row="1" col="8" name="account.description" readonly="true" styleClass="twohundred" labelKey="GL Description"/>
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+			<lineItemHidden row="0" col="0" name="costObjectTypeId1" defaultValue="CC" />
+			<lineItemHidden row="0" col="0" name="account.type" defaultValue="E" />
+			<lineItemHidden row="0" col="0" name="expType" />
+			<lineItemHidden row="0" col="0" name="cardInd" />
+			<lineItemHidden row="0" col="0" name="code6" defaultValue="Yes" />
+			<lineItemHidden row="0" col="0" name="tbdString1" defaultValue="Credit" forceDefault="true" />
+			</lineItemProperties>
+			<actions>
+				<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+				<button name="removeLineItem" command="deleteLineItem" type="submit" isAnchored="true" readonly="false" visible="true" hotKey="d"/>
+				<button name="addSubLineItem" command="addSubLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="b"/>
+				<button name="removeSubLineItem" command="removeSubLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="u"/>
+			</actions>
+	</section>
+	
+	
+	<hiddenFields>
+	    <!--hidden name="requesterId"/-->
+	    <hidden name="type" defaultValue='EXP'/>
+		<hidden name="subType"/>
+	    <hidden name="postingERPId" defaultValue="ERP1"/>
+	    <hidden name="vendorERPId" defaultValue="ERP1"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="requesterId" validation="required"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="CardType" defaultValue="P" forceDefault="true"/>
+		<!--hidden name="AFENumber" defaultValue="2" forceDefault="true"/-->
+				<!-- added by NB on 9-11-13-->
+		<validation name="validation.checkcreditcard"/>
+    </hiddenFields>
+
+    <processors>
+    	<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.miriasystems.processors.LineItemTypeProcessor"/>
+		<processor name="com.miriasystems.processors.CalculateExpenseProcessor"/>
+		<processor name="com.miriasystems.processors.GLDistributionCalculator"/>
+     </processors>
+
+</propertyTemplate>

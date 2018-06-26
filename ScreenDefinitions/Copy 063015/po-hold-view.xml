@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-hold-view" template="po-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+			<label name="Reject" value="Workflow Complete"/>
+			<label name="Awaiting" value="Awaiting Receipts"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+
+	</section-overrides>
+
+	<property-overrides>
+	
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		
+	</action-overrides>
+
+	<hidden-overrides>
+	<hidden name="processInformation.response" defaultValue="Complete"/>			
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Exception" commentsRequired="true" note="message.returnException"> <!-- Exception-->
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="true" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Awaiting" commentsRequired="true" note="message.awaitingReceipts">
+			</reason>
+			<reason name="Dropped" commentsRequired="true" note="message.dropped">
+			</reason>
+			<reason name="Reject" commentsRequired="true" note="message.workflowComplete">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<!--<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>-->
+		<!--<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>-->
+		<!--validation name="validation.validNetAmount"/-->
+		<!--validation name="validation.validPaymentTerm"/-->
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+</view>

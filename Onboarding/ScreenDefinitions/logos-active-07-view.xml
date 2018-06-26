@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="logos-active-07-view" template="logo-07-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Forward"/>
+			<label name="release" value="Unlock"/>
+			<label name="update" value="Lock"/>
+		</locale>
+</labels>
+
+<documentRejection>
+		<rejectionReasons>
+			<reason name="Approved" commentsRequired="false" note="message.artist">
+			</reason>
+			<reason name="Approved With Changes" commentsRequired="false" note="message.artist">
+			</reason>
+			<reason name="Rejected" commentsRequired="true" note="message.artist">
+			</reason>
+		</rejectionReasons>
+</documentRejection>
+
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<validations>
+    <validation name="validation.logostatusvalidator"/> 
+	<validation name="validation.logosCustomerIdvalidator"/>
+</validations>
+
+</view>
+
+

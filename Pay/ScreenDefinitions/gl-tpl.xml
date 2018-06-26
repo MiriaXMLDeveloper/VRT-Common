@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+	<labels>
+			<locale name="en">
+				<label name="date" value="Entry Date"/>
+				<label name="tbdString1" value="JDE User ID"/>
+			</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="comment"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment1" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<iconAction name="image" icon="/images/image-window.png" width="16" height="16" link="javascript:parent.openImage()" alwaysActive="true"/>
+			<button name="default" command="forward" readonly="false" type="submit" styleClass="buttonHide"/>
+			<getNext name="next" readonly="false" showLabel="true" visible="true" toLeft="true" styleClass="getNext70"/>					
+			<rejectButton name="reject" readonly="false" isAnchored="false" title="rejectTitle" styleClass="button70"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"  title="releaseTitle" styleClass="button70"/>
+			<button name="updateRelease" command="updateRelease" readonly="false" visible="true" type="submit"  title="updateReleaseTitle" styleClass="button70"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"  title="forwardTitle" styleClass="button70"/>
+		</actions>
+	</section>
+	
+	<section name="doc2" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1" name="type" readonly="true"/>
+		<dropDown row="1" col="2" name="subType" choiceList="choice.glType" readonly="false" validation="required"/>
+		<text row="2" col="1" name="tbdString1" readonly="false" validation="required"/>
+		<date row="2" col="2" name="date" readonly="false" styleClass="date"/>
+		<text row="3" col="1" name="defaultCode2" readonly="false" validation="required"/>
+
+		</properties>
+		<actions>
+			<postingReplyAction name="postings" icon="/revised/images/ico-paid-w24.png" width="24" height="24" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/>
+			<!--<iconAction name="editRouting" icon="/revised/images/ico-route-w24.png" width="24" height="24" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo', 'TUR_MP_Sys_DEV')" alwaysActive="true" readonly="false"/>-->			
+			<iconAction name="email" icon="/revised/images/ico-mail-w24.png" width="24" height="24" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/revised/images/ico-attachment-w24.png" width="24" height="24" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<!--iconAction name="vendorHistory" icon="/revised/images/ico-vhistory-w24.png" width="24" height="24" link="javascript:openVendorHistoryWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/-->
+			<iconAction name="print" icon="/revised/images/ico-print-w24.png" width="24" height="24" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="barcode" icon="/revised/images/ico-barcode-w24.png" width="24" height="24" link="javascript:openPrintBarcodeWindow('$contextPath$', '$uploadRef$', '$seqId$')" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/revised/images/ico-history-w24.png" width="24" height="24" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<!--iconAction name="compliance" icon="/revised/images/ico-check-w24.png" width="24" height="24" link="javascript:openHelp('User_Interfaces/Working_on_Tasks-cab.htm', '$contextPath$')" alwaysActive="true"/-->
+			<!--iconAction name="help" icon="/revised/images/ico-help-w24.png" width="24" height="24" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/-->	
+		</actions>
+	</section>
+
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="true">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date" showTime="true"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="seqId" readonly="true"/>
+			<text row="3" col="1" name="batchNumber" readonly="true"/>
+		</properties>
+	</section>
+
+	<hiddenFields>
+<hidden name="processInformation.comment"/>
+    </hiddenFields>
+
+	<processors>
+
+    </processors>
+</propertyTemplate>

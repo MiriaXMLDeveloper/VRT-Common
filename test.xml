@@ -1,0 +1,5 @@
+<section name="section.requests" roles="MP_Indexer2, MP_Indexer3, MP_Processor1, MP_Processor2, MP_Processor4, MP_Processor5" collapsed="false">
+		<action href="/filenet/upload.do?view=upload-po-cor-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload1" roles="MP_Indexer2, MP_Processor1, MP_Processor2, MP_Processor4, MP_Processor5"/>	
+		<-action href="/filenet/upload.do?view=upload-nonpo-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload2" roles="MP_Indexer3, MP_Processor1, MP_Processor2, MP_Processor4, MP_Processor5"/>	
+		<!--action href="/filenet/upload.do?view=upload-cash-view.xml" target="right" image="/images/ico_upload.gif" name="action.expensecash" roles="MP_Indexer2" /-->	
+	</section>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-inv-ref-view" template="nonpo-index-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+	
+<section-overrides>	
+		<section name="vendorDetails" collapsed="true"/>
+		<section name="lineItems" collapsed="false"/>
+	</section-overrides>
+
+	<property-overrides>
+		<currency name="grossAmount" readonly="true"/>
+		<currency name="taxAmount2" readonly="true"/>
+		<currency name="taxAmount1" readonly="false"/>
+		<text name="custom2.name" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address1" defaultValue="" forceDefault="true"/>
+	<text name="custom2.city" defaultValue="" forceDefault="true"/>
+	<text name="custom2.state" defaultValue="" forceDefault="true"/>
+	<text name="custom2.postalCode" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address2" defaultValue="" forceDefault="true"/>
+	<text name="custom2.address3" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtName" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtAddress1" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtCity" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtState" defaultValue="" forceDefault="true"/>
+	<text name="custom2.rmtPostalCode" defaultValue="" forceDefault="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" readonly="false"/>
+		<iconAction name="postings" visible="true"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.returnException">
+				<subReason name="Duplicate invoice"/>
+				<subReason name="Incomplete documentation"/>
+				<subReason name="Not a GenuineInvoice"/>
+				<subReason name="Other"/>
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="true" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Trade Invoice" commentsRequired="true" note="message.tradeInvoice">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<!--validation name="validation.validNetAmount"/-->
+		<validation name="validation.validPaymentTerm"/>
+		<validation name="validation.capex"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.accountCode" />		
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+
+</view>
+
+

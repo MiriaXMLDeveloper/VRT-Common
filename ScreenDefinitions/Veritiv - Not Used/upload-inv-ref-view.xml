@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-inv-ref-view" template="upload-nonpo-ref-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+	
+<section-overrides>	
+		<section name="New Vendor Details" visible="true"/>
+		<section name="vendorDetails" visible="false"/>
+</section-overrides>
+
+<property-overrides>
+		<text name="type" readonly="true" defaultValue="NON-PO" forceDefault="true"/>
+		<text name="vendorId" readonly="true" defaultValue="999999" forceDefault="true"/>
+		<text name="vendor.name" readonly="true" defaultValue="Misc Vendor" forceDefault="true"/>
+		<text name="alternatevendor" readonly="true"/>
+		<text name="custom2.name" validation="required"/>
+		<text name="custom2.address1" validation="required"/>
+		<text name="custom2.city" validation="required"/>
+		<text name="custom2.state" validation="required"/>
+		<text name="custom2.postalCode" validation="required"/>
+		<text name="custom2.rmtName" readonly="true"/>
+		<text name="custom2.rmtAddress1" readonly="true"/>
+		<text name="custom2.rmtCity" readonly="true" />
+		<text name="custom2.rmtState" readonly="true"/>
+		<dropDown name="custom2.rmtPostalCode" readonly="true"/>
+		<text name="tbdString3" validation=""/>
+</property-overrides>
+
+<validations>
+    <validation name="validation.accountCode"/>
+	<validation name="validation.lineItemAmount"/>
+	<validation name="validation.capex"/>
+	<validation name="validation.facilities" messageType="warning"/>
+	<validation name="validation.ApproverUserValidation"/>
+	<validation name="validation.upload.approvercheck"/>
+	<validation name="validation.check.requester.approver"/>
+	<validation name ="validation.check.originator.approver"/>
+</validations>
+
+</view>
+
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+        <labels>
+	<locale name="en">
+    <label name="image" value="Image Window"/>
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="comment"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment1" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<iconAction name="image" icon="/images/image-window.png" width="16" height="16" link="javascript:parent.openImage()" alwaysActive="true"/>
+			<getNext name="next" readonly="true" showLabel="true" visible="false" toLeft="true"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+		</actions>
+	</section>
+	
+	<section name="doc2" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<dropDown row="1" col="1" name="type" choiceList="choice.invoiceTypes" readonly="true" validation="required" onChange="reloadPage(this)"/>
+		<dropDown row="1" col="2" name="subType" choiceList="choice.invoiceSubTypes" readonly="true" validation="required" onChange="reloadPage(this)"/>
+		<text row="2" col="1" name="number" readonly="true" />
+        <date row="2" col="2" name="date" readonly="true" />
+		</properties>
+		<actions>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="16" height="16" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	
+		
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="seqId" readonly="true"/>
+		</properties>
+	</section>
+
+	<hiddenFields>
+
+    </hiddenFields>
+
+	<processors>
+
+    </processors>
+</propertyTemplate>

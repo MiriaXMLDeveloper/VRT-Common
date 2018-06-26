@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--view name="upload-view" template="expense-upload-tpl.xml"-->
+	<view name="upload-exp-view" template="pexpense-upload-draft-tpl.xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/view.xsd">
+	
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Submit"/>
+		</locale>
+	</labels>
+
+    <validations>
+		<!--validation name="validation.line.check"/-->
+		<validation name ="validation.check.originator.approver"/>
+		<!--validation name="validation.MainAndSubLineTotal"/>
+		<validation name="validation.ExpenseReportAccountCodeValidation"/>
+		<validation name="validation.MileageLineItemValidation" messageType="warning"/>
+		<validation name="validation.CashLineItemValidation" messageType="warning"/>
+		<validation name="validation.accountCode"/>
+		<validation name="validation.MileageCheckValidation"/-->
+		<validation name="validation.Delegate"/>
+    </validations>
+    
+</view>

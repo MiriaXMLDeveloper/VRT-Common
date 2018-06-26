@@ -1,0 +1,587 @@
+<searches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/searches.xsd">
+
+<!--Sort Order: Priority (ascending), Inv Amt (descending)
+Would like to see QA reason listed.  Need to check if this is added to fail reason.
+Display: Priority, Invoice Due Date, invoice Date, Invoice Number, Vendor Name, Gross Amount, Invoice Type, QA Reason	-->
+
+	<search name="AccountQASearch" queueName="QA" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.sensitiveaccountqa">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+				<!--greaterThan name="grossAmount" value="5000" type="Integer"/-->
+				<lessThan name="grossAmount" value="50000" type="Integer"/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="ASC"/>
+			<order name="grossAmount" direction="DESC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="vendor.name"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="type" filter="like"/>
+			<property name="failReason" filter="like"/>
+		</visibleProperties>
+	</search>
+
+	<search name="ArchiveIndexingSearch" queueName="Archive" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.archive">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name"/>
+			<property name="type" filter="like"/>
+		</visibleProperties>
+	</search>
+
+
+<search name="ArchiveExceptionSearch" queueName="ArchiveException" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.archiveexception">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="failReason"/>
+		</visibleProperties>
+	</search>
+
+	<search name="BuyerSearch" queueName="Buyer" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.gbaudit">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="companyCode" />
+			<property name="processInformation.deadline" type="date" filter="date"/>
+			<property name="poId"/>
+			<property name="number"/>
+			<property name="date" type="Date"/>
+			<property name="vendor.name"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="receivedDate" type="Date"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date
+Display:Priority, Invoice Due Date, Invoice Type, Invoice Number, Vendor Name, Invoice Date, Fail Reason-->
+
+<search name="CorpTaxSearch" queueName="CorpTax" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.corptax">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<!--property name="companyCode" /-->
+			<property name="type" filter="like"/>
+			<property name="number"/>
+			<property name="vendor.name"/>
+			<property name="date" type="Date"/>
+			<!--property name="receivedDate" type="Date"/-->
+			<property name="failReason" filter="like"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date
+Display:Priority, Invoice Due Date, Invoice Type, Invoice Number, Vendor Name, Invoice Date, Fail Reason-->
+
+<search name="CorpFacilitiesSearch" queueName="CorpFacilities" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.corpfacilities">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<!--property name="companyCode" /-->
+			<property name="type" filter="like"/>
+			<property name="number"/>
+			<property name="vendor.name"/>
+			<property name="date" type="Date"/>
+			<!--property name="receivedDate" type="Date"/-->
+			<property name="failReason" filter="like"/>
+		</visibleProperties>
+	</search>
+
+	<search name="ExceptionSearch" queueName="GeneralException" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.generalexception">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="subRejectionReason"/>
+			<property name="failReason"/>
+
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority (ascending), Inv Amt (descending)
+Would like to see QA reason listed.  Need to check if this is added to fail reason.
+Display: Priority, Invoice Due Date, invoice Date, Invoice Number, Vendor Name, Gross Amount, Invoice Type, QA Reason-->
+
+<search name="HighDollarQASearch" queueName="QA" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.highdollarqa">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+				<greaterThan name="grossAmount" value="49999" type="Integer"/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="ASC"/>
+			<order name="grossAmount" direction="DESC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="vendor.name"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="type" filter="like"/>
+			<property name="failReason" filter="like"/>
+		</visibleProperties>
+	</search>
+
+
+<!--Sort Order: Priority, Task Due Date, Invoice Date
+Display: Priority, Vendor Name, Invoice Date, Invoice Number, PO Number, Gross Amount, Invoice Type, Task Due Date, Queue, Fail Reason
+-->
+
+	<search name="InboxSearch" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.myinbox">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="dueDate" direction="ASC"/>
+			<!--order name="seqId" direction="ASC"/-->
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId" filter="like"/>
+ 			<property name="grossAmount" type="Currency"/>
+			<property name="type" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+ 			<property name="processInformation.queueName" />
+			<property name="failReason" />
+    </visibleProperties>
+	</search>
+
+	<search name="IndexingSearch" queueName="Indexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.indexing">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name"/>
+			<property name="type" filter="like"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date
+Display: Priority, Invoice Due Date, Invoice Type, Invoice Number Vendor Name, Invoice Date, Fail Reason-->
+
+<!--Sort Order: Priority, Task due date, Invoice Date-->
+
+<search name="ACHSearch" queueName="ACH" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ach">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+		  <order name="docPriority" direction="DESC"/>
+		  <order name="processInformation.deadline" direction="ASC"/>
+		  <order name="date" direction="ASC"/>
+			<!--order name="seqId" direction="ASC"/-->
+		</ordering>
+		<visibleProperties>
+			<property name="seqId" filter="like"/>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency" filter="like"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="group" filter="like"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date-->
+
+	<search name="PostingSearch" queueName="Posting" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.posting">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			 <order name="docPriority" direction="DESC"/>
+		  <order name="processInformation.deadline" direction="ASC"/>
+		  <order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="seqId" filter="like"/>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency" filter="like"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="group" filter="like"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date-->
+
+<search name="PostingClearedSearch" queueName="PostingCleared" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.clearedposting">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+		  <order name="processInformation.deadline" direction="ASC"/>
+		  <order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="seqId" filter="like"/>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency" filter="like"/>
+			<property name="vendor.name" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="group" filter="like"/>
+		</visibleProperties>
+	</search>
+
+	<search name="ProcessSearch" queueName="Process" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.process">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId" filter="like"/>
+			<property name="grossAmount" type="Currency" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name"/>
+			<property name="type"/>
+		</visibleProperties>
+	</search>
+
+
+<!--Display:Priority, Invoice Due Date, invoice Date, Invoice Number Vendor Name, Gross Amount, Invoice Type, QA Reason-->
+
+
+	<search name="QASearch" queueName="QA" resultsPage="/ManagedPay/filenet/apdocument.do"  frameRatio="60" titleKey="action.qa">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+				<lessThan name="grossAmount" value="50000" type="Integer"/>
+				<greaterThan name="grossAmount" value="5000" type="Integer"/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="Date" filter="date"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="vendor.name"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="type" filter="like"/>
+			<property name="failReason" />
+		</visibleProperties>
+	</search>
+
+    <search name="ApproveSearch" queueName="Approve" resultsPage="/ManagedPay/filenet/apdocument.do"  frameRatio="60" titleKey="action.approvalqueue">
+	    <criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+			<property name="grossAmount" type="Currency"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+			<property name="vendor.name"/>
+			<property name="type" filter="like"/>
+		</visibleProperties>
+	</search>
+
+    <!-- DO NOT REMOVE THE ReassignSearch. This search is used by the reassign functionality. You may make modifications to the columns and settings. -->
+	<search name="ReassignSearch" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.myinbox">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId"/>
+ 			<property name="vendor.name" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+ 			<property name="type"/>
+			<property name="processInformation.queueName" />
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date-->
+
+	<search name="RematchHoldSearch" queueName="RematchHold" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.rematchHold">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+		  <order name="processInformation.deadline" direction="ASC"/>
+		  <order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId" filter="like"/>
+			<property name="grossAmount" type="Currency"/>
+ 			<property name="vendor.name" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+ 			<property name="type" filter="like"/>
+		</visibleProperties>
+	</search>
+
+
+	<search name="RematchReceivablesSearch" queueName="RematchReceivables" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.rematchReceivables">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId" filter="like"/>
+			<property name="grossAmount" type="Currency"/>
+ 			<property name="vendor.name" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+		</visibleProperties>
+	</search>
+
+	<search name="RematchVendorSearch" queueName="RematchVendor" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.rematchVendor">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="processInformation.deadline" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="number" filter="like"/>
+			<property name="poId" filter="like"/>
+			<property name="grossAmount" type="Currency"/>
+ 			<property name="vendor.name" filter="like"/>
+			<property name="processInformation.deadline" type="Date" filter="date"/>
+ 			<property name="type" filter="like"/>
+		</visibleProperties>
+	</search>
+
+	<search name="RescanSearch" queueName="Rescan" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.rescan">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="scanDate" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="scanDate" filter="date" type="Date"/>
+			<property name="batchNumber"/>
+			<property name="batchOrdinal"/>
+			<property name="group" filter="like"/>
+		</visibleProperties>
+	</search>
+
+	<search name="RestartSearch" queueName="Restart" resultsPage="/ManagedPay/filenet/apdocument.do"  frameRatio="60" titleKey="action.restart">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+			<order name="date" direction="ASC"/>
+			<order name="seqId" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="group" filter="like"/>
+			<property name="type" filter="like"/>
+			<property name="date" type="Date" filter="date"/>
+			<property name="docPriority" filter="like" choiceList="choice.priority"/>
+			<property name="number" filter="like"/>
+		</visibleProperties>
+	</search>
+
+<!--Sort Order: Priority, Task due date, Invoice Date
+Display: Priority, Invoice Due Date, Invoice Date, Invoice Number, Vendor Name, Gross Amount, Invoice Type, Fail Reason-->
+
+
+
+<!--Sort Order: Priority, Task due date, Invoice Date
+Display:Priority, Invoice Due Date, Invoice Type, Invoice Number, Vendor Name, Invoice Date-->
+
+    <search name="VendorMaintenanceSearch" queueName="VendorMaintenance" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.vendormaintenance">
+		<criteria>
+			<and>
+				<alwaysTrue name="" value=""/>
+			</and>
+		</criteria>
+		<ordering>
+			<order name="docPriority" direction="DESC"/>
+		  <order name="processInformation.deadline" direction="ASC"/>
+		  <order name="date" direction="ASC"/>
+		</ordering>
+		<visibleProperties>
+			<property name="docPriority" choiceList="choice.priority"/>
+			<property name="dueDate" type="date" filter="date"/>
+			<property name="type" filter="like"/>
+			<property name="number" filter="like"/>
+			<property name="vendor.name"/>
+			<property name="date" type="Date" filter="date"/>
+		</visibleProperties>
+	</search>
+
+</searches>

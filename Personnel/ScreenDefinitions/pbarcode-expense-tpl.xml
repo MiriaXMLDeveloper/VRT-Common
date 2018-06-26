@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="date" value ="Submission Date"/>
+		<label name="originatorName" value ="Entered By"/>
+		<label name="approverName" value ="Approver"/>
+		<label name="seqId" value ="Report #"/>
+		<label name="itemCode" value ="Type"/>
+		<label name="forward" value ="Complete"/>
+		<label name="grossAmount" value="Expense Total"/>
+		<label name="tbdDate1" value ="Period Ending"/>
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+		</properties>
+		<actions>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<!--section name="Expense Guidelines" collapsible="false" collapsed="false">
+		<properties>
+			<label row="1" col="1" name="Guidelines" position="left"/>
+			<text row="2" col="1" name="custom1.tbdComment1" labelKey="1." defaultValue="Please fax your expenses to 555-555-5555 immediately after submission of this report" styleClass="sixhundred" forceDefault="true" readonly="true"/>
+			<text row="3" col="1" name="custom1.tbdComment2" labelKey="2." defaultValue="Select Training if Seminar related" forceDefault="true" readonly="true" styleClass="sixhundred"/>
+			<text row="4" col="1" name="custom1.tbdComment3" labelKey="3." defaultValue="Travel From - City/State at Start of Day" forceDefault="true" readonly="true" styleClass="sixhundred"/>
+			<text row="5" col="1" name="custom1.tbdComment4" labelKey="4." defaultValue="Travel To   - City/State at End of Day" forceDefault="true" readonly="true" styleClass="sixhundred"/>
+		</properties>
+	</section-->
+	
+	<section name="Expense Report" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<dynamicDropDown row="1" col="1" name="companyCode" providerClass="com.miriasystems.ui.providers.CompanyChoiceListProvider" readonly="false" validation="required"/>
+		<date row="1" col="2" name="date" readonly="true" validation="required" styleClass="date"/>
+		<text row="2" col="1" name="originatorName" readonly="true" styleClass="fulllookup"/>
+		<lookup row="2" col="1" name="requester.displayName" lookupType="lookup.requester" readonly="true"/>
+		<text row="3" col="1-3" name="voucherComments" styleClass="fulllookup" />
+		<dropDown row="4" col="1" name="routingCode" choiceList="choice.sourceCodes" readonly="true"/> <!--Source Code-->
+		<date row="4" col="2" name="tbdDate1" readonly="true"/> <!--Period Ending-->
+		<currency row="5" col="1" name="grossAmount" readonly="true"/>
+		</properties>
+		<actions>
+			<postingReplyAction name="postings" icon="/images/ico_mp.gif" width="16" height="16" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="false"/>
+			<iconAction name="editRouting" icon="/images/ico_routing.gif" width="20" height="20" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" alwaysActive="true" readonly="true"/>			
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_search.gif" width="20" height="20" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	
+	
+	<section name="lineItems" visible="true" collapsible="true" collapsed="false">
+		<lineItemProperties showTotal="true" showTaxTotal="false">
+			<dropDown row="1" col="1" name="itemCode" choiceList="choice.lineTypes" validation="required" styleClass="fifty"/>
+			<date row="1" col="2" name="tbdDate1" readonly="false" labelKey="Date" validation="required" styleClass="date"/>
+			<text row="1" col="3" name="itemDescription" readonly="false" labelKey="Description" validation="required" styleClass="twohundred"/>
+			<text row="1" col="4" name="tbdString1" readonly="false" labelKey="Travel To" styleClass="onehundred"/>
+			<text row="1" col="5" name="tbdString2" readonly="false" labelKey="Travel From" styleClass="onehundred"/>
+			<dropDown row="1" col="6" name="tbdString3" readonly="false" choiceList = "choice.expenseType" labelKey="Expense Type" validation="required"/>
+			<currency row="1" col="7" name="lineTotal" readonly="false" validation="required"/>
+			<text row="1" col="8" name="tbdString4" readonly="false" labelKey="Claim #" styleClass="eighty"/>
+			<dropDown row="1" col="9" name="costObjectId2" readonly="false" labelKey="Training" choiceList = "choice.training" defaultValue="1" validation="required" styleClass="fifty"/>
+			<text row="1" col="10" name="tbdQuantity1" readonly="false" labelKey="Miles" validation="required" styleClass="fifty"/>
+			<text row="1" col="11" name="tbdQuantity2" readonly="true" labelKey="Rate" validation="required" styleClass="fifty"/>
+			<lookup row="1" col="12" name="costObjectId1" lookupType="lookup.costObject1" readonly="false" labelKey="Project" styleClass="fifty"/>
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+			<lineItemHidden row="0" col="0" name="code6" defaultValue="Yes" />
+		</lineItemProperties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<button name="addLineItem" command="addLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="a"/>
+			<button name="removeLineItem" command="deleteLineItem" type="submit" isAnchored="true" hotKey="d"/>
+		</actions>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="EAS"/>
+		<hidden name="vendorERPId" defaultValue="EAS"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="EAS"/>
+		<hidden name="paymentTypeERPId" defaultValue="EAS"/>
+       	<hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="type" defaultValue="EXP"/>
+		<hidden name="processInformation.comment"/>
+	</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.miriasystems.processors.LineItemTypeProcessor"/>
+		<processor name="com.miriasystems.processors.MileageRateProcessor"/>
+		<processor name="com.miriasystems.processors.CalculateExpenseProcessor"/>
+    </processors>
+</propertyTemplate>
+

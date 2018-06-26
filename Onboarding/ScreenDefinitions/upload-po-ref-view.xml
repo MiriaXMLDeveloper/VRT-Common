@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-inv-ref-view" template="upload-trade-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+	
+<section-overrides>	
+		<section name="New Vendor Details" visible="true"/>
+		<section name="vendorDetails" visible="false"/>
+</section-overrides>
+
+<property-overrides>
+		<text name="vendorId" readonly="true" defaultValue="999999"/>
+		<text name="vendor.name" readonly="true" defaultValue="Misc Vendor"/>
+		<text name="alternatevendor" readonly="true"/>
+</property-overrides>
+
+<validations>
+    <!--validation name="validation.vendortype.check"/--> 
+	<validation name="validation.validPONumber2"/>
+</validations>
+
+</view>
+
+

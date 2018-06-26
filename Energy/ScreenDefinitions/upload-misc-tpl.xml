@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+    <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+	</locale>
+	</labels>
+
+	
+	<section name="Document Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<dropDown row="1" col="1" name="type" choiceList="choice.invoiceTypes" readonly="true" validation="required"/>
+		<lookup row="2" col="1-3" name="vendor.name" lookupType="lookup.vendorCode" readonly="false" styleClass="fulllookup"/>
+		<lookup row="3" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="false" />
+		<text row="3" col="2" name="number"/>
+        <text row="3" col="3" name="poId" readonly="false"/>
+		</properties>
+	</section>
+	
+		
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId"  defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+        <hidden name="paymentTermERPId"  defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId"  defaultValue="JDA"/>
+        <hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="uploadRef"/>
+		<hidden name="originatorId"/>
+		<hidden name="originatorName"/>
+     </hiddenFields>
+
+	<processors>
+		
+    </processors>
+</propertyTemplate>

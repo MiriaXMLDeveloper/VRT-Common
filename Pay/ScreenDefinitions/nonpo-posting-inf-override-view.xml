@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-posting-view" template="nonpo-readonly-inf-override-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="false">
+		
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+	
+	
+		<property-overrides>
+
+			<text row="4" col="2" name="paymentTermId" readonly="false" onBlur="reloadPage(this)"/>
+			<currency row="5" col="1" name="discountAmount" readonly="false" styleClass="currency" validation="required"/>
+			<date row="5" col="2" name="discountDueDate" readonly="false" styleClass="date" validation="required"/>
+			<date row="6" col="1" name="tbdDate2" readonly="false" styleClass="date"/><!--net due date-->
+			<date row="6" col="1" name="dueDate" readonly="false" styleClass="date" validation="required"/>
+			<dropDown name="lineitemsdropdown" choiceList="choice.lineitemsdropdown" readonly="true" visible="false"/>
+	</property-overrides>
+	
+	<action-overrides>
+		<rejectButton name="reject" command="reject" readonly="true" visible="false" type="submit"/>
+		<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		<button name="update" command="update" readonly="true" visible="false" type="submit"/>
+		<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		<iconAction name="addLineItem" readonly="true" visible="false"/>
+		<iconAction name="removeLineItem" readonly="true" visible="false"/>
+		
+		<iconAction name="RemoveAllItems" readonly="true" visible="false" />
+		<iconAction name="RemoveMarkedItems" readonly="true" visible="false"/>
+		<iconAction name="RemoveUnMarkedItems" readonly="true" visible="false"/>
+		<iconAction name="selectTemplate" readonly="true" visible="false"/>
+		
+
+	</action-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+	
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.accountCode"/>
+		<validation name="validation.CharacterLimitValidation"/>
+	</validations>
+</view>

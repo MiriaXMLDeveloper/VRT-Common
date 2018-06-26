@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="IT-indexing-view" template="IT-Approval-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Accept"/>
+			<label name="Reject" value="Exception"/>
+			<label name="Dropped" value="Dropped"/>
+			<label name="Awaiting" value="Awaiting Receipts"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+
+	</section-overrides>
+
+	<property-overrides>
+		<text name="routingCode" readonly="true"/>
+		<text name="number" readonly="true"/>
+		<text name="date" readonly="true"/>
+		<text name="tbdString2" readonly="true"/>
+		<text name="tbdString1" readonly="true"/>
+		<text name="poId" readonly="true"/>
+		<text name="grossAmount" readonly="true"/>
+		<text name="dueDate" readonly="true"/>
+		<text name="tbdString3" readonly="true"/>
+		<!--<text name="voucherComments" readonly="false"/>-->
+		<text name="vendor.address1" readonly="true"/>
+		<text name="vendor.address2" readonly="true"/>
+		<text name="vendor.city" readonly="true"/>
+		<text name="vendor.state" readonly="true"/>
+		<text name="vendor.postalCode" readonly="true"/>
+		<lookup name="accountCode" readonly="true"/>
+		<!--<currency name="lineTotal" readonly="true"/>
+		<text name="tbdString4" readonly="true"/>
+		<text name="accountERPId" readonly="true"/-->
+		<output name="processInformation.previousComment" readonly="false"/>
+		
+		
+	</property-overrides>
+
+	<lineItem-overrides>
+			
+			<lookup name="accountCode" lookupType="lookup.accountCodeIT" readonly="true" styleClass="onetwenty"/>
+			<currency name="lineTotal" readonly="true" validation="required, nonZero" styleClass="currency" />	
+			<text name="tbdString4" readonly="true" styleClass="onesixty"/>
+			<checkbox name="matched" labelKey="Match" visible="true" styleClass="ten" />		 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="addLineItem" readonly="true" visible="false"/>
+		<iconAction name="removeLineItem" readonly="true" visible="false"/>
+		
+	</action-overrides>
+
+	<hidden-overrides>
+			<hidden name="processInformation.response" defaultValue="Complete"/>		
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="false" note="message.returnException"> <!-- Exception-->
+			</reason>
+			<reason name="Rescan" commentsRequired="false" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="false" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Hold" commentsRequired="false" note="message.hold">
+			</reason>
+			<reason name="Dropped" commentsRequired="false" note="message.dropped">
+			</reason>
+			<reason name="Workflow Complete" commentsRequired="false" note="message.workflowComplete">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<!--validation name="validation.validNetAmount"/-->
+		<!--validation name="validation.validPaymentTerm"/-->
+		<!--validation name="validation.vendortype.check"/-->
+		<validation name="validation.lineItemAmount"/>
+		<validation name="validation.propertyLevelValidationForLineItems"/>
+		<!--<validation name="validation.accountCode"/>-->
+		<!--validation name="validation.accountCode" note="message.accountCode"/-->
+
+	</validations>
+</view>

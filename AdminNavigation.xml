@@ -1,0 +1,83 @@
+<navigation name="admin.leftnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/leftNavigation.xsd">
+    <!--initpage href="/blank.jsp"></initpage-->
+	 <initpage href="/queuestats.do"/>
+	 	
+		
+	<section name="section.admin.usersearch" colapsible="true" collapsed="true" roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4"> 			
+		<usersearch />
+		<action href="" target="right" name=""/>  <!-- Used to add space -->
+	</section>
+	 	
+	 <section name="section.admin.organization" collapsed="true" roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4"> 			
+		<action href="/users.do" target="right" image="/images/ico-default.png" name="action.admin.users"/>
+		<action href="/rolegroups.do" target="right" image="/images/ico-default.png" name="action.admin.user.rolegroup" roles="MP_Administrator3, MP_Administrator4"/>
+		<action href="/organization/list.do" target="right" image="/images/ico-default.png" name="action.admin.organizations"/>
+		<action href="/queues.do" target="right" image="/images/ico-default.png" name="action.admin.queue.security"/>
+		<action href="/defaultvalues.do" target="right" image="/images/ico-default.png" name="action.admin.defaults.user" roles="MP_Administrator3, MP_Administrator4"/>
+		
+	</section>
+	
+	<section name="section.admin.organization.parameters" collapsed="true" roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4"> 			
+		<action href="/companies.do" target="right" image="/images/ico-default.png" name="action.admin.companies" roles="MP_Administrator4"/>
+		<action href="/groups.do" target="right" image="/images/ico-default.png" name="action.admin.groups"/>
+		<action href="/listSearchFilter.do" target="right" image="/images/ico-default.png" name="action.admin.filters" />
+		<action href="/costobjects/list.do" target="right" image="/images/ico-default.png" name="action.admin.costobjects"/>
+		<action href="/approvalexception/list.do" target="right" image="/images/ico-default.png" name="action.admin.approvalexception"/>	
+		<action href="/listParameter.do" target="right" image="/images/ico-default.png" name="action.admin.parameters" />
+		<action href="/creditcategory/list.do" target="right" image="/images/ico-default.png" name="action.admin.expensecategory"/>
+		<action href="/listpaymentterms.do" target="right" image="/images/ico-default.png" name="action.admin.paymentterms"/>	
+		<action href="/paymenttypes.do" target="right" image="/images/ico-default.png" name="action.admin.paymenttypes"/>
+		<action href="/taxcodes.do" target="right" image="/images/ico-default.png" name="action.admin.taxcodes"/>
+		<action href="/templates/list.do" target="right" image="/images/ico-default.png" name="action.admin.gltemplate"/>
+	</section>
+	
+	<section name="section.admin.creditcard" collapsed="true"  roles="MP_Administrator4" >
+		<action href="/creditcards.do" target="right" image="/images/ico-default.png" name="action.admin.creditcard" />
+		<action href="/mcccodes/list.do" target="right" image="/images/ico-default.png" name="action.admin.mcccodes"/>
+	</section>
+	
+			
+	<section name="section.admin.maintenance" collapsed="true" roles="MP_Administrator1, MP_Administrator2, MP_Administrator3, MP_Administrator4"> 
+		<action href="/queuestats.do" target="right" image="/images/ico-default.png" name="action.admin.queuestats"/>
+		<action href="/conductorqueue.do" target="right" image="/images/ico-default.png" name="action.admin.conductor"/>
+		<action href="/refresh.do" target="right" image="/images/ico-default.png" name="action.admin.refresh" roles="MP_Administrator3, MP_Administrator4"/>
+		<action href="/users/refresh.do" target="right" image="/images/ico-default.png" name="action.admin.usersrefresh"  roles="MP_Administrator3, MP_Administrator4"/>
+		<action href="/maintenance/systemvalues.do" target="right" image="/images/ico-default.png" name="action.systemvalues"  roles="MP_Administrator4"/>
+		<action href="/countries.do" target="right" image="/images/ico-default.png" name="action.admin.countries" roles="MP_Administrator3, MP_Administrator4"/>	
+		<action href="/currencies.do" target="right" image="/images/ico-default.png" name="action.admin.currencies" roles="MP_Administrator3, MP_Administrator4"/>
+		<action href="/currencyconversion.do" target="right" image="/images/ico-default.png" name="action.admin.currencyConversion" roles="MP_Administrator3, MP_Administrator4"/>
+		
+	</section>
+		
+	 
+	 <section name="section.admin.maintenace2" collapsed="true" roles="MP_Administrator4" >
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.labels"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.navigation"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.choicelist"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.searches"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.emailtemplates"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.validations"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.lookups"/>
+		<action href="/construction.jsp" target="right" image="/images/ico-default.png" name="action.admin.maxlengths"/>
+		<action href="/errorcodetranslations.do" target="right" image="/images/ico-default.png" name="action.admin.errorcodetranslations"/>			
+	 </section>
+			
+		
+	<section name="section.admin.portal"  roles="MP_Administrator4" collapsed="true" visible="false" >
+		<action href="/vendorportal/listVendors.do" target="right" image="/images/ico-default.png" name="action.admin.invitevendor"/>
+		<action href="/vendorportal/preferences.do" target="right" image="/images/ico-default.png" name="action.admin.preferences"/>
+		<action href="/vendorportal/index.jsp" target="right" image="/images/ico-default.png" name="action.vendor.portal.links" />
+	</section>
+
+		<section name="section.admin.erp.tables" roles="MP_Administrator4" collapsed="true">
+		<action href="" target="_blank" image="/images/ico-default.png" name="action.simsap" contextPath="/ManagedPay/simsap"/>
+		<action contextPath="/ManagedPay/simsap/systemoriginator/list.do" target="right" image="/images/ico-default.png" name="action.simsap.systemoriginator"/>
+		<action contextPath="/ManagedPay/simsap/account/list.do" target="right" image="/images/ico-default.png" name="action.simsap.accounts"/>
+		<action contextPath="/ManagedPay/simsap/poheader/list.do?page=0" target="right" image="/images/ico-default.png" name="action.simsap.poheaders"/>
+        <action contextPath="/ManagedPay/simsap/documentsreadyforposting/list.do" target="right" image="/images/ico-default.png" name="action.simsap.documentsreadyforposting"/>
+        <action contextPath="/ManagedPay/simsap/documentsreadyforposting/list.do?command=posted" target="right" image="/images/ico-default.png" name="action.simsap.posteddocuments"/>    
+		<action contextPath="/ManagedPay/simsap/vendor/list.do" target="right" image="/images/ico-default.png" name="action.simsap.vendors"/>
+    </section>
+	
+
+</navigation>

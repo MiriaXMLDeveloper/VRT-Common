@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="ar-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<property-overrides>
+		<lookup name="vendorId" readonly="true" validation=""/>
+		<checkbox name="alternatevendor" readonly="true"/>	
+		<text name="number" readonly="true" />
+		<date name="date" readonly="true" />
+		<currency name="grossAmount" readonly="true"/>
+		<currency name="freightAmount1" readonly="true" />
+		<currency name="taxAmount1" readonly="true" />
+	</property-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<validations>
+     
+</validations>
+
+</view>
+
+

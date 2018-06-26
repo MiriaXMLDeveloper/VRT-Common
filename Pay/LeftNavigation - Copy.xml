@@ -1,0 +1,142 @@
+<navigation name="section.mpnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <initpage href="/filenet/search.do?searchName=InboxSearchPay&amp;split=true&amp;getNext=true" roles="MP_Confirmer1, MP_Indexer4, MP_Processor1,MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Auditor2, MP_Approver2, MP_Administrator2, MP_VendorMaintenance2, MP_Scanner2"/>
+	<initpage href="/filenet/search.do?searchName=ITinboxSearch&amp;split=true&amp;getNext=true" roles="MP_Processor8, MP_Administrator2, MP_Approver3"/>
+    <action href="/filenet/search.do?searchName=InboxSearchPay&amp;split=true&amp;getNext=true" target="right" image="/images/ico-inbox-w24.png" name="action.myinbox" roles="MP_Confirmer1, MP_Indexer4, MP_Processor1,MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Auditor2, MP_Approver2, MP_Administrator2, MP_VendorMaintenance2, MP_Scanner2" searchName="InboxSearchPay"/>
+	<action href="/filenet/search.do?searchName=ITinboxSearch&amp;split=true&amp;getNext=true" target="right" image="/images/ico-inbox-w24.png" name="action.ITinboxSearch"  roles="MP_Processor8, MP_Administrator2, MP_Approver3" searchName="ITinboxSearch"/>	
+	<!--   AP Queues Section         -->
+	
+	
+	<section name="section.APIndexingQueues" roles="MPSys_Test,MP_Scanner2, MP_Processor2, MP_Processor3, MP_Processor7, MP_Approver2, MP_Administrator2" collapsed="false" >
+		<action href="/filenet/search.do?searchName=TradeIndexing&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.TradeIndexing" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="TradeIndexing"/>
+		<action href="/filenet/search.do?searchName=NonTradeIndexing&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTradeIndexing" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="NonTradeIndexing"/>
+		<!--action href="/filenet/search.do?searchName=NonTradeINFIndexing&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTradeINFIndexing" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="NonTradeINFIndexing"/-->
+		<action href="/filenet/search.do?searchName=CreditIndexing&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.CreditIndexing" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="CreditIndexing"/>
+		<action href="/filenet/search.do?searchName=SupplierIndexing&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.SupplierIndexing" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="SupplierIndexing"/>
+		<action href="/filenet/search.do?searchName=EqptIndex&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.eqptIndex" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="EqptIndex"/>
+		<action href="/filenet/search.do?searchName=Eqpt&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.eqpt" roles="MP_Processor2, MP_Processor3, MP_Processor7, MP_Approver2, MP_Administrator2" searchName="Eqpt"/>
+		<!--action href="/filenet/search.do?searchName=rollsourceSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.rollsource" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="rollsourceSearch"/>
+		<action href="/filenet/search.do?searchName=rebateSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.rebate" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="rebateSearch"/>
+		<action href="/filenet/search.do?searchName=creditVOSSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.creditVOS" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="creditVOSSearch"/>
+		<action href="/filenet/search.do?searchName=freightVOSSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.freightVOS" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="freightVOSSearch"/>
+		<action href="/filenet/search.do?searchName=freightMAXSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.freightMAX" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="freightMAXSearch"/>
+		<action href="/filenet/search.do?searchName=MGISearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.MGI" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="MGISearch"/-->
+		<action href="/filenet/search.do?searchName=W9&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.W9" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="W9"/>
+		<action href="/filenet/search.do?searchName=Stmt&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.stmt" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="Stmt"/>
+		<action href="/filenet/search.do?searchName=APMisc&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.APMisc" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="APMisc"/>
+		<action href="/filenet/search.do?searchName=RtnCks&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.RtnCks" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="RtnCks"/>
+		<action href="/filenet/search.do?searchName=PennyVoucher&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.PennyVoucher" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="PennyVoucher"/>
+		<action href="/filenet/search.do?searchName=IntNav&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.IntNav" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="IntNav"/>
+	</section>
+		
+	<!--  AP Exceptions Queues Section          -->	
+	<section name="section.APExceptions" roles="MP_Scanner2,MP_Processor2, MP_Processor3, MP_Approver2, MP_Processor4, MP_Processor5, MP_Processor6, MP_Auditor2, MP_Administrator2, MP_VendorMaintenance2" collapsed="false" >
+		<action href="/filenet/search.do?searchName=UnidentifiedSubType&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.UnidentifiedSubType" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="UnidentifiedSubType"/>
+		<action href="/filenet/search.do?searchName=UnidentifiedDivision&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.UnidentifiedDivision" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="UnidentifiedDivision"/>
+		<action href="/filenet/search.do?searchName=POExceptionSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.POexception" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Auditor2, MP_Administrator2" searchName="POExceptionSearch"/>
+		<action href="/filenet/search.do?searchName=NonPOExceptionSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonPOexception" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Auditor2, MP_Administrator2" searchName="NonPOExceptionSearch"/>
+		<action href="/filenet/search.do?searchName=AwaitingReceiptSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.awaitingReceipt" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_VendorMaintenance2, MP_Administrator2" searchName="AwaitingReceiptSearch"/>
+		<action href="/filenet/search.do?searchName=DuplicateReviewSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.duplicateReview" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_VendorMaintenance2, MP_Administrator2" searchName="DuplicateReviewSearch"/>
+		<action href="/filenet/search.do?searchName=HoldSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.hold" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="HoldSearch"/>
+		<action href="/filenet/search.do?searchName=DroppedSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.dropped" roles="MP_Processor2, MP_Processor3, MP_Approver2, MP_Administrator2" searchName="DroppedSearch"/>
+		<action href="/filenet/search.do?searchName=RescanSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.rescan" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Approver2, MP_Administrator2" searchName="RescanSearch"/>
+		<action href="/filenet/search.do?searchName=VendorMaintenanceSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.vendormaintenance" roles="MP_Approver2, MP_VendorMaintenance2, MP_Administrator2" searchName="VendorMaintenanceSearch"/>
+		<!--action href="/filenet/search.do?searchName=VendorMaintenanceINFSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.vendormaintenanceINF" roles="MP_Approver2, MP_VendorMaintenance2, MP_Administrator2" searchName="VendorMaintenanceINFSearch"/-->
+		<action href="/filenet/search.do?searchName=EDISearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.edi" roles="MP_Approver2, MP_Administrator2, MP_Processor2, MP_Processor3" searchName="EDISearch"/>
+	</section>
+	
+	 <!--  Posting Queues Section         -->    
+	<section name="section.postingqueues" roles="MP_Processor2, MP_Administrator2, MP_Approver2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=PostingSearch&amp;getNext=true&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.nonpoposting" roles="MP_Processor2, MP_Administrator2, MP_Approver2" searchName="PostingSearch"/>
+		<action href="/filenet/search.do?searchName=AwaitJDESearch&amp;getNext=true&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.poposting" roles="MP_Processor2, MP_Administrator2, MP_Approver2" searchName="AwaitJDESearch"/>
+	</section>   
+
+	<!--  Trade Indexing Section       -->
+	<section name="section.TradeIndexing" roles="MPSys_Test,MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=12Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.12Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="12Direct"/>
+		<action href="/filenet/search.do?searchName=25Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.25Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="25Direct"/>
+		<action href="/filenet/search.do?searchName=50Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.50Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="50Direct"/>
+		<action href="/filenet/search.do?searchName=60Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.60Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="60Direct"/>
+		<action href="/filenet/search.do?searchName=80Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.80Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="80Direct"/>
+		<action href="/filenet/search.do?searchName=90Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.90Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="90Direct"/>
+		<action href="/filenet/search.do?searchName=95Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.95Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="95Direct"/>
+		<action href="/filenet/search.do?searchName=97Direct&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.97Direct" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="97Direct"/>
+		<action href="/filenet/search.do?searchName=12Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.12Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="12Warehouse"/>
+		<action href="/filenet/search.do?searchName=25Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.25Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="25Warehouse"/>
+		<action href="/filenet/search.do?searchName=50Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.50Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="50Warehouse"/>
+		<action href="/filenet/search.do?searchName=60Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.60Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="60Warehouse"/>
+		<action href="/filenet/search.do?searchName=80Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.80Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="80Warehouse"/>
+		<action href="/filenet/search.do?searchName=90Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.90Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="90Warehouse"/>
+		<action href="/filenet/search.do?searchName=95Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.95Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="95Warehouse"/>
+		<action href="/filenet/search.do?searchName=97Warehouse&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.97Warehouse" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="97Warehouse"/>
+	</section>
+	
+	<!--  Non-Trade Indexing Section       -->
+	<section name="section.NonTradeIndexing" roles="MPSys_Test,MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=NonTrade1&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade1" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade1"/>
+		<action href="/filenet/search.do?searchName=NonTrade1Urgent&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade1Urgent" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade1Urgent"/>
+		<action href="/filenet/search.do?searchName=NonTrade2&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade2" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade2"/>
+		<action href="/filenet/search.do?searchName=NonTrade2Urgent&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade2Urgent" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade2Urgent"/>
+		<action href="/filenet/search.do?searchName=NonTrade3&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade3" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade3"/>
+		<action href="/filenet/search.do?searchName=NonTrade3Urgent&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTrade3Urgent" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTrade3Urgent"/>
+		<action href="/filenet/search.do?searchName=NonTradeVLS&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTradeVLS" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTradeVLS"/>
+		<action href="/filenet/search.do?searchName=NonTradeTaxUrgent&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.NonTradeTaxUrgent" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Approver2,MP_Administrator2" searchName="NonTradeTaxUrgent"/>
+	</section>	
+	
+	<!--   GL Functions Section         -->
+	<section name="section.GLIndexing" roles="MP_Processor6,MP_Administrator2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=GLIndexingSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.GL" searchName="GLIndexingSearch" roles="MP_Processor6, MP_Administrator2" />
+		<action href="/filenet/search.do?searchName=GLApproveSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.approveGL" searchName="GLApproveSearch" roles="MP_Processor6,MP_Administrator2" />
+    </section>
+	
+	<!--   Tax Functions Section         -->
+	<section name="section.taxindexing" roles="MP_Processor5,MP_Administrator2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=TaxSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.tax" searchName="TaxSearch" roles="MP_Processor5,MP_Administrator2" />
+		<action href="/filenet/search.do?searchName=TaxPendingSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.taxPending" searchName="TaxPendingSearch" roles="MP_Processor5,MP_Administrator2" />
+    </section>
+	
+	<!--   AR Functions Section         -->
+	<section name="section.arindexing" roles="MP_Processor4,MP_Administrator2" collapsed="true" >
+		<action href="/filenet/search.do?searchName=ARSearch&amp;getNext=true&amp;split=true" target="right" image="/images/ico_queue.gif" name="action.ar" searchName="ARSearch" roles="MP_Processor4, MP_Administrator2" />
+    </section>
+	
+	
+	
+	<!-- ms added-->
+	<section name="section.ITqueues" roles="MP_Processor8, MP_Administrator2" collapsed="false" > 
+	
+		<action href="/filenet/search.do?searchName=ITindexing" target="right" image="/images/ico_queue.gif" name="action.ITindexing"  searchName="ITindexing" roles="MP_Processor8,MP_Administrator2"/>
+        <action href="/filenet/search.do?searchName=ITexception" target="right" image="/images/ico_queue.gif" name="action.ITexception" roles="MP_Processor8,MP_Administrator2" searchName="ITexception"/>
+		<action href="/filenet/search.do?searchName=IThold" target="right" image="/images/ico_queue.gif" name="action.IThold" roles="MP_Processor8,MP_Administrator2" searchName="IThold"/>
+		<action href="/filenet/search.do?searchName=ITdropped" target="right" image="/images/ico_queue.gif" name="action.ITdropped" roles="MP_Processor8,MP_Administrator2" searchName="ITdropped"/>
+		<action href="/filenet/search.do?searchName=ITrescan" target="right" image="/images/ico_queue.gif" name="action.ITrescan" roles="MP_Processor8,MP_Administrator2" searchName="ITrescan"/>
+		<action href="/filenet/search.do?searchName=ITposting" target="right" image="/images/ico_queue.gif" name="action.ITposting" roles="MP_Processor8,MP_Administrator2" searchName="ITposting"/>
+		
+		
+		
+    </section>
+	
+
+	<!--   Search Actions        -->
+    <section name="section.search" collapsed="false" roles="MP_Confirmer1, MP_Indexer4, MP_Processor1,MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Processor6, MP_Processor7, MP_Auditor2, MP_Approver2, MP_Administrator2, MP_VendorMaintenance2, MP_Scanner2, MP_Approver3" >
+		<documentsearch target="right" showPoSearch="true" showVendorSearch="true"/>
+        <action href="/document/advancedsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.advancedinvoicesearch"/>
+        <action href="/document/headerInvoiceSearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.searchsave"/>
+    </section>
+
+	<!--   Tools        -->
+    <section name="section.tools" collapsed="false" roles="MP_Scanner2, MP_Processor2, MP_Processor3, MP_Processor7, MP_Approver2, MP_Administrator2, MP_Processor8, MP_Administrator2, MP_Approver3" >
+        <action href="/documents/reassign.do?userIsSelf=true&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignSelf"/>
+        <action href="/documents/reassign.do?userIsSelf=false&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignDelegate"/>
+        <action href="/protected/preferences.do" target="right" image="/images/ico_configuration.gif" name="action.preferences"/>
+    </section>
+         
+	<!--   Applications         -->
+    <section name="section.applications" collapsed="True" roles="MP_Administrator2">
+		<!--action href="" target="_blank" image="/images/ico_report.gif" name="action.reporting" roles="MPSys_Test,MP_Administrator1, MP_Processor4,MP_Administrator2"  contextPath="/ManagedPay/reporting/index.jsp"/-->
+        <action href="" target="_blank" image="/images/ico_configuration.gif" name="action.adminmodule" roles="MP_Administrator2" contextPath="/ManagedPay/admin/index.jsp"/>
+    </section>
+	
+	
+	
+	
+</navigation>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-exception-view" template="nonpo-except-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+			<section name="lineItems" collapsed="false"/>
+			<section name="New Vendor Details" visible="true"/>
+			<section name="vendorDetails" visible="false"/>
+	</section-overrides>
+
+	<property-overrides>
+	<text name="vendorId" readonly="true" defaultValue="999999" forceDefault="true"/>
+	<text name="vendor.name" readonly="true" defaultValue="Misc Vendor" forceDefault="true"/>
+	<text name="alternatevendor" readonly="true"/>
+	<currency name="grossAmount" readonly="true"/>
+	<currency name="taxAmount2" readonly="true"/>
+	<text name="custom2.name" validation="required"/>
+	<text name="custom2.address1" validation="required"/>
+	<text name="custom2.city" validation="required"/>
+	<text name="custom2.state" validation="required"/>
+	<text name="custom2.postalCode" validation="required"/>
+	<dynamicDropDown name="companyCode" readonly="true"/>
+	<dropDown name="subType" readonly="true"/>
+	<dropDown name="type" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+		<text name="accountCode" readonly="true"/>
+		<text name="lineTotal" readonly="true"/>
+		<text name="tbdString1" readonly="true"/>	 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" readonly="false"/>
+		<iconAction name="postings" visible="true"/>
+		<button name="addLineItem" visible="false"/>
+		<button name="removeLineItem" visible="false"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<!--<hidden name="taxAmount2"/>-->
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.terminate">
+				<subReason name="Duplicate"/>
+				<subReason name="Incomplete documentation"/>
+				<subReason name="Other"/>
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.capex"/>
+		<!--validation name="validation.vendortype.check"/-->
+		<validation name="validation.accountCode"/>
+		<validation name="validation.ApprovedAmountValidator"/>
+	</validations>
+</view>

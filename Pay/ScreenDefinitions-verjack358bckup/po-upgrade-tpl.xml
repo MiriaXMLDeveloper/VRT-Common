@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<labels>
+			<locale name="en">
+				<label name="image" value="Image Window"/>
+				<label name="paymentTerm.discount1" value="Payment discount"/>
+				<label name="tbdString2" value="SCAC"/>
+				<label name="scanVendorName" value="Carrier Name"/>
+				<label name="vendorId" value="Carrier Id"/>
+			</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="comment"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment1" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<iconAction name="image" icon="/images/image-window.png" width="16" height="16" link="javascript:parent.openImage()" alwaysActive="true"/>
+			<getNext name="next" readonly="false" showLabel="true" visible="true" toLeft="true"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit" styleClass="button blue"/>
+			<button name="update" command="updateRelease" readonly="false" visible="true" type="submit" styleClass="button blue"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r" styleClass="button blue"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1" name="type" readonly="true" validation="required"/>
+		<dropDown row="1" col="2" name="subType" choiceList="choice.tradeSubTypes" readonly="true" validation="required"/>
+		<text row="2" col="1" name="number" validation="required, noSpecialCharacters"/>
+        <date row="2" col="2" name="date" readonly="false" validation="required" styleClass="date"/>
+		<text row="3" col="1" name="tbdNumber1" readonly="false" validation="required,number"/>
+		</properties>
+		<actions>
+			<!--postingReplyAction name="postings" icon="/revised/images/ico-paid-w24.png" width="24" height="24" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/>
+			<iconAction name="editRouting" icon="/revised/images/ico-route-w24.png" width="24" height="24" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo', 'TUR_MP_Sys_DEV')" alwaysActive="true" readonly="false"/-->			
+			<iconAction name="email" icon="/revised/images/ico-mail-w24.png" width="24" height="24" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/revised/images/ico-attachment-w24.png" width="24" height="24" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="vendorHistory" icon="/revised/images/ico-vhistory-w24.png" width="24" height="24" link="javascript:openVendorHistoryWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="print" icon="/revised/images/ico-print-w24.png" width="24" height="24" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="barcode" icon="/revised/images/ico-barcode-w24.png" width="24" height="24" link="javascript:openPrintBarcodeWindow('$contextPath$', '$uploadRef$', '$seqId$')" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/revised/images/ico-history-w24.png" width="24" height="24" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<!--iconAction name="compliance" icon="/revised/images/ico-check-w24.png" width="24" height="24" link="javascript:openHelp('User_Interfaces/Working_on_Tasks-cab.htm', '$contextPath$')" alwaysActive="true"/-->
+			<!--iconAction name="help" icon="/revised/images/ico-help-w24.png" width="24" height="24" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/-->
+		</actions>
+	</section>
+
+<section name="invoiceDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="poId" validation="required" readonly="false"/>
+			<checkbox row="1" col="2" name="tbdBoolean1" />
+			<!--lookup row="2" col="1" name="vendor.name" lookupType="lookup.vendorCode" readonly="false" styleClass="fulllookup"/>
+			<lookup row="2" col="2" name="vendorId" lookupType="lookup.vendorCode" readonly="false"/-->
+			<text row="2" col="1" name="scanVendorName"  validation="required"/>
+			<text row="2" col="2" name="vendorId" validation="required"/>
+			<text row="3" col="1" name="tbdString2" />
+			<currency row="4" col="1" name="grossAmount" validation="decimal" styleClass="currency"/>
+			<date row="4" col="2" readonly="false" name="dueDate" styleClass="date" />
+		</properties>
+	</section>
+					
+	
+		<section name="vendorDetails" visible="false" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1-4" name="vendor.address1" readonly="true"  styleClass="fulllookup"/>
+			<text row="2" col="1-4" name="vendor.address2" readonly="true"  styleClass="fulllookup"/>
+			<text row="3" col="1" name="vendor.city" readonly="true"/>
+			<text row="3" col="2" name="vendor.state" readonly="true"/>
+			<text row="3" col="3" name="vendor.postalCode" readonly="true"/>
+	    </properties>
+	</section>
+	
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="true">
+		<properties>
+			<date row="1" col="1" name="scanDate"  styleClass="date" readonly="true" showTime="true"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="seqId" readonly="true"/>
+			<text row="3" col="1" name="batchNumber" readonly="true"/>
+		</properties>
+	</section>
+	
+
+	<hiddenFields>
+	<hidden name="processInformation.comment"/>
+    </hiddenFields>
+
+	<processors>
+		<processor name="com.miriasystems.processors.DueDateProcessor"/>
+		<processor name="com.miriasystems.processors.DiscountCalculationProcessor"/>
+		<processor name="com.miriasystems.processors.PaymentTermDiscountProcessor"/>
+    </processors>
+</propertyTemplate>

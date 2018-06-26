@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+    <labels>
+	<!-- Label overrides for this template -->
+	<locale name="en">
+	</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+				<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+				<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="Document Details" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		      <text row="1" col="1" name="poId" readonly="false"/>
+			  <text row="1" col="2" name="shippingDocumentId" readonly="false"/>
+		</properties>
+	</section>
+	
+		
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId"  defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+        <hidden name="paymentTermERPId"  defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId"  defaultValue="JDA"/>
+        <hidden name="vendor.status" defaultValue="V"/>
+		<hidden name="uploadRef"/>
+		<hidden name="docPriority"/>
+		<hidden name="originatorId"/>
+		<hidden name="originatorName"/>
+		<hidden name="type" defaultValue="RECEIVER" forceDefault="true" /> 
+		<hidden name="processInformation.comment"/>
+     </hiddenFields>
+
+	<processors>
+		
+    </processors>
+</propertyTemplate>

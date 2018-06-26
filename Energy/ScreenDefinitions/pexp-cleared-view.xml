@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="pexpense-tpl.xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/view.xsd">
+
+    <action-overrides>
+		<iconAction name="editRouting" readonly="true"/>
+		<button name="release" visible="false"/>
+		<button name="addLineItem" readonly="true" visible="false"/>
+		<button name="removeLineItem" readonly="true" visible="false"/>
+		<button name="addSubLineItem" readonly="true" visible="false"/>
+		<button name="removeSubLineItem" readonly="true" visible="false"/>
+	</action-overrides>
+	
+	<property-overrides>
+		<lookup name="processCode" readonly="true"/>
+	</property-overrides>
+	
+	<lineItem-overrides>
+			<text name="tbdString1" readonly="true"/>
+			<dynamicDropDown name="tbdString4" readonly="true"/>
+			<text name="tbdString2" readonly="true"/>
+			<date name="tbdDate1" readonly="true"/>
+			<date name="tbdDate2" readonly="true"/>
+			<text name="tbdString3" readonly="true"/>
+			<text name="tbdQuantity1" readonly="true"/>
+			<currency name="lineTotal" readonly="true"/>
+			<lookup name="accountCode" readonly="true"/>
+			<text name="itemDescription" readonly="true"/>
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+	
+	 <validations>
+     	<validation  name="validation.check.originator.approver.document"/>
+		<validation name="validation.check.requester.approver.document"/>
+    </validations>
+
+	<documentRejection>
+		<rejectionReasons>
+		<reason name="Stop Payment" commentsRequired="true" note="message.stopPayment">
+		</reason>
+		</rejectionReasons>
+	</documentRejection>
+    
+</view>

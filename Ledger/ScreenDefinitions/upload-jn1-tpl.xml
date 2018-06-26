@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="originatorId" value ="Submitted By"/>
+		<label name="group" value ="Store/Location"/>
+		<label name="department" value ="Department"/>
+		<label name="tbdString2" value ="Auto Reverse"/>
+		<label name="tbdString1" value ="Interco code"/>
+		<label name="tbdString3" value ="Frequency"/>
+		<label name="number" value ="Journal #"/>
+		<label name="taxAmount" value ="Total CR"/>
+		<label name="netAmount" value ="Balance"/>
+		<label name="voucherComments" value ="Description"/>
+		<label name="poId" value ="Template Id"/>
+		<label name="tbdBoolean1" value ="Save As Template"/>
+		<label name="tbdBoolean2" value ="Save As Draft"/>
+	</locale>
+	</labels>
+	
+	<section name="Journal Header" collapsible="false" collapsed="false">
+		<properties>		
+			<dropDown row="1" col="1" name="subType" choiceList="choice.accrual2" validation="required" styleClass="onehundredpercent"/>
+			<text row="1" col="2" name="originatorId" readonly="true"/>
+			<text row="2" col="1" name="number" readonly="false" validation="required"/>
+			<dropDown row="2" col="2" name="tbdString2" choiceList="choice.truncated" readonly="true" defaultValue="1" styleClass="onehundredpercent"/>
+			<text row="3" col="1-2" name="voucherComments" readonly="false" validation="required" styleClass="threehundred"/>
+		</properties>
+		<actions>
+				<iconAction name="print" icon="/images/ico_search.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+				<iconAction name="statusWindow" icon="/images/ico_status.gif" width="16" height="16" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+				<iconAction name="help" icon="/images/ico_help.gif" width="16" height="16" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+				<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>	
+	
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="type" defaultValue="AC" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="3" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="group" defaultValue="JN" forceDefault="true"/>
+		<hidden name="grossAmount" defaultValue="0" forceDefault="true"/>
+		<hidden name="batchNumber" defaultValue="indexer2" forceDefault="true"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+    </processors>
+</propertyTemplate>

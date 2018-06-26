@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels default="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/labels.xsd">
+    <locale name="en">
+		
+		
+		<label name="queue.header.list" value="Queue Access Security"  />
+		<label name="queue.filenetName" value="Queue Name" />
+		<label name="queue.description" value="Queue Description" />
+		<label name="action.admin.maintenance" value="Sys Maintenance"/>
+		<label name="section.admin.maintenace2" value="Sys Maintenance:7.1" />
+		<label name="section.admin.portal" value="Vendor Portal" />
+		<label name="action.admin.queue.security" value="Queue Security"/>
+		<label name="section.admin.creditcard" value="Card Maintenance" />
+		<label name="action.admin.companies" value="Business Units"/>
+		<label name="section.admin.organization" value="Organization" />
+		<label name="section.admin.organization.parameters" value="Org Settings" />
+		<label name="action.admin.gltemplate" value="GL Templates"/>
+		<label name="action.admin.user.rolegroup" value="Role Group"/>v
+		<label name="section.admin.aops.parameters" value="System Tables" />
+		<label name="section.admin.navigation"  value="Menus and Forms" />
+		<label name="section.admin.erp.transactions" value="ERP Tables" />
+		<label name="section.admin.erp.tables" value="ERP System *"/>
+        <label name="section.admin.maintenance" value="System Maintenance"/>
+		<label name="section.admin.tools" value="System Tools" />
+        <label name="section.admin.parameters" value="Operating Parameters"/>
+        <label name="section.admin.rules" value="Business Rules"/>
+        <label name="section.admin.renderers" value="Navigation"/>
+        <label name="section.admin.usersearch" value="User Search"/>
+        <label name="section.admin.vendor" value="Vendors *"/>
+		<label name="section.admin.creditcard" value="Credit Cards"/>
+		<label name="action.admin.preferences" value="Portal Settings" />
+		<label name="section.admin.future" value="7.0 Future *" />
+		<label name="section.admin.orphan" value="Archived *" />	
+		<label name="action.ad.users" value="Portal Users"/>
+		<label name="action.vendor.portal.links" value="Portal Links" />
+		<label name="action.admin.navigation"  value="Navigation" />
+		<label name="action.poheaders" value="Purchase Orders" />
+		<label name="action.admin.labels" value="Labels " />
+		<label name="action.WASConsole" value="WAS Console" />
+		<label name="action.admin.choicelist" value="Choice Lists" />
+		<label name="action.admin.searches" value="Searches" />
+		<label name="action.admin.emailtemplates" value="Email Templates" />
+		<label name="action.admin.validations" value="Validations" />
+		<label name="action.admin.lookups" value="Lookups" />
+		<label name="action.admin.maxlengths" value="Maximum Lengths" />
+		<label name="action.admin.systemparms" value="Workflow Parameters"/>
+		<label name="action.rulesadmin" value="Workflow Rules" />
+		<label name="action.simsap" value="SimSap" />
+		<label name="action.admin.rules2" value="Rules Viewer" />
+	    <label name="action.admin.approvalexception" value="Approval Exception"/> <!--Approval Exception-->
+        <label name="admin.leftnavigation" value="Administration"/>
+		<label name="action.admin.clearLock" value="Clear Posting Locks"/>
+        <label name="action.admin.countries" value="Country Codes"/>
+		<label name="action.systemvalues" value="System Values" />
+        <label name="action.admin.conductor" value="Conductor Queue"/>
+        <label name="action.admin.currencies" value="Currency Codes"/>
+		<label name="action.admin.creditcard" value="Credit Card Admin"/>
+        <label name="action.admin.currencyConversion" value="Currency Conversion"/>
+        <label name="action.admin.dlq" value="Dead Letter Queue"/>
+        <label name="action.admin.defaults.system" value="System Settings"/>
+        <label name="action.admin.defaults.user" value="New User Defaults"/>
+        <label name="action.admin.errorcodetranslations" value="ERP Error Codes"/>
+        <label name="action.admin.groups" value="Document Groups"/>
+        <label name="action.admin.invitevendor" value="Invite Vendors"/>
+        <label name="action.admin.leftnav" value="Menu Viewer"/>
+        <label name="action.admin.logextract" value="Extract Log Files"/>   
+        <label name="action.admin.organizations" value="Organizations"/>
+        <label name="action.admin.paymentterms" value="Payment Terms"/>
+		<label name="action.admin.listpaymentterms" value="List Payment Terms" />
+        <label name="action.admin.paymenttypes" value="Payment Types"/>
+        <label name="action.admin.queuestats" value="Queue Stats"/>
+		<label name="action.admin.queuesecurity" value="Queue Security"/>
+        <label name="action.admin.refresh" value="Refresh Caches"/>
+        <label name="action.admin.rules" value="Rules Editor"/>
+        <label name="action.admin.taxcodes" value="Tax Codes"/>
+        <label name="action.admin.users" value="Users"/> <!--Users-->
+        <label name="action.admin.usersrefresh" value="LDAP Import"/>
+        <label name="action.admin.views" value="Form Viewer"/>
+        <label name="admin.view.invoice" value="View Invoice"/>
+		<label name="action.admin.expensecategory" value="Expense Categories"/> <!--Expense Category-->
+        <label name="company.add" value="Add New Company"/>
+        <label name="company.header.form" value="Edit Company Code"/>
+        <label name="company.header.list" value="Companies"/>
+        <label name="country.add" value="Add country"/>
+        <label name="country.header.form" value="Edit Country Code"/>
+        <label name="country.header.list" value="Country Codes"/>
+        <label name="currency.add" value="Add currency code"/>
+        <label name="currency.header.form" value="Edit Currency Code"/>
+        <label name="currency.header.list" value="Currency Codes"/>
+        <label name="paymentTerm.add" value="Add payment term"/>
+        <label name="paymentTerm.header.form" value="Edit Payment Term"/>
+        <label name="paymentTerm.header.list" value="Payment Terms"/>
+        <label name="paymentType.add" value="Add payment type"/>
+        <label name="paymentType.header.form" value="Edit Payment Type"/>
+        <label name="paymentType.header.list" value="Payment Types"/>
+        <label name="paymentTerm.add" value="Add payment term"/>
+        <label name="paymentTerm.header.form" value="Edit Payment Term"/>
+        <label name="paymentTerm.header.list" value="Payment Terms"/>
+        <label name="taxCode.add" value="Add tax code"/>
+        <label name="taxCode.header.form" value="Edit Tax Code"/>
+        <label name="taxCode.header.list" value="Tax Codes"/>		
+		<label name="action.admin.costobjects" value="Route Codes"/> <!--Location-->
+        <label name="preferences.header" value="Preferences"/>
+        <label name="preferences.legend" value="Work Summary Notification Frequency"/>
+        <label name="preferences.notificationDaily" value="Daily"/>
+        <label name="preferences.notificationImmediate" value="Immediate (if configured)"/>
+		<label name="preferences.outOfOffice" value="Out Of Office"/>
+		<label name="action.admin.filters" value="Search Filters"/>
+		<label name="action.admin.parameters" value="System Parameters"/>
+
+        <!-- SimSap Left Navigation -->
+		<label name="section.admin.simsap.config" value="Demo ERP Configuration" />
+		<label name="action.simsap.systemoriginator" value="Orginator" />
+		<label name="section.admin.simsap.data" value="Demo ERP Tables" />
+		<label name="section.asmin.simsap.transaction" value="Demo ERP Transactions" />
+		<label name="action.accounts" value="Accounts"/>
+		<label name="action.apheaders" value="AP Header Items"/>
+		<label name="action.company" value="Business Units"/>
+		<label name="action.costobjects" value="Cost Objects"/>
+		<label name="action.costobjecttypes" value="Cost Object Types"/>
+		<label name="action.approvalexception" value="Approval Exception"/>
+		<label name="action.approvalexception" value="Approval Exception Types"/>
+		<label name="action.countries" value="Countries"/>
+		<label name="action.currencies" value="Currencies"/>
+		<label name="action.documentsreadyforposting" value="Documents for Posting"/>
+		<label name="action.erperrorcodes" value="ERP Error Codes"/>
+		<label name="action.paymentterms" value="Payment Terms"/>
+		<label name="action.paymenttypes" value="Payment Types"/>
+		<label name="action.poheaders" value="Purchase Orders"/>
+		<label name="action.posteddocuments" value="Posted Documents"/>
+		<label name="action.receivables" value="Receivables"/>
+		<label name="action.systemoriginator" value="System Originators"/>
+		<label name="action.taxcodes" value="Tax Codes"/>
+		<label name="action.vendors" value="Vendors"/>
+        <label name="action.pohistory" value="PO History"/>
+		<label name="section.erpconfiguration" value="ERP Configuration"/>
+		<label name="section.masterdata" value="Master Data"/>
+		<label name="section.simsapmain" value="ERP Database"/>
+		<label name="section.transactionaldata" value="Transactional Data"/>
+		<label name="action.simsap.posteddocuments" value="Posted Docs"/>
+		<label name="action.simsap.vendors" value="ERP Vendors"/>
+		<label name="action.simsap.documentsreadyforposting" value="Posting Docs"/>
+		<label name="action.simsap.poheaders" value="ERP PO Headers"/>
+		<label name="action.simsap.accounts" value="ERP Accounts" />
+		
+        <!-- Vendor Portal -->
+        <label name="action.vendorPortal.invite" value="Invite a Vendor"/>
+		<label name="action.portal1" value="Invoice Inquiry"/>
+		<label name="action.portal2" value="Submit Invoice"/>
+		<label name="action.portal3" value="Change of Address"/>
+		<label name="action.portal4" value="Message Center"/>
+		<label name="section.portal" value="Vendor Portal"/>
+        <label name="action.admin.mcccodes" value="MCC Maintenance"/>
+		<label name="mccCode" value="Mcc Codes"/>
+		<label name="ccCardIndicator" value="Card Indicator"/>
+		
+
+    </locale>
+</labels>

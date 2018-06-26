@@ -1,0 +1,145 @@
+<navigation name="section.mpnavigation" colapsible="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+                <initpage href="/filenet/search.do?searchName=InboxSearch"/>
+                <action href="/filenet/search.do?searchName=InboxSearch" target="right" image="/images/ico_inbox.gif" name="action.myinbox" 
+                roles="MP_Approver1,MP_Confirmer1, MP_Confirmer2, MP_Confirmer3,MP_Confirmer4, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Indexer4, MP_Processor1,MP_Processor2,MP_Processor3,MP_Processor4,MP_Processor5,MP_Processor6, MP_Processor7,  MP_Auditor1, MP_VendorMaintenance1, MP_Auditor4,MP_Administrator4,MP_Approver4,MP_Buyer4" searchName="InboxSearch"/>
+                <!--action href="/filenet/search.do?searchName=InboxSearchE" target="right" image="/images/ico_inbox.gif" name="action.myinboxE" 
+                roles="MP_Processor3,MP_Processor4,MP_Processor6, MP_Indexer3, MP_Indexer4, MP_Auditor4, MP_Approver1, MP_VendorMaintenance1, MP_Administrator1,MP_Administrator2" searchName="InboxSearchE"/-->
+                <!--action href="/filenet/search.do?searchName=InboxSearchL" target="right" image="/images/ico_inbox.gif" name="action.myinboxL" 
+                roles="MP_Indexer1,MP_Processor1,MP_Processor2,MP_Processor3,MP_Processor4,MP_Auditor1, MP_Auditor2, MP_Auditor3, MP_Auditor4, MP_Approver1, MP_VendorMaintenance1, MP_Administrator1,MP_Administrator2" searchName="InboxSearchL"/-->
+                
+                
+                <section name="section.queues" roles="MP_Confirmer1, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Processor1, MP_Processor3,MP_Processor4, MP_Auditor1, MP_VendorMaintenance1,MP_Administrator4" collapsed="false" >
+					<action href="/filenet/search.do?searchName=POTradeSearch" target="right" image="/images/ico_queue.gif" name="action.potrade" roles="MP_Indexer1, MP_Indexer2, MP_Processor1,MP_Indexer3, MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2" searchName="POTradeSearch"/>
+					<action href="/filenet/search.do?searchName=POExceptionsSearch" target="right" image="/images/ico_queue.gif" name="action.poexceptions" roles="MP_Indexer2, MP_Processor1, MP_Indexer3, MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2" searchName="POExceptionsSearch"/>
+					<action href="/filenet/search.do?searchName=SupervisorSearch" target="right" image="/images/ico_queue.gif" name="action.supervisor" roles="MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Processor2, MP_Indexer2 " searchName="SupervisorSearch"/>
+					<action href="/filenet/search.do?searchName=CreditAPSearch" target="right" image="/images/ico_queue.gif" name="action.creditap" roles="MP_Indexer3, MP_Processor4,MP_Administrator4,MP_Processor2" searchName="CreditAPSearch"/>
+                    <action href="/filenet/search.do?searchName=CreditBoatSearch" target="right" image="/images/ico_queue.gif" name="action.creditboat" roles="MP_Indexer3, MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2" searchName="CreditBoatSearch"/>
+					<!--<action href="/filenet/search.do?searchName=CRDSearch" target="right" image="/images/ico_queue.gif" name="action.crd" roles="MP_Confirmer1, MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Indexer3" searchName="CRDSearch"/>-->
+					<action href="/filenet/search.do?searchName=PreTaxSearch" target="right" image="/images/ico_queue.gif" name="action.pretax" roles="MP_Processor3,MP_Processor4, MP_Indexer3, MP_Approver4,MP_Auditor4, MP_Buyer4,MP_Processor2" searchName="PreTaxSearch"/>
+                    <action href="/filenet/search.do?searchName=PostTaxSearch" target="right" image="/images/ico_queue.gif" name="action.posttax" roles="MP_Processor3,MP_Processor4, MP_Confirmer3, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2" searchName="PostTaxSearch"/>
+                    <action href="/filenet/search.do?searchName=CorpFacilitiesSearch" target="right" image="/images/ico_queue.gif" name="action.corpfacilities" roles="MP_Processor3,MP_Processor4, MP_Confirmer2, MP_Approver4, MP_Buyer4, MP_Processor2" searchName="CorpFacilitiesSearch"/>
+					<action href="/filenet/search.do?searchName=VendorMaintenanceSearch" target="right" image="/images/ico_queue.gif" name="action.vendormaintenance" roles="MP_Processor3, MP_Processor4, MP_VendorMaintenance1,MP_Administrator4,MP_Processor2" searchName="VendorMaintenanceSearch"/>
+                    <action href="/filenet/search.do?searchName=RescanSearch" target="right" image="/images/ico_queue.gif" name="action.rescan" roles="MP_Indexer1, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Indexer3" searchName="RescanSearch"/>
+                    <action href="/filenet/search.do?searchName=TradeAuditSearch" target="right" image="/images/ico_queue.gif" name="action.tradeaudit" roles="MP_Auditor1, MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Indexer3" searchName="TradeAuditSearch"/>                    
+					<action href="/filenet/search.do?searchName=StatementSearch" target="right" image="/images/ico_queue.gif" name="action.statement" roles="MP_Processor3,MP_Processor4, MP_Approver4, MP_Buyer4, MP_Indexer3,MP_Processor2" searchName="StatementSearch"/>
+                </section>
+                
+                <section name="section.getnext" roles="MP_Confirmer1, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Processor1, MP_Processor3,MP_Processor4, MP_Auditor1, MP_VendorMaintenance1,MP_Administrator4" collapsed="true" >
+                                <action href="/filenet/search.do?searchName=SupervisorSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.supervisor" roles="MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2"/>
+                                <!--<action href="/filenet/search.do?searchName=CRDSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.crd" roles="MP_Confirmer1,MP_Administrator4,MP_Processor2, MP_Indexer3" searchName="CRDSearch"/>-->
+                                <action href="/filenet/search.do?searchName=VendorMaintenanceSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.vendormaintenance" roles="MP_VendorMaintenance1,MP_Administrator4,MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=RescanSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.rescan" roles="MP_Indexer1, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Indexer3"/>
+                                <action href="/filenet/search.do?searchName=POExceptionsSearch&amp;next=true" target="right" image="/images/ico_queue.gif" name="action.getnext.poexceptions" roles="MP_Indexer2, MP_Processor1, MP_Indexer3, MP_Processor4, MP_Processor5,MP_Administrator4"/>
+                                <action href="/filenet/search.do?searchName=POTradeSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.potrade" roles="MP_Indexer1, MP_Indexer2, MP_Processor1,MP_Indexer3, MP_Processor4,MP_Administrator4,MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=CreditAPSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.creditap" roles="MP_Indexer3, MP_Processor4,MP_Administrator4,MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=CreditBoatSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.creditboat" roles="MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2, MP_Indexer3"/>
+                               <!-- <action href="/filenet/search.do?searchName=CreditRTVSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.creditrtv" roles="MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2, MP_Indexer3"/>-->
+                                <action href="/filenet/search.do?searchName=CreditRBTSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.creditrbt" roles="MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2, MP_Indexer3"/>
+                                <!--<action href="/filenet/search.do?searchName=MatchForceSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.matchforce" roles="MP_Indexer3, MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2"/>-->
+                                <!--<action href="/filenet/search.do?searchName=TradeAuditSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.tradeaudit" roles="MP_Auditor1, MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2, MP_Indexer3"/>-->
+								 <action href="/filenet/search.do?searchName=StatementSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.statement" roles=" MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Indexer3, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=PreTaxSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.pretax" roles="MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2, MP_Processor3"/>
+                                <action href="/filenet/search.do?searchName=PostTaxSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.posttax" roles="MP_Confirmer3, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2, MP_Processor3"/>
+                                <action href="/filenet/search.do?searchName=CorpFacilitiesSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.corpfacilities" roles="MP_Confirmer2, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2"/>
+                </section>
+                
+                <section name="section.nonpoQueues" roles="MP_Processor2,MP_Processor3,MP_Processor4, MP_Indexer3, MP_Confirmer2, MP_Confirmer3, MP_Approver4, MP_Auditor4, MP_Buyer4" collapsed="false" >
+                                <action href="/filenet/search.do?searchName=IndexingSearch" target="right" image="/images/ico_queue.gif" name="action.indexing" roles="MP_Processor3,MP_Processor4, MP_Indexer3, MP_Approver4, MP_Buyer4,MP_Processor2" searchName="IndexingSearch"/>
+                                <action href="/filenet/search.do?searchName=ExceptionSearch" target="right" image="/images/ico_queue.gif" name="action.generalexception" roles="MP_Processor3,MP_Processor4, MP_Indexer3,MP_Approver4, MP_Buyer4,MP_Processor2" searchName="ExceptionSearch"/>
+                                <action href="/filenet/search.do?searchName=StatementSearch" target="right" image="/images/ico_queue.gif" name="action.statement" roles="MP_Processor3,MP_Processor4, MP_Approver4, MP_Buyer4, MP_Indexer3,MP_Processor2" searchName="StatementSearch"/>
+                                <action href="/filenet/search.do?searchName=PreTaxSearch" target="right" image="/images/ico_queue.gif" name="action.pretax" roles="MP_Processor3,MP_Processor4, MP_Indexer3, MP_Approver4,MP_Auditor4, MP_Buyer4,MP_Processor2" searchName="PreTaxSearch"/>
+                                <action href="/filenet/search.do?searchName=PostTaxSearch" target="right" image="/images/ico_queue.gif" name="action.posttax" roles="MP_Processor3,MP_Processor4, MP_Confirmer3, MP_Approver4,MP_Auditor4, MP_Buyer4,, MP_Indexer3,MP_Processor2" searchName="PostTaxSearch"/>
+                                <action href="/filenet/search.do?searchName=CorpFacilitiesSearch" target="right" image="/images/ico_queue.gif" name="action.corpfacilities" roles="MP_Processor3,MP_Processor4, MP_Confirmer2, MP_Approver4, MP_Buyer4,, MP_Indexer3,MP_Processor2" searchName="CorpFacilitiesSearch"/>
+                                <action href="/filenet/search.do?searchName=RematchHoldSearch" target="right" image="/images/ico_queue.gif" name="action.rematchHold" roles="MP_Processor3, MP_Processor4, MP_Approver4, MP_Buyer4, MP_Indexer3,MP_Processor2" searchName="RematchHoldSearch"/>
+                </section>
+                
+                <!--<section name="section.nonpoGetnext" roles=" MP_Confirmer2, MP_Confirmer3, MP_Processor2, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Indexer3" collapsed="true" >
+                                <action href="/filenet/search.do?searchName=IndexingSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.indexing" roles="MP_Indexer3, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=ExceptionSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.generalexception" roles="MP_Indexer3, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=StatementSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.statement" roles=" MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Indexer3, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=PreTaxSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.pretax" roles="MP_Indexer3, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=PostTaxSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.posttax" roles="MP_Confirmer3, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Indexer3, MP_Processor2"/>
+                                <action href="/filenet/search.do?searchName=CorpFacilitiesSearch&amp;next=true" target="_blank" image="/images/ico_getnext.gif" name="action.getnext.corpfacilities" roles="MP_Confirmer2, MP_Processor4, MP_Approver4,MP_Auditor4, MP_Buyer4, MP_Indexer3, MP_Processor2"/>
+                </section>-->
+                
+                
+        <section name="section.requests" roles="MP_Indexer2, MP_Processor1, MP_Processor4, MP_Processor2, MP_Indexer4" collapsed="false">
+                <action href="/filenet/upload.do?view=upload-po-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload1" roles="MP_Indexer2, MP_Processor1, MP_Processor4, MP_Processor5, MP_Processor2"/>       
+                <action href="/filenet/upload.do?view=upload-inv-cor-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload3" roles="MP_Processor4"/>
+                <action href="/filenet/upload.do?view=upload-inv-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload4" roles="MP_Processor6, MP_Processor2"/>      
+                <action href="/filenet/upload.do?view=upload-exp-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload2" roles="MP_Processor6, MP_Indexer4" />     
+                <action href="/filenet/upload.do?view=upload-cash-view.xml" target="right" image="/images/ico_upload.gif" name="action.expensecash" roles="MP_Processor6" />           
+        </section>
+                
+		<section name="section.postingqueues" roles=" MP_Processor3, MP_Processor4,MP_Administrator4" collapsed="false" >
+			<action href="/filenet/search.do?searchName=TradeReceiptsSearch" target="right" image="/images/ico_queue.gif" name="action.tradereceipts" roles="MP_Processor3, MP_Processor4,MP_Administrator4,MP_Indexer3" searchName="CancelledInvoiceSearch"/>
+			<action href="/filenet/search.do?searchName=PostingSearch" target="right" image="/images/ico_queue.gif" name="action.posting" roles="MP_Processor3, MP_Processor4,MP_Administrator4" searchName="PostingSearch"/>
+			<action href="/filenet/search.do?searchName=PostingFailedSearch" target="right" image="/images/ico_queue.gif" name="action.postingfailed" roles="MP_Processor3, MP_Processor4,MP_Administrator4" searchName="PostingFailedSearch"/>
+			<action href="/filenet/search.do?searchName=MatchSearch" target="right" image="/images/ico_queue.gif" name="action.match" roles="MP_Processor1, MP_Indexer3, MP_Processor3, MP_Processor4, MP_Processor5,MP_Administrator4,MP_Processor2" searchName="MatchSearch"/>
+			<action href="/filenet/search.do?searchName=MatchForceSearch" target="right" image="/images/ico_queue.gif" name="action.matchforce" roles="MP_Indexer3, MP_Processor3, MP_Processor4,MP_Administrator4,MP_Processor2" searchName="MatchForceSearch"/>
+			<action href="/filenet/search.do?searchName=PaymentSearch" target="right" image="/images/ico_queue.gif" name="action.payment" roles="MP_Processor3, MP_Processor4,MP_Administrator4" searchName="PaymentSearch"/>
+			<action href="/filenet/search.do?searchName=ClearanceSearch" target="right" image="/images/ico_queue.gif" name="action.clearance" roles="MP_Processor3, MP_Processor4,MP_Administrator4" searchName="ClearanceSearch"/>
+			<action href="/filenet/search.do?searchName=CancelledInvoiceSearch" target="right" image="/images/ico_queue.gif" name="action.cancelled" roles="MP_Processor3, MP_Processor4,MP_Administrator4" searchName="CancelledInvoiceSearch"/>         
+			<action href="/filenet/search.do?searchName=ExpenseJournalSearch" target="right" image="/images/ico_queue.gif" name="action.expensejournal" roles="MP_Administrator4" searchName="ExpenseJournalSearch"/>
+			<action href="/filenet/search.do?searchName=ExpenseFailedSearch" target="right" image="/images/ico_queue.gif" name="action.expensefailed" roles="MP_Administrator4" searchName="ExpenseFailedSearch"/>
+		</section>
+                
+        <section name="section.expensequeues" roles=" MP_Indexer4, MP_Processor3, MP_Processor4,MP_Confirmer4,MP_Administrator4" collapsed="false" >
+                <action href="/filenet/search.do?searchName=ExpenseReceiptsSearch" target="right" image="/images/ico_queue.gif" name="action.expensereceipts" searchName="ExpenseReceiptsSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseExceptionSearch" target="right" image="/images/ico_queue.gif" name="action.expenseexception" searchName="ExpenseExceptionSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCardSearch" target="right" image="/images/ico_queue.gif" name="action.expensecard" searchName="ExpenseCardSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseSendSearch" target="right" image="/images/ico_queue.gif" name="action.expensesend" searchName="ExpenseSendSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCleanSearch" target="right" image="/images/ico_queue.gif" name="action.expenseclean" searchName="ExpenseCleanSearch"/>
+                <action href="/filenet/search.do?searchName=ExpenseCloseSearch" target="right" image="/images/ico_queue.gif" name="action.expenseclose" searchName="ExpenseCloseSearch"/>
+        </section>
+				
+		<section name="Accounts Receivable" roles="MP_Processor5" collapsed="false" >
+                <action href="/filenet/upload.do?view=upload-ar-view.xml" target="right" image="/images/ico_upload.gif" name="action.uploadAR"/>      
+                <action href="/filenet/search.do?searchName=AR1Search" target="right" image="/images/ico_queue.gif" name="action.ar1" searchName="AR1Search"/>
+                <action href="/filenet/search.do?searchName=AR2Search" target="right" image="/images/ico_queue.gif" name="action.ar2" searchName="AR2Search"/>
+                <action href="/filenet/search.do?searchName=AR3Search" target="right" image="/images/ico_queue.gif" name="action.ar3" searchName="AR3Search"/>
+                <action href="/filenet/search.do?searchName=AR4Search" target="right" image="/images/ico_queue.gif" name="action.ar4" searchName="AR4Search"/>         
+				<action href="/filenet/search.do?searchName=AR5Search" target="right" image="/images/ico_queue.gif" name="action.ar5" searchName="AR5Search"/>         
+				<action href="/filenet/search.do?searchName=AR6Search" target="right" image="/images/ico_queue.gif" name="action.ar6" searchName="AR6Search"/>   
+        </section>
+				
+		<section name="Journal Processing" roles="MP_Processor6" collapsed="false" >
+                <action href="/filenet/upload.do?view=upload-jn-view.xml" target="right" image="/images/ico_upload.gif" name="action.uploadJournal"/>      
+                <action href="/filenet/search.do?searchName=JN1Search" target="right" image="/images/ico_queue.gif" name="action.jn1" searchName="JN1Search"/>
+                <action href="/filenet/search.do?searchName=JN2Search" target="right" image="/images/ico_queue.gif" name="action.jn2" searchName="JN2Search"/>
+                <action href="/filenet/search.do?searchName=JN3MSearch" target="right" image="/images/ico_queue.gif" name="action.jn3m" searchName="JN3MSearch"/>
+				<action href="/filenet/search.do?searchName=JN3QSearch" target="right" image="/images/ico_queue.gif" name="action.jn3q" searchName="JN3QSearch"/>
+				<action href="/filenet/search.do?searchName=JN3YSearch" target="right" image="/images/ico_queue.gif" name="action.jn3y" searchName="JN3YSearch"/>
+        </section>
+                
+  <!--  <section name="section.logoqueues" roles="MP_Processor5, MP_Processor6, MP_Processor7" collapsed="false" >
+                                <action href="/filenet/upload.do?view=upload-logos-view.xml" target="right" image="/images/ico_upload.gif" name="action.upload5" roles="MP_Processor5" />     
+                                <action href="/filenet/search.do?searchName=LogosInitializeSearch" target="right" image="/images/ico_queue.gif" name="action.logosinitialize" roles="MP_Processor5" searchName="LogosInitializeSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosActiveSearch" target="right" image="/images/ico_queue.gif" name="action.logosactive" roles="MP_Processor6" searchName="LogosActiveSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosGraphicSearch" target="right" image="/images/ico_queue.gif" name="action.logosgraphic" roles="MP_Processor7" searchName="LogosGraphicSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosEngSearch" target="right" image="/images/ico_queue.gif" name="action.logoseng" roles="MP_Processor7" searchName="LogosEngSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosDigSearch" target="right" image="/images/ico_queue.gif" name="action.logosdig" roles="MP_Processor7" searchName="LogosDigSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosScrSearch" target="right" image="/images/ico_queue.gif" name="action.logosscr" roles="MP_Processor7" searchName="LogosScrSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosBndSearch" target="right" image="/images/ico_queue.gif" name="action.logosbnd" roles="MP_Processor7" searchName="LogosBndSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosPdcSearch" target="right" image="/images/ico_queue.gif" name="action.logospdc" roles="MP_Processor7" searchName="LogosPdcSearch"/>
+                                <action href="/filenet/search.do?searchName=LogosCompleteSearch" target="right" image="/images/ico_queue.gif" name="action.logoscomplete" roles="MP_Processor6" searchName="LogosCompleteSearch"/>
+    </section>-->
+
+                <section name="section.search" collapsed="false">
+                                <documentsearch target="right" showPoSearch="true" showVendorSearch="true"/>
+                                <action href="/document/advancedsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.advancedinvoicesearch"/>
+                                <action href="/document/headerInvoiceSearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.searchsave"/>
+                                <action href="/document/expenseadvancedsearch.do?showPoProperties=true" target="right" image="/images/ico_search.gif" name="action.advancedexpensesearch"/>                      
+                </section>
+
+                <section name="section.tools" collapsed="false" roles="MP_Confirmer1, MP_Confirmer2, MP_Confirmer3, MP_Confirmer4, MP_Indexer1, MP_Indexer2, MP_Indexer3, MP_Indexer4, MP_Processor1,MP_Processor2, MP_Processor3, MP_Processor4, MP_Processor5, MP_Auditor1, MP_Auditor2, MP_Auditor3, MP_VendorMaintenance1, MP_Approver1" >
+                                <action href="/documents/reassign.do?userIsSelf=true&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignSelf"/>
+                                <action href="/documents/reassign.do?userIsSelf=false&amp;new=true" target="right" image="/images/ico_reassign.gif" name="action.reassignDelegate"/>
+                                <action href="/protected/preferences.do" target="right" image="/images/ico_configuration.gif" name="action.preferences"/>
+                </section>
+                
+                <section name="section.applications" collapsed="false" roles="MP_Administrator1,MP_Administrator2">
+                                <!--action href="" target="_blank" image="/images/ico_report.gif" name="action.reporting" roles=""  contextPath="/ManagedPay/reporting"/-->
+                                <action href="" target="_blank" image="/images/ico_configuration.gif" name="action.adminmodule" roles="MP_Administrator1, MP_Processor4" contextPath="/ManagedPay/admin/index.jsp"/>
+                </section>
+</navigation>

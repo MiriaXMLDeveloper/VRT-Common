@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="expense-upload-advance-tpl.xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/view.xsd">
+
+    <validations>
+        <validation name="validation.erpRequiredForPO" messageType="warning"/>
+    </validations>
+    
+</view>

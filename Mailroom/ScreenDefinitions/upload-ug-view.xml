@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-view" template="upload-tradeug-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+
+
+	<!--validations>
+		<validation name="validation.vendortype.check"/>
+		<validation name="validation.validPONumber2"/>
+		<validation name="validation.matchHeaderAmount" messageType="warning" note="message.buyerValidation"/>
+		<validation name="validation.matchLineAmount" messageType="warning" note="message.buyerValidation"/>
+		<validation name="validation.lineReceivableMatch" messageType="warning" note="message.buyerValidation"/>
+	</validations-->
+
+</view>
+
+

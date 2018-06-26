@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="jn-view" template="jn-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+	<action-overrides>
+		<iconAction name="editRouting" readonly="true"/>
+		<button name="addLineItem" readonly="true" visible="false"/>
+		<button name="removeLineItem" readonly="true" visible="false"/>
+	</action-overrides>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<property-overrides>
+
+	<text name="subType" readonly="true"/>
+		
+</property-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.returnException">
+				<subReason name="Incorrect Journal"/>
+				<subReason name="Incorrect Accrual"/>
+				<subReason name="Duplicate"/>
+				<subReason name="Other"/>
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="true" note="message.returnVendorMaintenance">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+
+<validations>
+     
+</validations>
+
+</view>
+
+

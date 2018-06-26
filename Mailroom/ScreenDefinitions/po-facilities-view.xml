@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-indexing-view" template="po-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="lineItems" visible="true" collapsed="false"/>	
+	</section-overrides>
+
+	<property-overrides>
+		<lookup name="vendor.name" readonly="true"/>
+		<lookup name="vendorId" readonly="true"/>
+		<text name="number" readonly="true"/>
+		<currency name="grossAmount" readonly="true"/>
+		<currency name="freightAmount2" readonly="true"/>
+		<dropDown name="paymentTermId" readonly="true"/>
+		<dropDown name="paymentTypeId" readonly="true"/>
+		<dropDown name="checkStubMessage" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+			<dropDown name="costObjectId1" readonly="true"/>
+			<text name="quantity" readonly="true"/>
+			<currency name="lineTotal" readonly="true"/>
+			<currency name="tbdCurrency1" readonly="true"/>
+			<currency name="tbdCurrency2" readonly="true"/>
+			<text name="tbdString1" readonly="true"/>
+			<text name="tbdString2" readonly="true"/>
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" readonly="false"/>
+		<iconAction name="postings" visible="true"/>
+		<button name="addLineItem" visible="false"/>
+		<button name="removeLineItem" visible="false"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Hold" commentsRequired="true" note="message.OnHold">
+			</reason>
+			<reason name="Expense Invoice" commentsRequired="true" note="message.expenseInvoice">
+			</reason>
+			<reason name="Rescan" commentsRequired="true" note="message.rescan">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" note="message.duplicateInvoiceValidation"/>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<validation name="validation.matchLineAmount" messageType="warning" note="message.buyerValidation"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.duedate.check" />
+		<validation name="validation.validPaymentTerm"/>
+		<!--validation name="validation.vendortype.check"/-->
+		<validation name="validation.validPONumber"/>
+	</validations>
+</view>

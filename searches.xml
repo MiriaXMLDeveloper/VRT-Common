@@ -1,0 +1,2279 @@
+<searches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/searches.xsd">
+				 <search name="quickSearch" queueName="quickSearch" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.Terminateexception">
+                                <criteria>
+
+                                </criteria>
+                                <ordering>
+
+                                               
+                                </ordering>
+                                <visibleProperties>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+
+                                </visibleProperties>
+       </search>
+
+                <search name="InboxSearchPay" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.myinbox">
+                                <criteria>
+                                                <and>
+                                                    <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+                                </visibleProperties>
+                </search>
+
+		
+<!--IT Approval Approve Queues Searches-->
+		<!--ms added-->
+				
+				<search name="ITindexing" queueName="ITindexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITindexing">
+                                <criteria>
+												<or>
+                                                                <equals name="type" value ="ITApproval"/>
+																
+                                                </or>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+		<search name="ITapprovalSearch" queueName="ITApprove" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITapprovalSearch">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+
+<!--IT Approval Exceptions Queues Searches-->
+		<!--ms added-->
+		
+		
+		
+				<search name="ITinboxSearch" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITinboxSearch">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="scanVendorName"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+		<search name="ITreviewSearch" queueName="ITReview" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITreviewSearch">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+
+		<search name="ITrescan" queueName="ITrescan" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITrescan">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+
+
+		<search name="IThold" queueName="ITHold" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.IThold">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+		
+		<search name="ITdropped" queueName="ITDropped" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITdropped">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+		
+		
+
+		<search name="ITawaitingreceiptsSearch" queueName="ITAwaitingReceipts" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITawaitingreceiptsSearch">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="seqId"/>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>										
+												<property name="scanVendorName" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>											
+												<property name="subType" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="failReason" filter="like"/>
+												
+                                </visibleProperties>
+                </search>
+
+
+
+		<search name="ITvendormaintenanceSearch" queueName="ITVendorMaintenance" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITvendormaintenanceSearch">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<!--property name="Cost Center" choiceList="tbd" filter="like"/--><!-- this is a placeholder-->
+												<property name="date" type="date" filter="date"/>
+												<property name="number" filter="like"/>
+												
+												<property name="subType" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												
+                                </visibleProperties>
+                </search>
+
+
+
+		<search name="ITexception" queueName="ITexception" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITexception">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<!--property name="Cost Center" choiceList="tbd" filter="like"/--><!-- this is a placeholder-->
+												<property name="date" type="date" filter="date"/>
+												<property name="number" filter="like"/>
+												
+												<property name="subType" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												
+                                </visibleProperties>
+                </search>
+
+	
+		<!--IT Approval Posting Queues Searches-->
+		<!--ms added-->
+
+
+		<search name="ITposting" queueName="ITposting" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.ITposting">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="scanVendorName" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="number" filter="like"/>
+												<property name="receivedDate" type="date" />
+												<property name="subType" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												
+                                </visibleProperties>
+                </search>
+		
+		
+		<!-- AP Indexing Queues Searches  -->
+				<search name="TradeIndexing" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.TradeIndexing">
+                                <criteria>
+												<or>
+													<equals name="subType" value="DIRECT"/>
+													<equals name="subType" value="WAREHOUSE"/>
+													<equals name="subType" value="EQUIPMENT"/>
+													<equals name="subType" value="UNIDENTIFIED"/>
+													<equals name="subType" value="CREDIT"/>
+													<equals name="subType" value="SUPPLIER"/>
+													<equals name="subType" value="FREIGHT-MAX"/>
+													<equals name="subType" value=""/>
+                                                </or>
+												
+												<!--or>
+												<notEqual name="subType" value="ROLLSOURCE"/>
+												<notEqual name="subType" value="REBATE"/>
+												<notEqual name="subType" value="CREDIT-VOS"/>
+												<notEqual name="subType" value="FREIGHT-VOS"/>
+												<notEqual name="subType" value="MGIFREIGHT"/>
+												</or-->
+
+                                </criteria>
+								
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+								
+				<search name="NonTradeIndexing" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTradeIndexing">
+                                <criteria>
+                                                <and>
+                                                               <notEqual name="type" value="INF NON-TRADE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="CreditIndexing" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.CreditIndexing">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="CREDIT"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+								</visibleProperties>
+                </search>
+
+				<search name="SupplierIndexing" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.SupplierIndexing">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="SUPPLIER"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+								</visibleProperties>
+                </search>
+				
+				<search name="EqptIndex" queueName="EquipmentIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.eqptIndex">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+
+				<search name="Eqpt" queueName="EquipmentProcess" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.eqpt">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="W9" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.W9">
+                                <criteria>
+                                                <and>
+                                                          	<equals name="subType" value="W-9"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+		                         </visibleProperties>
+                </search>
+				
+				<search name="Stmt" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.stmt">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="STMT"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+				</search>
+				
+								<search name="APMisc" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.APMisc">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="AP MISC"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+				</search>
+								
+				<search name="RtnCks" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.RtnCks">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="RTN CKS"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+								
+                </search>	
+
+				<search name="PennyVoucher" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.PennyVoucher">
+                                <criteria>
+                                                <and>
+                                                                <equals name="subType" value="PENNY VOUCHERS"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>				
+			</search>
+			
+				<search name="IntNav" queueName="MiscIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.IntNav">
+                                <criteria>
+                                                <and>
+                                                                <equals name="subType" value="INT-NAV"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.apType" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>				
+			</search>
+			<!-- AP Exceptions Queues Searches  -->
+				<search name="UnidentifiedSubType" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.UnidentifiedSubType">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value="UNIDENTIFIED" />
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="UnidentifiedDivision" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.UnidentifiedDivision">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="type" value="TRADE"/>
+																<notEqual name="subType" value="REBATE"/>
+																<notEqual name="subType" value="FREIGHT-MAX"/>
+																<notEqual name="subType" value="FREIGHT-VOS"/>
+																<notEqual name="subType" value="MGIFREIGHT"/>
+																<notEqual name="subType" value="ROLLSOURCE"/>
+																<notEqual name="subType" value="CREDIT-VOS"/>
+																<notEqual name="tbdString3" value="Portland ME - MAX"/>
+																<notEqual name="tbdString3" value="Wilmington - MAX"/>
+																<notEqual name="tbdString3" value="West Haven - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Atlanta - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Chicago - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Clifton - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Dallas - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Downey - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Memphis - MAX"/>
+																<notEqual name="tbdString3" value="FedEx Nor Cal - MAX"/>
+																<notEqual name="tbdString3" value="Metro NY - MAX"/>
+																<notEqual name="tbdString3" value="Philadelphia MDC - MAX"/>
+																<notEqual name="tbdString3" value="Westampton - MAX"/>
+																<notEqual name="tbdString3" value="Willow Grove MDC - MAX"/>
+																<notEqual name="tbdString3" value="Buffalo Grove MDC - MAX"/>
+																<notEqual name="tbdString3" value="Chicago - MAX"/>
+																<notEqual name="tbdString3" value="Cincinnati - MAX"/>
+																<notEqual name="tbdString3" value="Cleveland - MAX"/>
+																<notEqual name="tbdString3" value="Cleveland MDC - MAX"/>
+																<notEqual name="tbdString3" value="Fairfield - MAX"/>
+																<notEqual name="tbdString3" value="Fidelity - MAX"/>
+																<notEqual name="tbdString3" value="Flint MDC - MAX"/>
+																<notEqual name="tbdString3" value="Grand Rapids - MAX"/>
+																<notEqual name="tbdString3" value="Indianapolis - MAX"/>
+																<notEqual name="tbdString3" value="Livonia - MAX"/>
+																<notEqual name="tbdString3" value="Livonia MDC - MAX"/>
+																<notEqual name="tbdString3" value="Louisville - MAX"/>
+																<notEqual name="tbdString3" value="Pittsburgh - MAX"/>
+																<notEqual name="tbdString3" value="Port Huron - MAX"/>
+																<notEqual name="tbdString3" value="Troy MDC - MAX"/>
+																<notEqual name="tbdString3" value="Wisconsin - MAX"/>
+																<notEqual name="tbdString3" value="Albany - MAX"/>
+																<notEqual name="tbdString3" value="Buffalo - MAX"/>
+																<notEqual name="tbdString3" value="Erie - MAX"/>
+																<notEqual name="tbdString3" value="Rochester - MAX"/>
+																<notEqual name="tbdString3" value="Syracuse - MAX"/>
+																<notEqual name="tbdString3" value="Ankeny - MAX"/>
+																<notEqual name="tbdString3" value="Atlanta - MAX"/>
+																<notEqual name="tbdString3" value="Baltimore MDC - MAX"/>
+																<notEqual name="tbdString3" value="Birmingham - MAX"/>
+																<notEqual name="tbdString3" value="Bloomington MDC - MAX"/>
+																<notEqual name="tbdString3" value="Charlotte - MAX"/>
+																<notEqual name="tbdString3" value="Columbia MO - MAX"/>
+																<notEqual name="tbdString3" value="Columbia SC - MAX"/>
+																<notEqual name="tbdString3" value="Fairfax MDC - MAX"/>
+																<notEqual name="tbdString3" value="Fort Smith - MAX"/>
+																<notEqual name="tbdString3" value="Greensboro - MAX"/>
+																<notEqual name="tbdString3" value="Hanover - MAX"/>
+																<notEqual name="tbdString3" value="Harrisburg - MAX"/>
+																<notEqual name="tbdString3" value="Joplin - MAX"/>
+																<notEqual name="tbdString3" value="Kansas City MDC - MAX"/>
+																<notEqual name="tbdString3" value="Knoxville - MAX"/>
+																<notEqual name="tbdString3" value="Lakeland - MAX"/>
+																<notEqual name="tbdString3" value="Little Rock - MAX"/>
+																<notEqual name="tbdString3" value="Loveland Parts - MAX"/>
+																<notEqual name="tbdString3" value="Lynchburg - MAX"/>
+																<notEqual name="tbdString3" value="Memphis - MAX"/>
+																<notEqual name="tbdString3" value="Miami - MAX"/>
+																<notEqual name="tbdString3" value="Minneapolis - MAX"/>
+																<notEqual name="tbdString3" value="NA Imports - MAX"/>
+																<notEqual name="tbdString3" value="Nashville - MAX"/>
+																<notEqual name="tbdString3" value="National Accounts - MAX"/>
+																<notEqual name="tbdString3" value="Nebraska - MAX"/>
+																<notEqual name="tbdString3" value="Northeast Converting Warehouse - MAX"/>
+																<notEqual name="tbdString3" value="Oklahoma City - MAX"/>
+																<notEqual name="tbdString3" value="Olathe - MAX"/>
+																<notEqual name="tbdString3" value="Raleigh - MAX"/>
+																<notEqual name="tbdString3" value="Richmond - MAX"/>
+																<notEqual name="tbdString3" value="Roanoke - MAX"/>
+																<notEqual name="tbdString3" value="Springfield - MAX"/>
+																<notEqual name="tbdString3" value="St Louis - MAX"/>
+																<notEqual name="tbdString3" value="St Louis MDC - MAX"/>
+																<notEqual name="tbdString3" value="Tallahassee - MAX"/>
+																<notEqual name="tbdString3" value="Wichita - MAX"/>
+																<notEqual name="tbdString3" value="Alexandria - MAX"/>
+																<notEqual name="tbdString3" value="Billings - MAX"/>
+																<notEqual name="tbdString3" value="Boise - MAX"/>
+																<notEqual name="tbdString3" value="Dallas - MAX"/>
+																<notEqual name="tbdString3" value="Denver - MAX"/>
+																<notEqual name="tbdString3" value="Denver MDC - MAX"/>
+																<notEqual name="tbdString3" value="Downey - MAX"/>
+																<notEqual name="tbdString3" value="El Paso - MAX"/>
+																<notEqual name="tbdString3" value="Fresno - MAX"/>
+																<notEqual name="tbdString3" value="Hawaii - MAX"/>
+																<notEqual name="tbdString3" value="Houston - MAX"/>
+																<notEqual name="tbdString3" value="La Mirada - MAX"/>
+																<notEqual name="tbdString3" value="Las Vegas - MAX"/>
+																<notEqual name="tbdString3" value="NorCal Converting - MAX"/>
+																<notEqual name="tbdString3" value="Phoenix - MAX"/>
+																<notEqual name="tbdString3" value="Portland OR - MAX"/>
+																<notEqual name="tbdString3" value="Reno - MAX"/>
+																<notEqual name="tbdString3" value="Salt Lake City - MAX"/>
+																<notEqual name="tbdString3" value="Salt Lake City MDC - MAX"/>
+																<notEqual name="tbdString3" value="Seattle - MAX"/>
+																<notEqual name="tbdString3" value="Shreveport - MAX"/>
+																<notEqual name="tbdString3" value="Yakima - MAX"/>
+																<notEqual name="tbdString3" value="Fresno Saalfeld - MAX"/>												
+												</and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="POExceptionSearch" queueName="GeneralException" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.POexception">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                               </visibleProperties>
+                </search>
+				
+				<search name="NonPOExceptionSearch" queueName="NONPOException" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonPOexception">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type" choiceList="choice.nonTradeTypes" filter="like"/>
+												<property name="subType" choiceList="choice.invoiceSubTypes" filter="like"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+
+				<search name="AwaitingReceiptSearch" queueName="AwaitingReceipt" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.awaitingReceipt">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+												</and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+
+				<search name="HoldSearch" queueName="RematchHold" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.hold">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+												</and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type" choiceList="choice.Types" filter="like"/>
+												<property name="subType" choiceList="choice.invoiceSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.division" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+								
+								
+								
+                </search>
+
+				<search name="DroppedSearch" queueName="Dropped" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.dropped">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+												</and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type" choiceList="choice.Types" filter="like"/>
+												<property name="subType" choiceList="choice.invoiceSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.division" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+
+				<search name="RescanSearch" queueName="Rescan" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.rescan">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                               </and>
+                                </criteria>
+                                <ordering>
+                                                
+                                                <order name="scanDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type" choiceList="choice.Types" filter="like"/>
+												<property name="subType" choiceList="choice.invoiceSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.division" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="VendorMaintenanceSearch" queueName="VendorMaintenance" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.vendormaintenance">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+																<notEqual name="type" value="AR" type="String"/>
+																<notEqual name="type" value="INF NON-TRADE" type="String"/>
+																<notEqual name="subType" value="REBATE"/>
+																		<notEqual name="subType" value="FREIGHT-VOS"/>
+																<notEqual name="subType" value="MGIFREIGHT"/>
+																<notEqual name="subType" value="ROLLSOURCE"/>
+																<notEqual name="subType" value="CREDIT-VOS"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="rejectionReason" direction="ASC"/>                                       
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.division" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				 <search name="EDISearch" queueName="EDIProcess" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.edi">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+                				
+			<!-- AP Posting Queues Searches  -->
+                <search name="PostingSearch" queueName="NONPOPosting" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.nonpoposting">
+                                <criteria>
+                                                <and>
+                                                  
+																<equals name="type" value="NON-TRADE" type="String"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				
+				<search name="AwaitJDESearch" queueName="POPosting" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.poposting">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+								
+			<!-- Trade Indexing direct for Portland ME and Wilmington -->							
+				<search name="12Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.12Direct">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="DIRECT"/>
+												</and>
+												<or>
+												<equals name="tbdString3" value="Portland ME - MAX"/>
+												<equals name="tbdString3" value="Wilmington - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="12Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.12Warehouse">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+												</and>
+												<or>
+												<equals name="tbdString3" value="Portland ME - MAX"/>
+												<equals name="tbdString3" value="Wilmington - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>                          
+								</visibleProperties>
+                </search>
+				
+				<search name="25Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.25Direct">
+                                <criteria>
+												<and> 
+																<equals name="subType" value ="DIRECT"/>
+																<equals name="tbdString3" value="West Haven - MAX"  type="String"/>
+					                            </and>
+                                </criteria>
+								
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="25Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.25Warehouse">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="West Haven - MAX"/>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+
+				
+				<!--"Metro NY - MAX, Westampton - MAX, Philadelphia MDC - MAX, Willow Grove MDC - MAX, FedEx Atlanta - MAX, FedEx Chicago - MAX, FedEx Dallas - MAX, FedEx Nor Cal - MAX, FedEx Downey - MAX, FedEx Memphis - MAX, FedEx Clifton - MAX"/-->
+				<search name="50Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.50Direct">
+                                <criteria>
+								
+                                                <and>
+																<equals name="subType" value ="DIRECT"/>
+                                                </and>
+												<or>
+																<eqauls name="tbdString3" value="FedEx Atlanta - MAX"/>
+																<equals name="tbdString3" value="FedEx Chicago - MAX"/>
+																<equals name="tbdString3" value="FedEx Clifton - MAX"/>
+																<equals name="tbdString3" value="FedEx Dallas - MAX"/>
+																<equals name="tbdString3" value="FedEx Downey - MAX"/>
+																<equals name="tbdString3" value="FedEx Memphis - MAX"/>
+																<equals name="tbdString3" value="FedEx Nor Cal - MAX"/>
+																<equals name="tbdString3" value="FedEx Toronto - MAX"/>
+																<equals name="tbdString3" value="FedEx Vancouver - MAX"/>
+																<equals name="tbdString3" value="Metro NY - MAX"/>
+																<equals name="tbdString3" value="Philadelphia MDC - MAX"/>
+																<equals name="tbdString3" value="Westampton - MAX"/>
+																<equals name="tbdString3" value="Willow Grove MDC - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="50Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.50Warehouse">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+												<or>
+																<equals name="tbdString3" value="FedEx Atlanta - MAX"/>
+																<equals name="tbdString3" value="FedEx Chicago - MAX"/>
+																<equals name="tbdString3" value="FedEx Clifton - MAX"/>
+																<equals name="tbdString3" value="FedEx Dallas - MAX"/>
+																<equals name="tbdString3" value="FedEx Downey - MAX"/>
+																<equals name="tbdString3" value="FedEx Memphis - MAX"/>
+																<equals name="tbdString3" value="FedEx Nor Cal - MAX"/>
+																<equals name="tbdString3" value="FedEx Toronto - MAX"/>
+																<equals name="tbdString3" value="FedEx Vancouver - MAX"/>
+																<equals name="tbdString3" value="Metro NY - MAX"/>
+																<equals name="tbdString3" value="Philadelphia MDC - MAX"/>
+																<equals name="tbdString3" value="Westampton - MAX"/>
+																<equals name="tbdString3" value="Willow Grove MDC - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>                            
+									</visibleProperties>
+                </search>
+				
+				
+				<search name="60Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.60Direct">
+                                <criteria>
+								                 <and>
+																<equals name="subType" value ="DIRECT"/>
+                                                </and>
+																<or>
+																<equals name="tbdString3" value="Indianapolis - MAX"/>
+																<equals name="tbdString3" value="Livonia - MAX"/>
+																<equals name="tbdString3" value="Livonia MDC - MAX"/>
+																<equals name="tbdString3" value="Buffalo Grove MDC - MAX"/>
+																<equals name="tbdString3" value="Chicago - MAX"/>
+																<equals name="tbdString3" value="Cincinnati - MAX"/>
+																<equals name="tbdString3" value="Cleveland - MAX"/>
+																<equals name="tbdString3" value="Cleveland MDC - MAX"/>
+																<equals name="tbdString3" value="Pittsburgh - MAX"/>
+																<equals name="tbdString3" value="Port Huron - MAX"/>
+																<equals name="tbdString3" value="Fidelity - MAX"/>
+																<equals name="tbdString3" value="Grand Rapids - MAX"/>
+																<equals name="tbdString3" value="Troy MDC - MAX"/>
+																<equals name="tbdString3" value="Wisconsin - MAX"/>
+																<equals name="tbdString3" value="Fairfield - MAX"/>
+																<equals name="tbdString3" value="FedEx Toronto - MAX"/>
+																<equals name="tbdString3" value="Flint MDC - MAX"/>
+																<equals name="tbdString3" value="Louisville - MAX"/>
+																</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="60Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.60Warehouse">
+                                <criteria>
+								
+								                 <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+														<or>
+																<equals name="tbdString3" value="Indianapolis - MAX"/>
+																<equals name="tbdString3" value="Livonia - MAX"/>
+																<equals name="tbdString3" value="Livonia MDC - MAX"/>
+																<equals name="tbdString3" value="Buffalo Grove MDC - MAX"/>
+																<equals name="tbdString3" value="Chicago - MAX"/>
+																<equals name="tbdString3" value="Cincinnati - MAX"/>
+																<equals name="tbdString3" value="Cleveland - MAX"/>
+																<equals name="tbdString3" value="Cleveland MDC - MAX"/>
+																<equals name="tbdString3" value="Pittsburgh - MAX"/>
+																<equals name="tbdString3" value="Port Huron - MAX"/>
+																<equals name="tbdString3" value="Fidelity - MAX"/>
+																<equals name="tbdString3" value="Grand Rapids - MAX"/>
+																<equals name="tbdString3" value="Troy MDC - MAX"/>
+																<equals name="tbdString3" value="Wisconsin - MAX"/>
+																<equals name="tbdString3" value="Fairfield - MAX"/>
+																<equals name="tbdString3" value="Flint MDC - MAX"/>
+																<equals name="tbdString3" value="Louisville - MAX"/>
+														</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="80Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.80Direct">
+                                <criteria>
+								                 <and>
+																<equals name="subType" value ="DIRECT"/>
+                                                </and>
+												<or>
+																<equals name="tbdString3" value="Albany - MAX"/>
+																<equals name="tbdString3" value="Buffalo - MAX"/>
+																<equals name="tbdString3" value="Erie - MAX"/>
+																<equals name="tbdString3" value="Rochester - MAX"/>
+																<equals name="tbdString3" value="Syracuse - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="80Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.80Warehouse">
+                                <criteria>
+								
+								                 <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+												<or>
+																<equals name="tbdString3" value="Albany - MAX"/>
+																<equals name="tbdString3" value="Buffalo - MAX"/>
+																<equals name="tbdString3" value="Erie - MAX"/>
+																<equals name="tbdString3" value="Rochester - MAX"/>
+																<equals name="tbdString3" value="Syracuse - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+					<search name="90Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.90Direct">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="DIRECT"/>
+                                                </and>
+												<or>
+													<equals name="tbdString3" value="Harrisburg - MAX"/>
+													<equals name="tbdString3" value="Raleigh - MAX"/>							
+													<equals name="tbdString3" value="Richmond - MAX"/>
+													<equals name="tbdString3" value="Northeast Converting Warehouse - MAX"/>
+													<equals name="tbdString3" value="Hanover - MAX"/>
+													<equals name="tbdString3" value="National Accounts - MAX"/>
+													<equals name="tbdString3" value="NA Imports - MAX"/>
+													<equals name="tbdString3" value="Fairfax MDC - MAX"/>
+													<equals name="tbdString3" value="Baltimore MDC - MAX"/>
+													<equals name="tbdString3" value="Lynchburg - MAX"/>
+													<equals name="tbdString3" value="Greensboro - MAX"/>
+													<equals name="tbdString3" value="Charlotte - MAX"/>
+													<equals name="tbdString3" value="Roanoke - MAX"/>
+													<equals name="tbdString3" value="Columbia SC - MAX"/>
+													<equals name="tbdString3" value="Nebraska - MAX"/>
+													<equals name="tbdString3" value="Joplin - MAX"/>
+													<equals name="tbdString3" value="Tallahassee - MAX"/>
+													<equals name="tbdString3" value="St Louis - MAX"/>
+													<equals name="tbdString3" value="Miami - MAX"/>
+													<equals name="tbdString3" value="Lakeland - MAX"/>
+													<equals name="tbdString3" value="Ankeny - MAX"/>
+													<equals name="tbdString3" value="Wichita - MAX"/>
+													<equals name="tbdString3" value="Minneapolis - MAX"/>
+													<equals name="tbdString3" value="Oklahoma City - MAX"/>
+													<equals name="tbdString3" value="Olathe - MAX"/>
+													<equals name="tbdString3" value="St Louis MDC - MAX"/>
+													<equals name="tbdString3" value="Springfield - MAX"/>
+													<equals name="tbdString3" value="Fort Smith - MAX"/>
+													<equals name="tbdString3" value="Birmingham - MAX"/>
+													<equals name="tbdString3" value="Little Rock - MAX"/>
+													<equals name="tbdString3" value="Memphis - MAX"/>
+													<equals name="tbdString3" value="Atlanta - MAX"/>
+													<equals name="tbdString3" value="Nashville - MAX"/>
+													<equals name="tbdString3" value="Bloomington MDC - MAX"/>
+													<equals name="tbdString3" value="Columbia MO - MAX"/>
+													<equals name="tbdString3" value="Kansas City MDC - MAX"/>
+													<equals name="tbdString3" value="Knoxville - MAX"/>
+													<equals name="tbdString3" value="Loveland Parts - MAX"/>
+													<equals name="tbdString3" value="Springfield - MAX"/>
+													
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+				</search>			
+
+				
+					<search name="90Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.90Warehouse">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+												<or>
+													<equals name="tbdString3" value="Harrisburg - MAX"/>
+													<equals name="tbdString3" value="Raleigh - MAX"/>							
+													<equals name="tbdString3" value="Richmond - MAX"/>
+													<equals name="tbdString3" value="Northeast Converting Warehouse - MAX"/>
+													<equals name="tbdString3" value="Hanover - MAX"/>
+													<equals name="tbdString3" value="National Accounts - MAX"/>
+													<equals name="tbdString3" value="NA Imports - MAX"/>
+													<equals name="tbdString3" value="Fairfax MDC - MAX"/>
+													<equals name="tbdString3" value="Baltimore MDC - MAX"/>
+													<equals name="tbdString3" value="Lynchburg - MAX"/>
+													<equals name="tbdString3" value="Greensboro - MAX"/>
+													<equals name="tbdString3" value="Charlotte - MAX"/>
+													<equals name="tbdString3" value="Roanoke - MAX"/>
+													<equals name="tbdString3" value="Columbia SC - MAX"/>
+													<equals name="tbdString3" value="Nebraska - MAX"/>
+													<equals name="tbdString3" value="Joplin - MAX"/>
+													<equals name="tbdString3" value="Tallahassee - MAX"/>
+													<equals name="tbdString3" value="St Louis - MAX"/>
+													<equals name="tbdString3" value="Miami - MAX"/>
+													<equals name="tbdString3" value="Lakeland - MAX"/>
+													<equals name="tbdString3" value="Ankeny - MAX"/>
+													<equals name="tbdString3" value="Wichita - MAX"/>
+													<equals name="tbdString3" value="Minneapolis - MAX"/>
+													<equals name="tbdString3" value="Oklahoma City - MAX"/>
+													<equals name="tbdString3" value="Olathe - MAX"/>
+													<equals name="tbdString3" value="St Louis MDC - MAX"/>
+													<equals name="tbdString3" value="Springfield - MAX"/>
+													<equals name="tbdString3" value="Fort Smith - MAX"/>
+													<equals name="tbdString3" value="Birmingham - MAX"/>
+													<equals name="tbdString3" value="Little Rock - MAX"/>
+													<equals name="tbdString3" value="Memphis - MAX"/>
+													<equals name="tbdString3" value="Atlanta - MAX"/>
+													<equals name="tbdString3" value="Nashville - MAX"/>
+													<equals name="tbdString3" value="Birmingham - MAX"/>
+													<equals name="tbdString3" value="Little Rock - MAX"/>
+													<equals name="tbdString3" value="Memphis - MAX"/>
+													<equals name="tbdString3" value="Atlanta - MAX"/>
+													<equals name="tbdString3" value="Nashville - MAX"/>
+													<equals name="tbdString3" value="Bloomington MDC - MAX"/>
+													<equals name="tbdString3" value="Columbia MO - MAX"/>
+													<equals name="tbdString3" value="Kansas City MDC - MAX"/>
+													<equals name="tbdString3" value="Knoxville - MAX"/>
+													<equals name="tbdString3" value="Loveland Parts - MAX"/>
+													<equals name="tbdString3" value="Springfield - MAX"/>
+												</or>
+												
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="95Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.95Direct">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="Fresno Saalfeld - MAX"/>
+																<equals name="subType" value ="DIRECT"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="95Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.95Warehouse">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="Fresno Saalfeld - MAX"/>
+																<equals name="subType" value ="WAREHOUSE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="97Direct" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.97Direct">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="DIRECT"/>
+												</and>
+												<or>
+																<equals name="tbdString3" value="NorCal Converting - MAX"/>
+																<equals name="tbdString3" value="Fresno - MAX"/>							
+																<equals name="tbdString3" value="Seattle - MAX"/>
+																<equals name="tbdString3" value="Shreveport - MAX"/>
+																<equals name="tbdString3" value="Yakima - MAX"/>						
+																<equals name="tbdString3" value="Dallas - MAX"/>
+																<equals name="tbdString3" value="Denver - MAX"/>
+																<equals name="tbdString3" value="Portland OR - MAX"/>
+																<equals name="tbdString3" value="Alexandria - MAX"/>
+																<equals name="tbdString3" value="El Paso - MAX"/>
+																<equals name="tbdString3" value="Boise - MAX"/>
+																<equals name="tbdString3" value="Denver MDC - MAX"/>							
+																<equals name="tbdString3" value="Salt Lake City - MAX"/>
+																<equals name="tbdString3" value="Salt Lake City MDC - MAX"/>
+																<equals name="tbdString3" value="Billings - MAX"/>
+																<equals name="tbdString3" value="Phoenix - MAX"/>
+																<equals name="tbdString3" value="Downey - MAX"/>
+																<equals name="tbdString3" value="Hawaii - MAX"/>
+																<equals name="tbdString3" value="Reno - MAX"/>
+																<equals name="tbdString3" value="La Mirada - MAX"/>
+																<equals name="tbdString3" value="Las Vegas - MAX"/>
+																<equals name="tbdString3" value="Houston - MAX"/>
+												</or>
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="97Warehouse" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.97Warehouse">
+                                <criteria>
+                                                <and>
+																<equals name="subType" value ="WAREHOUSE"/>
+												</and>
+												<or>
+																<equals name="tbdString3" value="NorCal Converting - MAX"/>
+																<equals name="tbdString3" value="Fresno - MAX"/>							
+																<equals name="tbdString3" value="Seattle - MAX"/>
+																<equals name="tbdString3" value="Shreveport - MAX"/>
+																<equals name="tbdString3" value="Yakima - MAX"/>						
+																<equals name="tbdString3" value="Dallas - MAX"/>
+																<equals name="tbdString3" value="Denver - MAX"/>
+																<equals name="tbdString3" value="Portland OR - MAX"/>
+																<equals name="tbdString3" value="Alexandria - MAX"/>
+																<equals name="tbdString3" value="El Paso - MAX"/>
+																<equals name="tbdString3" value="Boise - MAX"/>
+																<equals name="tbdString3" value="Denver MDC - MAX"/>							
+																<equals name="tbdString3" value="Salt Lake City - MAX"/>
+																<equals name="tbdString3" value="Salt Lake City MDC - MAX"/>
+																<equals name="tbdString3" value="Billings - MAX"/>
+																<equals name="tbdString3" value="Phoenix - MAX"/>
+																<equals name="tbdString3" value="Downey - MAX"/>
+																<equals name="tbdString3" value="Hawaii - MAX"/>
+																<equals name="tbdString3" value="Reno - MAX"/>
+																<equals name="tbdString3" value="La Mirada - MAX"/>
+																<equals name="tbdString3" value="Las Vegas - MAX"/>
+																<equals name="tbdString3" value="Houston - MAX"/>
+												</or>
+                                                
+                                </criteria>
+                                <ordering>
+                                                <order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												<property name="tbdString3" choiceList="choice.businessUnit" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+			<!-- Non-Trade Indexing Queues Searches  -->	
+				
+				
+				<search name="NonTrade1" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade1">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 1"/>
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTrade1Urgent" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade1Urgent">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 1"/>
+																<equals name="docPriority" value="2" />
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTrade2" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade2">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 2"/>
+																
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTrade2Urgent" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade2Urgent">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 2"/>
+																<equals name="docPriority" value="2" />
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTrade3" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade3">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 3"/>
+																
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTrade3Urgent" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTrade3Urgent">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE 3"/>
+																<equals name="docPriority" value="2" />
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTradeVLS" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTradeVLS">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE VLS"/>
+																
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTradeTaxUrgent" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.NonTradeTaxUrgent">
+                                <criteria>
+                                                <and>
+                                                                <equals name="tbdString3" value="NON-TRADE TAX"/>
+																<equals name="docPriority" value="2" />
+                                                </and>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="docPriority" choiceList="choice.priority" filter="like"/>
+												<property name="tbdString3" choiceList="choice.nontradeDivision" filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>
+												<property name="vendor.name" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date" filter="date"/>
+                                </visibleProperties>
+                </search>
+          
+<!--Sort Order: Priority, Task Due Date, Invoice Date
+Display: Priority, Vendor Name, Invoice Date, Invoice Number, PO Number, Gross Amount, Invoice Type, Task Due Date, Queue, Fail Reason
+-->
+				<!-- AP Version-->
+                <search name="InboxSearchPay" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.myinbox">
+                                <criteria>
+                                                <and>
+                                                    <alwaysTrue name="" value=""/>
+                                                    <notEqual name="type" value="JN" type="String"/>
+													<notEqual name="type" value="CASH" type="String"/>
+													<notEqual name="type" value="EXP" type="String"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="number"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+												<property name="failReason" filter="like"/>
+                                </visibleProperties>						
+                </search>          
+
+<!-- GL Indexing Queues Searches  -->
+				
+				<search name="GLIndexingSearch" queueName="GLIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.GL">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.glType" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="GLApproveSearch" queueName="GLApprove" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.approveGL">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.glType" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>
+				
+	<!-- Tax Queues Searches  -->			
+				<search name="TaxSearch" queueName="TaxIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.tax">
+                                <criteria>
+                                                <!--and>
+                                                    <alwaysTrue name="" value=""/>
+                                                </and-->
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>
+				
+				<search name="TaxPendingSearch" queueName="TaxPending" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.taxPending">
+                                <criteria>
+                                                <and>
+                                                    <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>
+				
+	<!-- AR Queues Searches  -->			
+				<search name="ARSearch" queueName="ARIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.ar">
+                                <criteria>
+                                                <and>
+                                                    <alwaysTrue name="" value=""/>
+													<like name="type" value="AR" type="String"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.category" filter="like"/>
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="seqId"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>				
+
+				<!-- DO NOT REMOVE THE ReassignSearch. This search is used by the reassign functionality. You may make modifications to the columns and settings. -->
+                <search name="ReassignSearch" queueName="Inbox" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.myinbox">
+                                <criteria>
+                                                <and>
+                                                                <alwaysTrue name="" value=""/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="processInformation.deadline" direction="ASC"/>
+                                                <order name="dueDate" direction="ASC"/>
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+                                                <property name="date" type="Date" filter="date"/>
+                                                <property name="number" filter="like"/>
+                                                <property name="poId"/>
+                                                <property name="vendor.name" filter="like"/>
+                                                <property name="dueDate" type="date" filter="date"/>
+                                                <!--property name="processInformation.deadline" type="Date" filter="date"/-->
+                                                <property name="type"/>
+                                                <property name="processInformation.queueName" />
+                                </visibleProperties>
+                </search>
+				
+		<!-- Non-Trade INF Searches  -->		
+				
+				
+				<search name="NonTradeINFIndexing" queueName="NONPOIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.NonTradeINF">
+                                <criteria>
+												<and>
+													<equals name="type" value="INF NON-TRADE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.INFSubTypes" filter="like"/>
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>		
+				
+				<search name="rollsourceSearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.rollsourceSearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="ROLLSOURCE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												
+												<!--<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												<!--<property name="seqId"/>-->
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>	
+				
+				<search name="rebateSearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.rebateSearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="REBATE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												
+												<!--<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												
+												<property name="receivedDate" type="date"/>
+												<!--<property name="seqId"/>-->
+                                </visibleProperties>
+                </search>	
+				
+				<search name="creditVOSSearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.creditVOSSearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="CREDIT-VOS"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/> <!--inv date-->
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												
+												<!--<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												
+												<property name="receivedDate" type="date"/>
+												<!--<property name="seqId"/>-->
+                                </visibleProperties>
+                </search>	
+				
+				<search name="freightVOSSearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.freightVOSSearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="FREIGHT-VOS"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<!--<property name="scanVendorName" filter="like" titleKey="Carrier Name"/>-->  <!--carrier name -->
+												
+												<!--<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												<!--<property name="seqId"/>-->
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>	
+				
+				<search name="freightMAXSearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.freightMAXSearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="FREIGHT-MAX"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>
+												
+												<property name="tbdString3" choiceList="choice.businessUnit"  filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												
+												
+												<property name="scanDate" type="date" filter="date"/>
+												<!--<property name="seqId"/>-->
+												<property name="receivedDate" type="date"/>
+												
+                                </visibleProperties>
+                </search>	
+								
+				<search name="MGISearch" queueName="POIndexing" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.MGISearch">
+                                <criteria>
+                                                <and>
+                                                    <equals name="subType" value="MGIFREIGHT"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												
+												<!--<property name="subType" choiceList="choice.tradeSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												
+												<property name="receivedDate" type="date"/>
+												<!--<property name="seqId"/>-->
+                                </visibleProperties>
+                </search>	
+				
+				
+				<search name="DuplicateReviewSearch" queueName="DuplicateReview" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="100" titleKey="action.duplicateReview">
+                                <criteria>
+                                                <and>
+                                                   
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												<property name="subType" choiceList="choice.invoiceSubTypes" filter="like"/>
+												
+												<property name="tbdString3" choiceList="choice.businessUnit"  filter="like"/>
+												<property name="number" filter="like"/>
+												<property name="poId" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="tbdBoolean1" choiceList="choice.received" filter="like"/>
+												<property name="vendorId" filter="like"/>
+												<property name="tbdString1" filter="like"/>
+												
+												<property name="scanDate" type="date" filter="date"/>
+												<!--<property name="seqId"/>-->
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>	
+				
+				
+				<search name="VendorMaintenanceINFSearch" queueName="VendorMaintenance" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.INFvendormaintenanceSearch">
+                                <criteria>
+												<or>
+													<equals name="type" value="INF NON-TRADE"/>
+													<equals name="subType" value="REBATE"/>
+													<equals name="subType" value="FREIGHT-VOS"/>
+													<equals name="subType" value="MGIFREIGHT"/>
+													<equals name="subType" value="ROLLSOURCE"/>
+													<equals name="subType" value="CREDIT-VOS"/>
+                                                </or>
+                                </criteria>
+                                <ordering>
+                                                <order name="docPriority" direction="ASC"/>
+												<order name="scanDate" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>
+												<property name="type"/>
+												<property name="subType" filter="like"/>
+												<!--property name="Cost Center" choiceList="tbd" filter="like"/--><!-- this is a placeholder-->
+												<property name="number" filter="like"/>
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												
+												
+												
+												<!--<property name="tbdString1" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												<property name="receivedDate" type="date"/>
+												
+                                </visibleProperties>
+                </search>
+				
+				<search name="NonTradeINFPosting" queueName="NONPOPosting" resultsPage="/ManagedPay/filenet/apdocument.do" frameRatio="60" titleKey="action.infnonpoposting">
+                                <criteria>
+												<and>
+													<equals name="type" value="INF NON-TRADE"/>
+                                                </and>
+                                </criteria>
+                                <ordering>                                         
+                                                <order name="seqId" direction="ASC"/>
+                                </ordering>
+                                <visibleProperties>                                         
+												<property name="type"/>
+												
+												<property name="number" filter="like"/> <!-- invoice-->
+												<property name="date" type="date" filter="date"/>
+												<property name="vendorId" filter="like"/>  <!--ven num -->
+												<property name="vendor.name" filter="like"/>  <!--ven name -->
+												
+												<!--<property name="subType" choiceList="choice.INFSubTypes" filter="like"/>-->
+												<property name="scanDate" type="date" filter="date"/>
+												<!--<property name="seqId"/>-->
+												<property name="receivedDate" type="date"/>
+                                </visibleProperties>
+                </search>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+	
+</searches>

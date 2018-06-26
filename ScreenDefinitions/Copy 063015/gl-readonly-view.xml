@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="gl-readonly-view" template="gl-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+		
+	<action-overrides>
+		<rejectButton name="reject" readonly="true" visable="false"/>
+		<button name="forward" command="forward" readonly="true" visable="false" type="submit" isAnchored="false"/>
+		<button name="update" command="update" readonly="true" visible="false" type="submit"/>
+		<button name="release" command="release" readonly="true" visible="false" type="submit"/>
+	</action-overrides>
+		
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+	
+	</documentRejection>
+
+	<validations>
+		
+	</validations>
+</view>

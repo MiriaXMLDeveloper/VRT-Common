@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels default="en">
+	<locale name="en">
+		<!-- ManagedPay Left navigation -->
+		<!-- Common Labels * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.mpnavigation" value="Navigation"/>
+			<label name="number" value="Invoice"/>
+			<label name="action.myinbox" value="My Work Inbox"/>
+		<!-- Common Labels * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!-- Team Work Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.queues" value="Team Work Queues"/>
+			<label name="action.indexing" value="Indexing"/>
+			<label name="action.generalexception" value="Exceptions"/>
+			<label name="action.supervisor" value="Supervisor"/>
+			<label name="action.pretax" value="Pre-Tax Audit"/>
+			<label name="action.corpfacilities" value="Fixed Assets"/>
+			<label name="action.vendormaintenance" value="Vendor Maintenance"/>	
+			<label name="action.instructions" value="Payment Instructions"/>
+			<label name="action.rescan" value="Waiting Rescan"/>
+		<!-- Team Work Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->		
+			
+		<!--  GET NEXT ACTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.getnext" value="Get Next Work"/>
+			<label name="action.getnext.indexing" value="Get-Next: Indexing"/>
+			<label name="action.getnext.generalexception" value="Get-Next: Exception"/>
+			<label name="action.getnext.supervisor" value="Get-Next: Supervisor"/>
+			<label name="action.getnext.pretax" value="Get-Next: Pre-Tax Audit"/>
+			<label name="action.getnext.corpfacilities" value="Get-Next: Fixed Assets"/>		
+			<label name="action.getnext.vendormaintenance" value="Get-Next: Vendor Maint"/>	
+			<label name="action.getnext.rescan" value="Get-Next: Rescan"/>
+			
+							<!--  UNUSED
+							<label name="section.nonpoGetnext" value="Get Next: Expense"/>
+							<label name="action.getnext.process" value="Get-Next: Process"/>
+							<label name="action.getnext.matchforce" value="Get-Next: Force"/>
+							<label name="action.getnext.tradeaudit" value="Get-Next: Audit"/>
+							<label name="action.getnext.qa" value="Get-Next: QA"/>
+							<label name="action.getnext.statement" value="Get-Next: Statements"/>
+							<label name="action.getnext.crd" value="Get-Next: CRD"/>
+							<label name="action.getnext.posttax" value="Get-Next: Post Tax"/>
+							<label name="action.getnext.tradeaudit" value="Get-Next: Trade Audit"/>
+							<label name="action.getnext.poexceptions" value="Get-Next: Exception"/>
+							<label name="action.getnext.potrade" value="Get-Next: Indexing"/>
+							<label name="action.getnext.creditap" value="Get-Next: AP Credits"/>
+							<label name="action.getnext.creditboat" value="Get-Next: Boat Warranty"/>
+							<label name="action.getnext.creditrbt" value="Get-Next: Rebates Credits"/>
+							<label name="action.getnext.creditrtv" value="Get-Next: RTV Credits"/>
+							 -->		
+		<!--  GET NEXT END DEFAULT * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--AR CONFIGURATION * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="action.uploadAR" value="Request AR Invoice"/>
+			<label name="action.ar1" value="Review Invoice"/>
+			<label name="action.ar2" value="Post Invoice"/>
+			<label name="action.ar3" value="Awaiting Settlement"/>
+			<label name="action.ar4" value="Dispute Resolution"/>
+			<label name="action.ar5" value="AR Exceptions"/>
+			<label name="action.ar6" value="Customer Maintenance"/>
+		<!--AR CONFIGURATION * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--  PURCHASING CONFIGURATION * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.Purchasing" value="Purchasing"/>
+			<label name="action.buyer" value="Unassigned Buyer"/>
+			<label name="action.uploadUG" value="Procurement Form"/>
+			<label name="action.procurementqueue" value="Procurement Approval"/>
+		<!--  PURCHASING CONFIGURATION * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!--  UPLOAD ACTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.requests" value="Create Check Request"/>
+			<label name="action.upload1" value="PO Check Request"/>
+			<label name="action.upload4" value="Non-PO Check Request"/>
+			<label name="action.upload1M1" value="Charity Check Request"/>   <!-- CUSTOM -->
+						
+					<!--   UPLOAD ACTIONS NOT USED
+						<label name="action.upload2" value="Expense Report"/>
+						<label name="action.upload3" value="Write Off"/>
+						<label name="action.upload5" value="Logo Request"/>
+						<label name="action.upload6" value="P-Card Report"/>
+					-->
+		<!--  UPLOAD ACTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+		
+		<!--  VENDOR MANAGEMENT AND PORTAL MANAGEMENT     * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.vendormgmt" value="Vendor Management"/>
+			<label name="action.portaladdress" value="Change of Address"/>
+			<label name="action.portalFAQ" value="Misc Questions"/>
+			<label name="action.portaldiscount" value="Early Payment Request"/>
+			<label name="action.upload1MM" value="Vendor Upload"/>   <!--    CUSTOM   -->
+			
+						<!--  UNUSED    
+						<label name="action.vendoradd" value="Vendor Add"/>
+						<label name="action.vendorw9" value="Vendor W9"/>
+						<label name="action.vendorPortal.invite" value="Invite a Vendor"/>
+						<label name="action.portal1" value="Invoice Inquiry"/>
+						<label name="action.portal2" value="Submit Invoice"/>
+						<label name="action.portal3" value="Change of Address"/>
+						<label name="action.portal4" value="Message Center"/>
+						<label name="action.portal5" value="Miscellaneous Request"/>
+						<label name="section.portal" value="Vendor Portal"/>
+						<label name="section.portalactions" value="Portal Requests"/>
+					 -->		
+		<!--  VENDOR MANAGEMENT AND PORTAL MANAGEMENT     * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!-- JOURNAL PROCESS QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.journals" value="Journal Processing"/>
+			<label name="action.uploadJournal" value="Create Journal"/>
+			<label name="action.jn1" value="Review Journal"/>
+			<label name="action.jn2" value="Post Journal"/>
+			<label name="action.jn3m" value="Monthly Journals"/>
+			<label name="action.jn3q" value="Quarterly Journals"/>
+			<label name="action.jn3y" value="Year-End Journals"/>
+		<!-- JOURNAL PROCESS QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--   POSTING QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.postingqueues" value="Posting Queues"/>
+			<label name="action.tradereceipts" value="Awaiting Docs"/>
+			<label name="action.posting" value="Posting"/>
+			<label name="action.postingfailed" value="Posting Failed"/>
+			<label name="action.payment" value="Awaiting Payment"/>
+			<label name="action.clearance" value="Awaiting Clearance"/>
+			<label name="action.cancelled" value="Cancelled Invoices"/>
+		<!--   POSTING QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--   SEARCH ACTIONS    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.search" value="Search"/>
+			<label name="action.advancedinvoicesearch" value="Advanced Invoice Search"/>
+			<label name="action.searchsave" value="Export Search Data"/>
+		<!--   SEARCH ACTIONS    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--    TOOLS SECTION   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.tools" value="Tools"/>
+			<label name="action.reassignDelegate" value="Reassign Delegate's Work"/>
+			<label name="action.reassignSelf" value="Reassign Your Work"/>
+		<!--    TOOLS SECTION   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!--    APPLICATIONS SECTION  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.applications" value="Applications"/>
+			<label name="action.adminmodule" value="ActivePay Admin"/>
+			<label name="action.reporting" value="ActivePay Reporting"/>
+		<!--    APPLICATIONS SECTION  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+	
+	
+		<!--Custom 01 - Labels 
+			<label name="FIS Queues" value="Custom Label"/>
+			<label name="section.Custom01" value="FIS Queues"/>
+			<label name="action.indexingMM" value="1) Scanned"/>
+			<label name="action.generalexceptionMM" value="2) Procurement Verify"/>
+			<label name="action.supervisorMM" value="3) Business Ops Verify"/>
+			<label name="action.pretaxMM" value="4) Finance AP Approval"/>
+			<label name="action.corpfacilitiesMM" value="5) Finance Accounts Verify"/>
+			<label name="action.vendormaintenanceMM" value="6) Treasury Verify"/>
+			<label name="action.buyerMM" value="7) Payment Appproval"/>
+			<label name="action.instructionsMM" value="8) Payment On-Hold"/>
+			<label name="action.rescanMM" value="9) Payment Complete"/>
+			-->
+
+		
+						
+		<!--  Orphans  * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+			<label name="action.advancedexpensesearch" value="Search CC Transactions"/>
+			<label name="action.CreatPurchaseRequest" value="Purchasing" />
+			<label name="uploadRef" value="Posting Period"/>
+			<label name="Upload Ref#" value="Posting Period"/>
+			<label name="action.ach" value="ACH Cleared"/>
+			<label name="action.archive" value="Archive Index"/>
+			<label name="action.approvalqueue" value="Approvals"/>
+			<label name="action.creditap" value="AP Credits"/>
+			<label name="action.crd" value="CRD"/>
+			<label name="action.archiveexception" value="Archive Exception"/>
+			<label name="action.gbaudit" value="AP Buyers"/>	
+			<label name="action.highdollarqa" value="High Dollar QA"/>		
+			<label name="action.corptax" value="Tax Review"/>
+			<label name="action.invoicesearch" value="Invoice Search"/>
+			<label name="action.it" value="IT"/>		
+			<label name="action.launchworkflow" value="Launch Workflow"/>
+			<label name="action.match" value="Awaiting Match"/>
+			<label name="action.matchfailed" value="Failed Match"/>
+			<label name="action.matchforce" value="Force Match"/>
+			<label name="action.myinboxE" value="Expenses Inbox"/>
+			<label name="action.mymanagedpay" value="My ManagedPay"/>
+			<label name="action.newinvoice" value="New Invoice"/>
+			<label name="action.poexceptions" value="Exceptions"/>
+			<label name="action.potrade" value="Indexing"/>
+			<label name="action.poaudit" value="Buyer"/>
+			<label name="action.posttax" value="Post-Tax Audit"/>
+			<label name="action.tradeaudit" value="PO Audit"/>
+			<label name="action.preferences" value="User Preferences"/>
+			<label name="action.process" value="Process"/>
+			<label name="action.purchasing" value="Corp Facilities"/>
+			<label name="action.qa" value="QA"/>
+			<label name="action.highdollarqa" value="High Dollar QA"/>
+			<label name="action.sensitiveaccountqa" value="Sensitive Account QA"/>
+			<label name="action.receiver" value="Receivers"/>
+			<label name="action.receiverfailed" value="Receivers Failed"/>
+			<label name="action.rematchHold" value="Approver Hold"/>
+			<label name="action.rematchReceivables" value="Rematch (Receivables)"/>
+			<label name="action.rematchVendor" value="Rematch (Vendor)"/>
+			<label name="action.restart" value="Restart"/>
+			<label name="action.salestax" value="Sales Tax"/>
+			<label name="action.sensitiveaccountqa" value="Accounts QA"/>
+			<label name="action.statement" value="Statement Invoices"/>
+			<label name="action.voucherreceipt" value="Awaiting Docs"/>
+			<label name="action.reassignwork" value="Reassign Work"/>
+			<label name="action.simsap" value="SimSAP"/>
+			<label name="action.users" value="Users"/>		
+
+
+			<label name="section.nonpoQueues" value="NON PO Invoice Queues"/>
+			<label name="section.systemqueues" value="System Queues"/>
+
+			<label name="action.creditboat" value="Boat Warranty Crdt"/>
+			<label name="action.creditrbt" value="Rebates Credits"/>
+			<label name="action.creditrtv" value="RTV Credits"/>
+
+			<   Logo config  >
+			<label name="action.myinboxL" value="Logos Inbox"/>
+			<label name="section.logoqueues" value="Logo Queues"/>
+			<label name="action.logosinitialize" value="Customer Liason"/>
+			<label name="action.logosactive" value="Customer Specialist"/>
+			<label name="action.logoscomplete" value="Completed Requests"/>
+			<label name="action.logosgraphic" value="Graphic Artist"/>
+			<label name="action.logosdig" value="Digitizer"/>
+			<label name="action.logosbnd" value="Ultra-Bond"/>
+			<label name="action.logosscr" value="Screen Printing"/>
+			<label name="action.logoseng" value="Engraving"/>
+			<label name="action.logosemb" value="Embroidery"/>
+			<label name="action.logospdc" value="PDC Clerk"/>
+			<label name="action.logosdead" value="Dead Sales"/>
+			<label name="action.logoshold" value="Hold Queues"/>
+			<label name="action.logospdc" value="PDC Queues"/>
+			<label name="action.attachmentSearch" value="Manage Attachments"/>
+			<label name="section.expensequeues" value="Expense Queues"/>
+			<label name="action.expensereceipts" value="Awaiting Receipts"/>
+			<label name="action.expensejournal" value="Journal Posting"/>
+			<label name="action.expensefailed" value="Journal Failed"/>
+			<label name="action.expensetax" value="Tax Audit"/>
+			<label name="action.expenseexception" value="Exp Report Exception"/>
+			<label name="action.expensecard" value="Card Assignment"/>
+			<label name="action.expensecash" value="Cash Advance"/>
+			<label name="action.expensesend" value="Dispatch Card"/>
+			<label name="action.expenseclean" value="Confirm Card"/>
+			<label name="action.expenseclose" value="Close Card"/>
+		* * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+	</locale>
+</labels>
+

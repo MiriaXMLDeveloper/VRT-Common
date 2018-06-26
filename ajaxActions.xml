@@ -1,0 +1,83 @@
+<ajaxActions>
+
+
+	<action class="com.custom.processors.DiscountCalculationProcessor" type="processor" name="DiscountCalculationProcessor">
+        <request>
+            <property name="grossAmount"/>
+		</request>
+        <response>
+            <property name="discountAmount"/>	
+			<property name="paymentTerm.daysDue"/>
+        </response>
+	</action>
+	
+	<action class="com.miriasystems.processors.DueDateProcessor" type="processor" name="dueDateProcessor">
+        <request>
+             <property name="paymentTermId"/>
+			 <property name="date"/>
+         </request>
+        <response>
+            <property name="dueDate"/>
+			<!--property name="paymentTerm.daysDue"/>
+			<property name="paymentTerm.discount1"/-->
+        </response>
+    </action>
+	
+	<action class="com.custom.processors.NetAmountProcessor" type="processor"
+            name="customNetAmountProcessor">
+        <request>
+            <property name="grossAmount"/>
+        </request>
+        <response>
+            <property name="netAmount"/>
+        </response>
+    </action>
+	
+    <action class="com.miriasystems.processors.TotalLineAmountProcessor" type="processor" name="lineItemTotal">
+        <request>
+            <property name="lineTotal" lineItem="true"/>
+			<property name="taxAmount" lineItem="true"/>
+            <property name="calculatedLineTotal"/>
+        </request>
+        <response>
+            <property name="lineTotal" lineItem="true"/>
+            <property name="calculatedLineTotal"/>
+			<property name="calculatedTaxTotal"/>
+        </response>
+    </action>
+
+	<action class="com.miriasystems.processors.PaymentTermDiscountProcessor" type="processor" name="PaymentTermDiscountProcessor">
+        <request>
+             <property name="paymentTermId"/>
+			 <property name="date"/>
+			 <property name="grossAmount"/>
+         </request>
+        <response>
+            <property name="dueDate"/>
+			<!--property name="paymentTerm.daysDue"/-->
+			<!--<property name="paymentTerm.discount1"/>-->
+			<property name="discountDueDate"/>
+			<property name="discountAmount"/>
+			
+        </response>
+    </action>
+	
+	<action class="com.miriasystems.processors.INFPaymentTermDiscountProcessor" type="processor" name="INFPaymentTermDiscountProcessor">
+         <request>
+             <property name="paymentTermId"/>
+			 <property name="date"/>
+			 <property name="grossAmount"/>
+			 <property name="freightAmount2"/>
+			 <property name="taxAmount1"/>
+         </request>
+        <response>
+            <property name="dueDate"/>
+			<!--property name="paymentTerm.daysDue"/-->
+			<!--property name="paymentTerm.discount1"/-->
+			<property name="discountDueDate"/>
+			<property name="discountAmount"/>
+			
+        </response>
+    </action>
+
+</ajaxActions>

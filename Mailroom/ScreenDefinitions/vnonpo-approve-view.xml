@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-approve-view" template="nonpo-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Approve"/>
+			<label name="Restart" value="Wrong invoice type"/>
+			<label name="Vendor Maintenance" value="Route to Vendor Maintenance"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<!--section name="paymentInformation" collapsed="true"/-->
+	</section-overrides>
+
+	<property-overrides>
+		<lookup name="vendorId" readonly="true" validation=""/>
+		<dropDown name="type" readonly="true"/>	
+		<dropDown name="subType" readonly="true"/>	
+		<lookup name="vendor.name" readonly="true" />
+		<text name="number" readonly="true" />
+		<date name="date" readonly="true" />
+		<date name="dueDate" readonly="true"/>
+		<currency name="grossAmount" readonly="false"/>
+		<currency name="freightAmount1" readonly="true" />
+		<currency name="taxAmount1" readonly="true" />
+		<currency name="taxAmount2" readonly="true" />
+		<text name="voucherComments" readonly="false" />
+		<text name="tbdString2" readonly="true" />
+		<text name="routingCode" readonly="true" />
+		<text name="scanAmount" readonly="true" />
+		<text name="tbdBoolean1" readonly="true" />
+		<text name="paymentTypeId" readonly="true" />
+		<text name="tbdString3"/>
+		<text name="checkStubMessage" readonly="false"/>
+		<text name="scanVendorAddress2" readonly="true" />
+	</property-overrides>
+
+	<action-overrides>
+		
+		<iconAction name="editRouting" readonly="false" />
+		<iconAction name="postings" visible="true" />
+		<button name="release" visible="false"/>
+		</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.sendToException">
+				<subReason name="Duplicate Invoice"/>
+				<subReason name="Invoice does not belong to approver"/>
+				<subReason name="Incorrect Amount/ Invalid Charges"/>
+				<subReason name="Incomplete documentation"/>
+				<subReason name="Not a GenuineInvoice"/>
+				<subReason name="Alternate Payment Method"/>
+				<subReason name="Other"/>
+			</reason>	
+			<reason name="Hold" commentsRequired="true" note="message.rematchHold">
+			</reason>
+			<reason name="Return to Requester" commentsRequired="true" note="message.returnRequester">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.shortpay" note="message.shortPayValidation"/>
+		<validation name="validation.accountCode"/>
+		<validation name="validation.lineItemAmount"/>
+		<validation name="validation.capex"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.ApprovedAmountValidator"/>
+	</validations>
+</view>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="originatorId" value ="Submitted By"/>
+		<label name="group" value ="Store/Location"/>
+		<label name="department" value ="Department"/>
+		<label name="tbdString2" value ="Auto Reverse"/>
+		<label name="tbdString1" value ="Interco code"/>
+		<label name="tbdString3" value ="Frequency"/>
+		<label name="number" value ="Process Name"/>
+		<label name="taxAmount" value ="Total CR"/>
+		<label name="netAmount" value ="Balance"/>
+		<label name="voucherComments" value ="Description"/>
+		<label name="poId" value ="Template Id"/>
+		<label name="custom1.tbdComment2" value ="Tasks"/>
+		<label name="custom1.tbdBoolean1" value ="Journal Entries?"/>
+		<label name="custom1.tbdBoolean2" value = "Accruals?"/>
+		<label name="custom1.tbdBoolean3" value = "Ad-hoc requests?"/>
+	</locale>
+	</labels>
+	
+	<section name="Task Initializer" collapsible="false" collapsed="false">
+		<properties>		
+			<text row="1" col="1" name="number" validation="required" />
+			<text row="1" col="2" name="originatorId" readonly="true"/>
+			<text row="2" col="1-3" name="custom1.tbdComment2" readonly="true" defaultValue="Please ensure to check appropriate tasks prior to submission" styleClass="sixhundred"/>			
+			<checkbox row="3" col="1" name="custom1.tbdBoolean1"/>
+			<poNumber row="3" col="2" name="poId" readonly="false"/>
+			<dropDown row="3" col="3" name="tbdString3" choiceList="choice.frequency" readonly="false" styleClass="onehundredpercent"/>
+			<checkbox row="4" col="1" name="custom1.tbdBoolean2"/>
+			<dropDown row="4" col="2" name="subType" choiceList="choice.accrual2" validation="required"/>
+			<checkbox row="5" col="1" name="custom1.tbdBoolean3"/>
+		</properties>
+		<actions>
+				<iconAction name="print" icon="/images/ico_search.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+				<iconAction name="statusWindow" icon="/images/ico_status.gif" width="16" height="16" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+				<iconAction name="help" icon="/images/ico_help.gif" width="16" height="16" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+				<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>	
+	
+
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Direct Entry" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="type" defaultValue="Task" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="3" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="group" defaultValue="JN" forceDefault="true"/>
+		<hidden name="grossAmount" defaultValue="0" forceDefault="true"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+    </processors>
+</propertyTemplate>

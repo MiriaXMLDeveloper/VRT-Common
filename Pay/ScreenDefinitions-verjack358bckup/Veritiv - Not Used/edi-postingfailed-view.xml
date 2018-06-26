@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-posting-view" template="edi-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+   
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Re-Try"/>
+		</locale>
+	</labels>
+
+	
+	<property-overrides>
+		<lookup name="vendorId" readonly="false" validation="required"/>
+		<dropDown name="companyCode" readonly="false" validation="required"/>
+	</property-overrides>
+
+	
+	<action-overrides>
+		<iconAction name="editRouting" readonly="true" visible="false"/>
+		<button name="update" readonly="true" visible="false"/>
+		<getNext name="next" readonly="true" visible="false"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+		<reason name="Reject" commentsRequired="true" note="message.terminate">
+		</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		
+	</validations>
+</view>

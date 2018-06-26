@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="tax-readonly-view" template="tax-readonly-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+		
+	<action-overrides>		
+		<button name="update"  readonly="true" visible="false"/>
+		<button name="release"  readonly="true" visible="false"/>
+	</action-overrides>
+	
+		
+	<hidden-overrides>
+		
+	</hidden-overrides>
+
+	<documentRejection>
+	
+	</documentRejection>
+
+	<validations>	
+	</validations>
+</view>

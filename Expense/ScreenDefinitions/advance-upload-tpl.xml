@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+            	<label name="forward" value="Upload"/>
+            	<label name="tbdString2" value="Employee #"/>
+            	<label name="tbdString3" value="Employee Name"/>
+            	<label name="date" value="Required By"/>
+               	<label name="vendor.address1" value="Address"/>
+            	<label name="vendor.address2" value="Location"/>
+            	<label name="vendor.address3" value="Dept"/>
+            	<label name="tbdDate1" value="Travel(From)"/>
+				<label name="tbdDate2" value="Travel(To)"/>
+            	<label name="voucherComments" value="Business Reason"/>
+				<label name="originatorName" value="Submitter"/>
+				<label name="requesterName" value="Claimant"/>
+				<label name="processCode" value="Credit Card"/>
+				<label name="grossAmount" value="Amount Requested"/>
+            	</locale>
+	</labels>
+	
+	<section name="Expense Report" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="originatorName" readonly="true"/>
+			<lookup row="1" col="2" name="processCode" lookupType="lookup.accountCode" readonly="false"/>
+			<text row="2" col="1" name="voucherComments" styleClass="fourhundred" readonly="false"/>
+			<currency row="2" col="2" name="grossAmount" readonly="false"/>
+			<date row="3" col="1" name="tbdDate1" readonly="false"/>
+			<date row="3" col="2" name="tbdDate2" readonly="false"/>
+			<date row="4" col="1" name="date" readonly="false"/>
+			<text row="4" col="2" name="tbdString2" readonly="true" validation="required"/>
+			<text row="5" col="1" name="vendor.address1" readonly="true" styleClass="fourhundred"/>
+			<text row="5" col="2" name="vendor.city" readonly="true" />
+			<text row="6" col="1" name="vendor.state" readonly="true" styleClass="twohundred"/>
+			<text row="6" col="2" name="vendor.postalCode" readonly="true"/>
+		</properties>
+		<actions>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+			<iconAction name="print" icon="/images/icon_printer.png" width="20" height="16" link="javascript:window.print()" visible="true" alwaysActive="true"/>
+		</actions>
+	</section>
+	
+	
+	<hiddenFields>
+	    <!--hidden name="requesterId"/-->
+	    <hidden name="type" defaultValue='EXP'/>
+	    <hidden name="postingERPId" defaultValue="ERP1"/>
+	    <hidden name="vendorERPId" defaultValue="ERP1"/>
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="AFENumber" defaultValue="Cash" forceDefault="true"/>
+    </hiddenFields>
+
+    <processors>
+    		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.miriasystems.processors.LineItemTypeProcessor"/>
+		<processor name="com.miriasystems.processors.MileageRateProcessor"/>
+		<processor name="com.miriasystems.processors.CalculateExpenseProcessor"/>
+     </processors>
+
+</propertyTemplate>

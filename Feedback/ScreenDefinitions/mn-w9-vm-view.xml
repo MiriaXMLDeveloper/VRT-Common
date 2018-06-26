@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="mn-w9-vm-view" template="mn-w9-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+    <!-- View permutations:
+          -view: This is the standard view
+          -viewM: Payment Type 'MC' has been selected
+          -viewP: Payment Type 'PC' has been selected
+    -->
+
+    <labels default="en">
+        <locale name="en">
+            <label name="forward" value="Complete"/>
+        </locale>
+    </labels>
+
+    <section-overrides>
+    </section-overrides>
+    
+    <property-overrides>
+        <text name="poId" readonly="true"/>
+        <dropDown name="docPriority" readonly="true" />
+        <lookup name="vendor.name" readonly="true" />
+        <lookup name="vendorId" readonly="true" />
+        <text name="number" readonly="true" />
+        <date name="date" readonly="true" />
+        <date name="receiveDate" readonly="true" />
+        <currency name="grossAmount" readonly="true"/>
+    </property-overrides>
+
+    <action-overrides>
+    </action-overrides>
+
+    <hidden-overrides>
+        <hidden name="processInformation.response" defaultValue="Complete"/>
+    </hidden-overrides>
+
+    <documentRejection>
+        <rejectionReasons>
+            <reason name="Reject" commentsRequired="true" note="message.returnException">
+            </reason>
+        </rejectionReasons>
+    </documentRejection>
+</view>

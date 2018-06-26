@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="jn-view" template="jn-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+			<label name="reject" value="Relaunch"/>
+		</locale>
+</labels>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<property-overrides>
+		
+</property-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<validations>
+     
+</validations>
+
+<action-overrides>
+		<iconAction name="editRouting" readonly="false" />
+		<iconAction name="postings" visible="true" />
+		<button name="addLineItem" visible="false"/>
+		<button name="removeLineItem" visible="false"/>
+</action-overrides>
+
+	<lineItem-overrides>
+		<text name="accountCode" readonly="true"/>	
+		<text name="itemDescription" readonly="true"/>	
+		<currency name="lineTotal" readonly="true"/>	
+		<currency name="taxAmount" readonly="true"/>	
+	</lineItem-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Relaunch" commentsRequired="false" note="message.createNewJournal">
+			</reason>	
+		</rejectionReasons>
+	</documentRejection>
+
+</view>
+
+

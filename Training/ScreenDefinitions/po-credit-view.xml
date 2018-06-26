@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-vm-view" template="po-credit-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>
+		<section name="vendorDetails" visible="true" collapsed="false"/>	
+		<section name="lineItems" visible="true" collapsed="false"/>	
+	</section-overrides>
+		
+	<property-overrides>
+		<lookup name="vendor.name" readonly="false"/>
+		<lookup name="vendorId" readonly="false"/>
+		<dropDown name="companyCode" validation="required" readonly="false"/>
+		<text name="scanVendorAddress2" readonly="true" defaultValue="NET 1 DAY" forceDefault="true"/>
+	</property-overrides>
+
+	<action-overrides>
+				
+	</action-overrides>
+	
+	<lineItem-overrides>
+		
+	</lineItem-overrides>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<hidden name="paymentTermId" readonly="true" defaultValue="112" forceDefault="true"/>
+	</hidden-overrides>
+
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.returnException">
+				<subReason name="Duplicate invoice"/>
+				<subReason name="Not a GenuineInvoice"/>
+				<subReason name="Expense Invoice"/>
+				<subReason name="Other"/>	
+			</reason>
+			<reason name="Alternate Credit" commentsRequired="true" note="message.alternateCredit">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+	<validations>
+		<validation name="validation.validVendor"/>
+		<validation name="validation.accountCode" />
+		<validation name="validation.lineItemAmount"/>
+	</validations>
+</view>

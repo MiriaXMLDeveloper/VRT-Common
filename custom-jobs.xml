@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quartz version="1.1" xmlns="http://www.quartzscheduler.org/ns/quartz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.quartzscheduler.org/ns/quartz http://www.quartzscheduler.org/ns/quartz/job_scheduling_data_1_1.xsd">
+	<job>
+		<job-detail>
+			<name>nonTradeExportJob</name>
+			<group>invoiceOutputGroup</group>
+			<job-class>com.miriasystems.custom.etl.jobs.NonTradeExportJob</job-class>
+			<volatility>false</volatility>
+			<durability>false</durability>
+			<recover>false</recover>
+			<job-data-map allows-transient-data="true">
+                <entry>
+                    <key>outputFolder</key>
+                    <value>C:\\Veritiv_OutBound\\NonTradeExport</value>
+                </entry>
+				<entry>
+                    <key>archiveFolder</key>
+                    <value>C:\\Veritiv\\In-NonTrade\\Archive\\Outbound</value>
+                </entry>
+            </job-data-map>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>nonTradeExportJob</name>
+				<group>invoiceOutputGroup</group>
+				<job-name>allTrigger</job-name>
+				<job-group>allTriggers</job-group>
+				<!--cron-expression>0 0/5 * ? * *</cron-expression-->
+				<cron-expression>0 1/15 * ? * *</cron-expression>
+			</cron>
+		</trigger>
+	</job>
+	
+	<job>
+		<job-detail>
+			<name>nonTradeINFExportJob</name>
+			<group>invoiceOutputGroup</group>
+			<job-class>com.miriasystems.custom.etl.jobs.NonTradeINFExportJob</job-class>
+			<volatility>false</volatility>
+			<durability>false</durability>
+			<recover>false</recover>
+			<job-data-map allows-transient-data="true">
+                <entry>
+                    <key>outputFolder</key>
+                    <value>C:\\Veritiv_OutBound\\NonTradeInfinium</value>
+                </entry>
+				<entry>
+                    <key>archiveFolder</key>
+                    <value>C:\\Veritiv\\In-NonTradeInfinium\\Archive\\Outbound</value>
+                </entry>
+            </job-data-map>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>nonTradeINFExportJob</name>
+				<group>invoiceOutputGroup</group>
+				<job-name>allTrigger</job-name>
+				<job-group>allTriggers</job-group>
+				<!--cron-expression>0 0/5 * ? * *</cron-expression-->
+				<cron-expression>0 0/5 * ? * *</cron-expression>
+			</cron>
+		</trigger>
+	</job>
+	
+	<job>
+		<job-detail>
+			<name>nonTradeImportJob</name>
+			<group>invoiceOutputGroup</group>
+			<job-class>com.miriasystems.custom.etl.jobs.NonTradePostingUpdateJob</job-class>
+			<volatility>false</volatility>
+			<durability>false</durability>
+			<recover>false</recover>
+			<job-data-map allows-transient-data="true">
+                <entry>
+                    <key>inputFolder</key>
+                    <value>C:\\Veritiv\\In-NonTrade</value>
+                </entry>
+				<entry>
+                    <key>fileName</key>
+                    <value>nontrade_posting_input.txt</value>
+                </entry>
+				<entry>
+                    <key>recipient</key>
+                    <value>rchidambaram@miriasystems.com,dturner@miriasystems.com,gnikonenko@miriasystems.com</value>
+                </entry>
+				<entry>
+                    <key>isAuditLogEmail</key>
+                    <value>true</value>
+                </entry>
+				<entry>
+                    <key>emailAttachmentPath</key>
+                    <value>C:\\Veritiv\\In-NonTrade\\Email</value>
+                </entry>
+				<entry>
+                    <key>templateName</key>
+                    <value>AuditLogEmail</value>
+                </entry>
+				<entry>
+                    <key>archiveFilePath</key>
+                    <value>C:\\Veritiv\\In-NonTrade\\Archive\Inbound</value>
+                </entry>
+            </job-data-map>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>nonTradeImportJob</name>
+				<group>invoiceOutputGroup</group>
+				<job-name>allTrigger</job-name>
+				<job-group>allTriggers</job-group>
+				<!--cron-expression>0 1/7 * ? * *</cron-expression-->
+				<cron-expression>0 0/29 * ? * *</cron-expression>
+			</cron>
+		</trigger>
+	</job>
+	<job>
+		<job-detail>
+			<name>nonTradeINFImportJob</name>
+			<group>invoiceOutputGroup</group>
+			<job-class>com.miriasystems.custom.etl.jobs.NonTradeINFPostingUpdateJob</job-class>
+			<volatility>false</volatility>
+			<durability>false</durability>
+			<recover>false</recover>
+			<job-data-map allows-transient-data="true">
+                <entry>
+                    <key>inputFolder</key>
+                    <value>C:\\Veritiv\\In-NonTradeInfinium</value>
+                </entry>
+				<entry>
+                    <key>fileName</key>
+                    <value>nontradeINF_posting_input.txt</value>
+                </entry>
+				<entry>
+                    <key>recipient</key>
+                    <value>rchidambaram@miriasystems.com,dturner@miriasystems.com,gnikonenko@miriasystems.com</value>
+                </entry>
+				<entry>
+                    <key>isAuditLogEmail</key>
+                    <value>true</value>
+                </entry>
+				<entry>
+                    <key>emailAttachmentPath</key>
+                    <value>C:\\Veritiv\\In-NonTradeInfinium\\Email</value>
+                </entry>
+				<entry>
+                    <key>templateName</key>
+                    <value>INFAuditLogEmail</value>
+                </entry>
+				<entry>
+                    <key>archiveFilePath</key>
+                    <value>C:\\Veritiv\\In-NonTradeInfinium\\Archive\\Inbound</value>
+                </entry>
+            </job-data-map>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>nonTradeINFImportJob</name>
+				<group>invoiceOutputGroup</group>
+				<job-name>allTrigger</job-name>
+				<job-group>allTriggers</job-group>
+				<!--cron-expression>0 1/7 * ? * *</cron-expression-->
+				<cron-expression>0 0/5 * ? * *</cron-expression>
+			</cron>
+		</trigger>
+	</job>
+	
+	
+	
+	<job>
+		<job-detail>
+			<name>postedITApprovalEmailJob</name>
+			<group>invoiceOutputGroup</group>
+			<job-class>com.miriasystems.custom.etl.jobs.PostedITApprovalJob</job-class>
+			<volatility>false</volatility>
+			<durability>false</durability>
+			<recover>false</recover>
+			<job-data-map allows-transient-data="true">
+               	<entry>
+                    <key>isAuditLogEmail</key>
+                    <value>true</value>
+                </entry>				
+				<entry>
+                    <key>templateName</key>
+                    <value>PostedITApproval</value>
+                </entry>				
+            </job-data-map>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>postedITApprovalJob</name>
+				<group>invoiceOutputGroup</group>
+				<job-name>allTrigger</job-name>
+				<job-group>allTriggers</job-group>
+				<cron-expression>0 */15 * ? * *</cron-expression>
+				<!--cron-expression>0 0/2 * ? * *</cron-expression>-->
+			</cron>
+		</trigger>
+	</job>
+
+</quartz>

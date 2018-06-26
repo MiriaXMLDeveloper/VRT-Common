@@ -1,0 +1,7 @@
+<#setting number_format=",##0.00">
+<#setting locale="en_US">
+<#list documentsList as document>
+	<#list document.documentLines as docline>
+<#if document.seqId?exists>${document.seqId?c}</#if>|<#if document.vendorId?exists>${document.vendorId}<#else>${""}</#if>|<#if document.number?exists>${document.number}<#else>${""}</#if>|<#if document.date?exists>${document.date?string["MMddyy"]}<#else>${""}</#if>|<#if document.grossAmount?exists>${document.grossAmount?string.number}<#else>${""}</#if>|<#if document.taxAmount1?exists>${document.taxAmount1?string.number}<#else>${""}</#if>|<#if document.tbdDate1?exists>${document.tbdDate1?string["MMddyy"]}<#else>${""}</#if>|<#if document.dueDate?exists>${document.dueDate?string["MMddyy"]}<#else>${""}</#if>|<#if document.discountAmount?exists>${document.discountAmount?string.number}<#else>${""}</#if>|<#if document.poId?exists>${document.poId}<#else>${""}</#if>|<#if document.tbdString1?exists>${document.tbdString1}<#else>${""}</#if>|<#if document.voucherComments?exists>${document.voucherComments}<#else>${""}</#if>|<#if docline.accountCode?exists>${docline.accountCode}<#else>${""}</#if>|<#if docline.lineTotal?exists>${docline.lineTotal?string.number}<#else>${""}</#if>|<#if docline.tbdString4?exists>${docline.tbdString4?string}<#else>${""}</#if>
+	</#list>
+</#list>

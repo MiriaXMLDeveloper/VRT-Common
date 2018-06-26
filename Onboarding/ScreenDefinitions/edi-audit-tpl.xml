@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+			<label name="number" value="Invoice Number"/>
+			<label name="date" value="Invoice Date"/>
+			<label name="grossAmount" value="Gross Amount"/>
+			<label name="tbdString3" value="Freight Terms"/>
+			<label name="tbdBoolean1" value="Audit Complete"/>
+		</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<!-- The following section is standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="twohundred"/>
+			<checkbox row="1" col="2" name="tbdBoolean1" readonly="false"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+
+		<actions>
+			<getNext name="next" readonly="false" showLabel="true" toLeft="true"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<dropDown row="1" col="1" name="type" choiceList="choice.ediInvoiceTypes" readonly="true" validation="required"/>
+			<dropDown row="1" col="2" name="subType" choiceList="choice.invoiceSubTypes-PO" readonly="true" validation="required"/>
+			<text row="2" col="1" name="number" validation="required, noSpecialCharacters"/>
+			<date row="2" col="2" name="date" readonly="false" validation="required" styleClass="date"/>
+			<poNumber row="3" col="1" name="poId" readonly="false" />
+			<dropDown row="3" col="2" name="companyCode" choiceList="choice.poCompany" readonly="true"/>
+		</properties>
+		
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<postingReplyAction name="postings" icon="/images/ico_mp.gif" width="16" height="16" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/>
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_print.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm')" alwaysActive="true"/>
+			<button name="update" command="update" readonly="false" visible="true" type="submit"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+	
+	<section name="invoiceDetails" visible="true" collapsible="false" collapsed="false">
+			<properties>
+			<lookup row="1" col="1-2" name="vendor.name" lookupType="lookup.vendorCode" readonly="true" styleClass="fulllookup"/>
+			<lookup row="2" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="true" validation="required"/>
+			<dropDown row="2" col="2" name="tbdString3" choiceList="choice.freightTerms" readonly="true" />
+			<currency row="3" col="1" name="grossAmount" validation="required, nonZero" styleClass="currency"/>
+			<currency row="3" col="2" name="freightAmount1" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="4" col="1" name="tbdCurrency1" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="4" col="2" name="freightAmount2" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="5" col="1" name="netAmount" readonly="true" styleClass="currency"/>
+			<dynamicDropDown row="5" col="2" name="paymentTypeId" providerClass="com.miriasystems.ui.providers.PaymentTypeChoiceListProvider" validation="required"/>
+			<lookup row="6" col="1" name="scanVendorAddress2" lookupType="lookup.paymentTerm" validation="required"/>
+			<date row="6" col="2" readonly="true" name="dueDate" styleClass="date"/>
+			<checkbox row="7" col="1" name="tbdBoolean2"/>
+			<text row="7" col="2" name="tbdString1" readonly="false" />
+			<text row="8" col="1" name="checkStubMessage" readonly="false" />
+			<currency row="8" col="2" name="tbdCurrency2" readonly="true"/>
+			<textArea row="9" col="1-2" name="voucherComments" styleClass="comment"/>
+		</properties>
+	</section>
+
+	<section name="vendorDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1-2" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="2" col="1-2" name="vendor.address2" readonly="true"  styleClass="fulllookup"/>
+			<text row="3" col="1" name="vendor.city" readonly="true" />
+			<text row="3" col="2" name="vendor.state" readonly="true"/>
+			<text row="4" col="1" name="vendor.postalCode" readonly="true"/>
+			<text row="4" col="2" name="vendor.name2" readonly="true"/>
+	    </properties>
+	</section>
+	
+		<section name="lineItems" visible="false" collapsible="true" collapsed="false">
+		<lineItemProperties showTotal="true" showTaxTotal="false">
+			<lookup row="1" col="1" name="accountCode" lookupType="lookup.accountCode" readonly="false" validation="required" styleClass="onehundredpercent"/>
+			<text row="1" col="2-3" name="account.description" readonly="true" styleClass="fulllookup"/>
+			<currency row="1" col="4" name="lineTotal" readonly="false" validation="required, nonZero" styleClass="currency" />
+			<lineItemHidden row="0" col="0" name="accountERPId"/>
+			<lineItemHidden row="0" col="0" name="companyCode"/>
+		</lineItemProperties>
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<button name="addLineItem" command="addLineItem" type="submit" isAnchored="true" allowTabIndex="true" hotKey="a"/>
+			<button name="removeLineItem" command="deleteLineItem" type="submit" isAnchored="true" hotKey="d"/>
+		</actions>
+	</section>
+	
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="batchNumber" readonly="true"/> 
+			<text row="3" col="1" name="businessUnit" readonly="true"/>
+			<dropDown row="3" col="2" name="batchOrdinal" readonly="true" choiceList="choice.truncated"/>
+		</properties>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId"/>
+		<hidden name="vendorERPId"/>
+        <hidden name="newBatchNumber"/>
+		<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId"/>
+		
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="AFENumber" defaultValue="1" forceDefault="true"/>
+    </hiddenFields>
+
+	<processors>
+		<!--processor name="com.miriasystems.processors.NetAmountProcessor"/-->
+		<processor name="com.cabelas.processors.DueDateProcessor"/>
+		<processor name="com.cabelas.processors.FreightAmountProcessor"/>
+
+	</processors>
+</propertyTemplate>

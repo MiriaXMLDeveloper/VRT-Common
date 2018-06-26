@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="upload-misc-view" template="receiver-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd" readonly="true">
+
+
+<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+</labels>
+
+<property-overrides>
+	<text name="poId" readonly="true"/>
+	<text name="shippingDocumentId" readonly="true"/>
+</property-overrides>
+
+	<action-overrides>	
+		<button name="release" visible="false"/>
+		<button name="forward" visible="false"/>
+		<rejectButton name="reject" visible="false"/>
+		<button name="update" visible="false"/>
+	</action-overrides>
+
+<documentRejection>
+
+</documentRejection>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+</view>
+
+

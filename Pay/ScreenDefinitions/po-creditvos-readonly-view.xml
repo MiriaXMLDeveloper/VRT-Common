@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="po-creditvos-indexing-view" template="po-creditvos-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" readonly="true">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+			<label name="Dropped" value="Dropped"/>
+			<label name="Awaiting" value="Awaiting Receipts"/>
+			<label name="Exception" value="Exception"/>
+			<label name="Reject" value="Workflow Complete"/>
+			<label name="EquipmentQueue" value="Send to Equipment Process"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+
+	</section-overrides>
+
+	<property-overrides>
+			<text name="tbdNumber2" visable="false"/>
+			
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<rejectButton name="reject" command="reject" readonly="true" visible="false" type="submit"/>
+		<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		<button name="update" command="update" readonly="true" visible="false" type="submit"/>
+		<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		<iconAction name="addLineItem" readonly="true" visible="false"/>
+		<iconAction name="removeLineItem" readonly="true" visible="false"/>
+		<iconAction name="selectTemplate" readonly="true" visible="false"/>
+		<iconAction name="RemoveAllItems" readonly="true" visible="false"/>
+		<iconAction name="RemoveMarkedItems" readonly="true" visible="false"/>
+		<iconAction name="RemoveUnMarkedItems" readonly="true" visible="false"/>
+		<!--dropDown name="lineitemsdropdown" readonly="true" visible="false"/-->
+	</action-overrides>
+
+	<hidden-overrides>
+	<hidden name="processInformation.response" defaultValue="Complete"/>	
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Exception" commentsRequired="false" note="message.returnException"> <!-- Exception-->
+			</reason>
+			<reason name="Rescan" commentsRequired="false" note="message.rescan">
+			</reason>
+			<reason name="Vendor Maintenance" commentsRequired="false" note="message.returnVendorMaintenance">
+			</reason>
+			<reason name="Hold" commentsRequired="false" note="message.hold">
+			</reason>
+			<reason name="Awaiting" commentsRequired="false" note="message.awaitingReceipts">
+			</reason>
+			<reason name="Dropped" commentsRequired="false" note="message.dropped">
+			</reason>
+			<reason name="Reject" commentsRequired="false" note="message.workflowComplete">
+			</reason>
+			<reason name="EquipmentQueue" commentsRequired="false" note="message.workflowEquipment">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.duplicateInvoiceCheck" messageType="warning" />
+	</validations>
+</view>

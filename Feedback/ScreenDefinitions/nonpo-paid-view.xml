@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-paid-view" template="nonpo-posting-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+                <labels default="en">
+                                <locale name="en">
+                                                <label name="forward" value="Complete"/>
+                                </locale>
+                </labels>
+
+                <section-overrides>
+                                <section name="vendorDetails" visible="true" collapsed="false"/>
+                                <section name="lineItems" visible="true" collapsed="false"/>
+                </section-overrides>
+                                
+                <property-overrides>
+                                
+                </property-overrides>
+
+                <action-overrides>
+                                <getNext name="next" readonly="true" visible="false"/>
+                                <button name="reject" readonly="true" visible="false"/>
+                                <button name="forward" readonly="false" visible="true"/>
+                                <button name="update" readonly="true" visible="false"/>
+                                <button name="addLineItem" readonly="true" visible="false"/>
+                                <button name="removeLineItem" readonly="true" visible="false"/>
+                </action-overrides>
+                
+                <lineItem-overrides>
+                                <text name="accountCode" readonly="true" validation=""/>
+                                <currency name="lineTotal" readonly="true" validation=""/>
+                                <text name="tbdString1" readonly="true" validation=""/>
+                </lineItem-overrides>
+                
+                <hidden-overrides>
+                                <hidden name="processInformation.response" defaultValue="Complete"/>
+                </hidden-overrides>
+
+                <documentRejection>
+                                <rejectionReasons>
+                                                <reason name="Force" commentsRequired="true" note="message.forceMatch">
+                                                </reason>
+                                </rejectionReasons>
+                </documentRejection>
+                <validations>
+                                <validation name="validation.validVendor"/>
+                </validations>
+</view>
+

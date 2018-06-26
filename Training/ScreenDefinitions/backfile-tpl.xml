@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<labels>
+		<!-- Label overrides for this template -->
+		<locale name="en">
+			<label name="number" value="Invoice Number"/>
+			<label name="date" value="Invoice Date"/>
+			<label name="grossAmount" value="Gross Amount"/>
+			<label name="tbdString3" value="Freight Terms"/>	
+		</locale>
+	</labels>
+
+
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+			<dropDown row="1" col="1" name="type" choiceList="choice.invoiceTypes" readonly="true"/>
+			<dropDown row="1" col="2" name="subType" choiceList="choice.invoiceSubTypes" readonly="true"/>
+			<lookup row="2" col="1" name="vendorId" lookupType="lookup.vendorCode" readonly="true"/>
+			<text row="2" col="2" name="scanVendorName" readonly="true" styleClass="threehundred"/>
+			<text row="3" col="1" name="number" readonly="true"/>
+			<date row="3" col="2" name="date" readonly="true" styleClass="date"/>
+			<text row="4" col="1" name="poId" readonly="true" />
+			<text row="4" col="2" name="companyCode" readonly="true"/>
+			<currency row="5" col="1" name="grossAmount" readonly="true"/>
+		</properties>
+		
+		<actions>
+			<!-- The following set of actions are standard ManagedPay and should be included relatively unmodified from the baseline version in most templates -->
+			<postingReplyAction name="postings" icon="/images/ico_mp.gif" width="16" height="16" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/>
+			<iconAction name="email" icon="/images/ico_email.gif" width="20" height="20" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="20" height="20" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_print.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="20" height="20" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+		</actions>
+	</section>
+	
+
+	<section name="vendorDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1-2" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="2" col="1-2" name="vendor.address2" readonly="true"  styleClass="fulllookup"/>
+			<text row="3" col="1" name="vendor.city" readonly="true" />
+			<text row="3" col="2" name="vendor.state" readonly="true"/>
+			<text row="4" col="1" name="vendor.postalCode" readonly="true"/>
+			<text row="4" col="2" name="vendor.name2" readonly="true"/>
+	    </properties>
+	</section>
+	
+		
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<date row="1" col="1" name="scanDate" readonly="true" styleClass="date"/>
+			<text row="1" col="2" name="scanSource" readonly="true"/>
+			<text row="2" col="1" name="batchNumber" readonly="true"/> 
+		</properties>
+	</section>
+
+	<hiddenFields>
+		<hidden name="postingERPId"/>
+		<hidden name="vendorERPId"/>
+        <hidden name="newBatchNumber"/>
+		<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId"/>
+		
+		<hidden name="requester.userName"/>
+		<hidden name="processInformation.comment"/>
+    </hiddenFields>
+
+	<processors>
+		
+	</processors>
+</propertyTemplate>

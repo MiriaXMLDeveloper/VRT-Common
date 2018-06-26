@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="ap-view" template="ap-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+<labels default="en">
+		<locale name="en">
+
+		</locale>
+</labels>
+
+<section-overrides>	
+		
+</section-overrides>
+
+<property-overrides>
+
+</property-overrides>
+
+<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+</hidden-overrides>
+
+<documentRejection>
+		<rejectionReasons>
+			<reason name="Rescan" commentsRequired="false" note="message.rescan">
+				<subReason name="Multiple Invoices"/>
+				<subReason name="Incomplete documentation"/>
+				<subReason name="Illegible"/>
+				<subReason name="Other"/>
+			</reason>
+		</rejectionReasons>
+</documentRejection>
+
+<validations>
+     
+</validations>
+
+</view>
+
+

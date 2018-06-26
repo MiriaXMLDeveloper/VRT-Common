@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<labels>
+			<locale name="en">
+				<label name="image" value="Image Window"/>
+			</locale>
+	</labels>
+
+	<section name="doc" collapsible="false" collapsed="false">
+		<properties>
+			<valueAlias row="1" col="1" name="processInformation.queueName" readonly="true" styleClass="comment"/>
+			<output row="2" col="1-2" name="processInformation.previousComment" readonly="true" styleClass="comment1" escapeXml="false"/>
+			<text row="3" col="1-2" name="processInformation.failReason" readonly="true" styleClass="fulllookup"/>
+		</properties>
+		<actions>
+			<iconAction name="image" icon="/images/image-window.png" width="16" height="16" link="javascript:parent.openImage()" alwaysActive="true"/>
+			<getNext name="next" readonly="false" showLabel="true" visible="true" toLeft="true"/>
+			<rejectButton name="reject" readonly="false" isAnchored="false" hotKey="r"/>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+		</actions>
+	</section>
+	
+	<section name="invoice" visible="true" collapsible="false" collapsed="false">
+		<properties>
+		<text row="1" col="1" name="type" readonly="true" validation="required"/>
+		<dropDown row="1" col="2" name="subType" defaultValue="MIGRATED DOC" readonly="false" validation="required"/>
+		<text row="2" col="1" name="number" validation="required, noSpecialCharacters"/>
+        <date row="2" col="2" name="date" readonly="false" validation="required" styleClass="date"/>
+		<text row="3" col="1" name="tbdNumber1" readonly="false" validation="required" />
+		<text row="3" col="2" name="tbdNumber2" readonly="false"/>
+		</properties>
+		<actions>
+			<!--<postingReplyAction name="postings" icon="/images/ico_mp.gif" width="16" height="16" link="javascript:openPostingReplyWindow('$contextPath$', '$wobNumber$')" visible="true"/-->
+			<!--iconAction name="editRouting" icon="/images/ico_routing.gif" width="16" height="16" readOnlyLink="javascript:openViewRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" link="javascript:openRoutingWindow('$contextPath$', '$wobNumber$', 'nonPo')" alwaysActive="true" readonly="true"/-->			
+			<iconAction name="email" icon="/images/ico_email.gif" width="16" height="16" link="javascript:openSendEmailWindow('$contextPath$', '$imageGUID$', '$wobNumber$')" alwaysActive="true"/>
+			<iconAction name="attachments" icon="/images/ico_docattach.gif" width="16" height="16" link="javascript:openAttachmentsWindow('$contextPath$', '$wobNumber$')" alwaysActive="true"/>
+			<attachmentCountAction name="attachmentCount" visible="true"/>
+			<iconAction name="print" icon="/images/ico_search.gif" width="16" height="16" link="javascript:window.print()" visible="false" alwaysActive="true"/>
+			<iconAction name="statusWindow" icon="/images/ico_status.gif" width="16" height="16" link="javascript:openStatusWindow('$seqId$', '$contextPath$');return false;" alwaysActive="true"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="16" height="16" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+			<button name="update" command="updateRelease" readonly="false" visible="true" type="submit" hotKey="s"/>
+			<button name="release" command="release" readonly="false" visible="true" type="submit"/>
+		</actions>
+	</section>
+
+<section name="invoiceDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1" name="poId" validation="required" readonly="false"/>
+			<checkbox row="1" col="2" name="tbdBoolean1" />
+			<lookup row="2" col="1" name="vendor.name" lookupType="lookup.vendorCode" readonly="false" styleClass="fulllookup"/>
+			<lookup row="2" col="2" name="vendorId" lookupType="lookup.vendorCode" readonly="false"/>
+			<dropDown row="3" col="1" name="tbdString3" defaultValue="MIGRATED DOC" readonly="false" />
+			<text row="3" col="2" name="tbdString1"/>
+			<currency row="4" col="1" name="freightAmount1" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="4" col="2" name="freightAmount2" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="5" col="1" name="taxAmount2" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="5" col="2" name="taxAmount1" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="6" col="1" name="tbdCurrency1" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="6" col="2" name="tbdCurrency2" readonly="false" validation="decimal" styleClass="currency"/>
+			<currency row="7" col="1" name="grossAmount" validation="decimal" styleClass="currency"/>
+			<currency row="7" col="2" name="discountAmount" styleClass="currency" readonly="true" />
+			<dynamicDropDown row="8" col="1" name="paymentTermId" providerClass="com.miriasystems.ui.providers.PaymentTermChoiceListProvider" validation="required" onChange="reloadPage(this)" />
+			<date row="8" col="2" readonly="true" name="dueDate" styleClass="date" validation="required"/>
+			<text row="9" col="1" name="paymentTerm.daysDue" readonly="true"  />
+			<text row="9" col="2" name="paymentterms.discount1" readonly="true"  />
+			<textArea row="10" col="1-2" name="voucherComments" styleClass="comment"/>
+		</properties>
+	</section>
+					
+	
+		<section name="vendorDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1-4" name="vendor.address1" readonly="true"  styleClass="fulllookup"/>
+			<text row="2" col="1-4" name="vendor.address2" readonly="true"  styleClass="fulllookup"/>
+			<text row="3" col="1" name="vendor.city" readonly="true"/>
+			<text row="3" col="2" name="vendor.state" readonly="true"/>
+			<text row="3" col="3" name="vendor.postalCode" readonly="true"/>
+	    </properties>
+	</section>
+	
+	<section name="sourceInformation" visible="true" collapsible="true" collapsed="true">
+		<properties>
+			<date row="1" col="1" name="scanDate"  styleClass="date" readonly="true"/>
+			<text row="1" col="2" name="scanType" readonly="true"/>
+			<text row="2" col="1" name="scanSource" readonly="true"/>
+			<text row="2" col="2" name="seqId" readonly="true"/>
+		</properties>
+	</section>
+	
+
+	<hiddenFields>
+	<hidden name="processInformation.comment"/>
+	<!--hidden name="subRejectionReason"/-->
+    </hiddenFields>
+
+	<processors>
+		<processor name="com.miriasystems.processors.DueDateProcessor"/>
+		<processor name="com.custom.processors.DiscountCalculationProcessor"/>
+    </processors>
+</propertyTemplate>

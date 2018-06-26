@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="all-rescan-view" template="all-rescan-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+    <labels default="en">
+        <locale name="en">
+            <label name="forward" value="Terminate"/>
+			<label name="Reject" value="Exception"/>
+        </locale>
+    </labels>
+
+    <hidden-overrides>
+        <hidden name="processInformation.response" defaultValue="Complete"/>
+    </hidden-overrides>
+
+     <documentRejection>
+        <rejectionReasons>
+            <reason name="Reject" commentsRequired="false" note="message.returnException">
+            </reason>
+        </rejectionReasons>
+    </documentRejection>
+
+</view>

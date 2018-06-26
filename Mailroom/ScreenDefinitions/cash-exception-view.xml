@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="cash-exception-view" template="expense-advance-tpl.xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/view.xsd">
+
+	  <labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+	  
+	  
+	<action-overrides>
+		<iconAction name="editRouting" visible="false" />
+		<iconAction name="postings" visible="true" />
+		<rejectButton name="reject" visible="false"/>
+	</action-overrides>
+	
+	<property-overrides>
+
+		
+	</property-overrides>
+	
+	<documentRejection>
+		<rejectionReasons>
+			<reason name="Reject" commentsRequired="true" note="message.terminate">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+	
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+	</hidden-overrides>
+
+	  
+    <validations>
+      
+    </validations>
+    
+</view>

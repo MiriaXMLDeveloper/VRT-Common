@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view name="nonpo-exception-view" template="nonpo-cor-voucher-tpl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://managedpay.net/schemas/view.xsd">
+
+	<labels default="en">
+		<locale name="en">
+			<label name="forward" value="Complete"/>
+		</locale>
+	</labels>
+
+	<section-overrides>	
+			<section name="lineItems" collapsed="false"/>
+	</section-overrides>
+
+	<property-overrides>
+			<date name="dueDate" readonly="false" validation="required"/>
+			<currency name="taxAmount2" readonly="true"/>
+			<text name="routingCode" readonly="true"/>
+	</property-overrides>
+
+	<lineItem-overrides>
+			 
+	</lineItem-overrides>
+
+	<action-overrides>
+		<iconAction name="editRouting" visible="false"/>
+		<iconAction name="postings" visible="true"/>
+		<button name="release" visible="false"/>
+	</action-overrides>
+
+	<hidden-overrides>
+		<hidden name="processInformation.response" defaultValue="Complete"/>
+		<!--<hidden name="taxAmount2"/>-->
+	</hidden-overrides>
+
+	 <documentRejection>
+		<rejectionReasons>
+			<reason name="Terminate" commentsRequired="true" note="message.terminate">
+			</reason>
+		</rejectionReasons>
+	</documentRejection>
+
+	<validations>
+		<validation name="validation.validVendor" messageType="warning" note="message.validVendorValidation"/>
+		<validation name="validation.facilities" messageType="warning"/>
+		<validation name="validation.capex"/>
+		<validation name="validation.lineItemAmount"/>
+		<validation name="validation.accountCode"/>
+		<validation name="validation.duedate.check" />
+		<validation name="validation.validPaymentTerm"/>
+		<!--validation name="validation.vendortype.check"/-->
+	</validations>
+</view>

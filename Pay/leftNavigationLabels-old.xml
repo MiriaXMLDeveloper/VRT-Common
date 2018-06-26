@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels default="en">
+	<locale name="en">
+		<!-- ManagedPay Left navigation -->
+		<!-- Common Labels * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.mpnavigation" value="Active Pay"/>
+			<label name="number" value="Invoice"/>
+			<label name="action.myinbox" value="My Work Inbox"/>
+			<label name="action.ITinboxSearch" value="IT Inbox"/>
+		<!-- Common Labels * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!-- AP Indexing Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.APIndexingQueues" value="AP Indexing Queues"/>
+			<label name="action.TradeIndexing" value="Trade Indexing" />
+			<label name="action.NonTradeIndexing" value="Non-Trade Indexing" />
+			<label name="action.CreditIndexing" value="Credit Indexing" />
+			<label name="action.SupplierIndexing" value="Supplier Specific Indexing" />
+			<label name="action.eqptIndex" value="Equipment Index"/>
+			<label name="action.eqpt" value="Equipment"/>
+			<label name="action.W9" value="W-9"/>
+			<label name="action.stmt" value="Statements"/>			
+			<label name="action.APMisc" value="AP Misc."/>
+			<label name="action.RtnCks" value="Return Checks"/>
+			<label name="action.PennyVoucher" value="Penny Vouchers"/>
+			<label name="action.IntNav" value="International-NAV"/>
+		<!-- AP Indexing Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!-- IT Indexing Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name ="section.ITqueues" value="IT Approval Queues"/>
+			<label name="action.ITindexing" value="IT Indexing"/>
+			<label name="action.ITdropped" value="IT Dropped"/>
+			<label name="action.ITposting" value="IT Posting"/>
+			<label name="action.ITexception" value="IT Exception"/>
+			<label name="action.ITrescan" value="IT Rescan"/>
+			<label name="action.IThold" value="IT Hold"/>
+			
+			
+			 
+		<!-- IT Indexing Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!-- AP Exceptions Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->	
+			<label name="section.APExceptions" value="AP Exception Queues" />
+			<label name="action.UnidentifiedSubType" value="Unidentified Sub-Type" />
+			<label name="action.UnidentifiedDivision" value="Unidentified Division" />
+			<label name="action.POexception" value="Trade Exceptions"/>
+			<label name="action.NonPOexception" value="Non-Trade Exceptions"/>
+			<label name="action.awaitingReceipt" value="Awaiting Receipts"/>
+			<label name="action.hold" value="Hold"/>
+			<label name="action.dropped" value="Dropped"/>
+			<label name="action.rescan" value="Rescan"/>
+			<label name="action.vendormaintenance" value="Vendor Maintenance"/>	
+			<label name="action.edi" value="EDI"/>
+		<!-- AP Exceptions Queues  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->	
+		
+		<!--   POSTING QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.postingqueues" value="AP Posting Queues"/>
+			<label name="action.nonpoposting" value="Non-Trade Posting"/>
+			<label name="action.poposting" value="Awaiting JDE Payment"/>
+		<!--   POSTING QUEUES    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!-- Trade Indexing Queues    * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.TradeIndexing" value="Trade Indexing" />
+			<label name="action.12Direct" value="12 - Direct" />
+			<label name="action.25Direct" value="25 - Direct" />
+			<label name="action.50Direct" value="50 - Direct" />
+			<label name="action.60Direct" value="60 - Direct" />
+			<label name="action.80Direct" value="80 - Direct" />
+			<label name="action.90Direct" value="90 - Direct" />
+			<label name="action.95Direct" value="95 - Direct" />
+			<label name="action.97Direct" value="97 - Direct" />
+			<label name="action.12Warehouse" value="12 - Warehouse" />
+			<label name="action.25Warehouse" value="25 - Warehouse" />
+			<label name="action.50Warehouse" value="50 - Warehouse" />
+			<label name="action.60Warehouse" value="60 - Warehouse" />
+			<label name="action.80Warehouse" value="80 - Warehouse" />
+			<label name="action.90Warehouse" value="90 - Warehouse" />
+			<label name="action.95Warehouse" value="95 - Warehouse" />
+			<label name="action.97Warehouse" value="97 - Warehouse" />
+		<!-- Trade Indexing Queues     * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!-- Non-Trade Indexing Queues   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.NonTradeIndexing" value="Non-Trade Indexing" />
+			<label name="action.NonTrade1" value="Non-Trade 1" />
+			<label name="action.NonTrade1Urgent" value="Non-Trade 1 - Urgent" />
+			<label name="action.NonTrade2" value="Non-Trade 2" />
+			<label name="action.NonTrade2Urgent" value="Non-Trade 2 - Urgent" />
+			<label name="action.NonTrade3" value="Non-Trade 3" />
+			<label name="action.NonTrade3Urgent" value="Non-Trade 3 - Urgent" />
+			<label name="action.NonTradeVLS" value="Non-Trade VLS" />
+			<label name="action.NonTradeTaxUrgent" value="Non-Trade Tax - Urgent" />
+		<!-- Non-Trade Indexing Queues    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!-- GL Indexing Queues   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.GLIndexing" value="GL Indexing Queues" />
+			<label name="action.GL" value="General Ledger Indexing" />
+			<label name="action.approveGL" value="General Ledger Validation" />
+		<!-- GL Indexing Queues    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+		<!-- Tax Indexing Queues   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.taxindexing" value="Tax Indexing Queues" />
+			<label name="action.tax" value="Tax Indexing" />
+			<label name="action.taxPending" value="Tax Pending" />
+		<!-- Tax Indexing Queues    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!-- AR Indexing Queues   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.arindexing" value="AR Indexing Queues" />
+			<label name="action.ar" value="AR Indexing" />
+		<!-- AR Indexing Queues    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--   SEARCH ACTIONS    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.search" value="Search"/>
+			<label name="action.advancedinvoicesearch" value="Advanced Invoice Search"/>
+			<label name="action.searchsave" value="Export Search Data"/>
+			<label name="action.preferences" value="User Preferences"/>
+		<!--   SEARCH ACTIONS    * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+		<!--    TOOLS SECTION   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.tools" value="Tools"/>
+			<label name="action.reassignDelegate" value="Reassign Delegate's Work"/>
+			<label name="action.reassignSelf" value="Reassign Your Work"/>
+		<!--    TOOLS SECTION   * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			
+		<!--    APPLICATIONS SECTION  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+			<label name="section.applications" value="Applications"/>
+			<label name="action.adminmodule" value="ActivePay Admin"/>
+			<label name="action.reporting" value="ActivePay Reporting"/>
+		<!--    APPLICATIONS SECTION  * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+		
+	
+	</locale>
+</labels>
+

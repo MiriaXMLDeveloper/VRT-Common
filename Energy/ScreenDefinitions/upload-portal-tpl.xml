@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyTemplate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://www.managedpay.net/schemas/template.xsd">
+        
+     <labels>
+		
+	<locale name="en">
+		<label name="grossAmount" value ="Gross Amount"/>
+		<label name="originatorId" value ="Vendor Id"/>
+	</locale>
+	</labels>
+	
+	<section name="invoiceDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<lookup row="1" col="1" name="originatorId" lookupType="lookup.portalVendorCode" readonly="false"/>
+			<lookup row="1" col="2" name="vendor.name" lookupType="lookup.portalVendorCode" readonly="true" styleClass="fulllookup"/>
+			<text row="2" col="1" name="number" validation="noSpecialCharacters"/>
+			<date row="2" col="2" name="date" readonly="false" validation="required" styleClass="date"/>
+			<currency row="3" col="1" name="grossAmount" validation="required, nonZero" styleClass="currency" defaultValue="0.00"/>
+			<dropDown row="3" col="2" name="paymentTermId" choiceList="choice.paymentTerms" readonly="true"/>
+			<date row="4" col="1" readonly="true" name="dueDate" styleClass="date" validation="required"/>
+			<textArea row="5" col="1-2" name="voucherComments" styleClass="comment"/>
+		</properties>
+		<actions>
+			<button name="forward" command="forward" readonly="false" type="submit" isAnchored="false"/>
+			<iconAction name="help" icon="/images/ico_help.gif" width="20" height="20" link="javascript:openHelp('User_Interfaces/Working_with_Invoices.htm', '$contextPath$')" alwaysActive="true"/>
+		</actions>
+	</section>
+
+	<section name="vendorDetails" visible="true" collapsible="true" collapsed="false">
+		<properties>
+			<text row="1" col="1-4" name="vendor.address1" readonly="true" styleClass="fulllookup"/>
+			<text row="2" col="1" name="vendor.city" readonly="true" />
+			<text row="2" col="2" name="vendor.state" readonly="true"/>
+			<text row="2" col="3" name="vendor.postalCode" readonly="true"/>
+	    </properties>
+	</section>
+	
+	<hiddenFields>
+		<hidden name="postingERPId" defaultValue="JDA"/>
+		<hidden name="vendorERPId" defaultValue="JDA"/>
+		<hidden name="vendorId"/>
+        <hidden name="newBatchNumber"/>
+       	<hidden name="paymentTermERPId" defaultValue="JDA"/>
+		<hidden name="paymentTypeERPId" defaultValue="JDA"/>
+       	<hidden name="vendor.status" defaultValue="1"/>
+		<hidden name="uploadRef"/>
+		<hidden name="requesterId"/>
+		<hidden name="scanSource" defaultValue="Portal" forceDefault="true"/>
+		<hidden name="scanType" defaultValue="Expense" forceDefault="true"/>
+		<hidden name="requester.userName"/>
+		<hidden name="AFENumber" defaultValue="2" forceDefault="true"/>
+		<hidden name="processInformation.comment"/>
+		<hidden name="custom1.tbdComment1" defaultValue="1." forceDefault="true" readonly="true"/>
+		<hidden name="type" defaultValue="NON-PO" forceDefault="true" readonly="true"/>
+		<hidden name="subType" defaultValue="INV" forceDefault="true" readonly="true"/>
+		</hiddenFields>
+	<processors>
+		<processor name="com.miriasystems.processors.NetAmountNoDiscountProcessor"/>
+		<processor name="com.miriasystems.processors.TotalLineAmountProcessor"/>
+		<processor name="com.cabelas.processors.DueDateProcessor"/>
+    </processors>
+</propertyTemplate>
