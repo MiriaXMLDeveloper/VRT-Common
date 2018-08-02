@@ -385,6 +385,7 @@
 			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
 			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/-->
 			<criteria name="systemOriginator.code" startsSearch="true" visible="false" mapping="vendorERPId"/>
+			<criteria name="deleteFlag" startsSearch="false" labelKey="vendor.deleteFlag" mapping="vendor.deleteFlag" isCheckbox="true" value="no" visible="false"/>
 		</searchCriteria>
 		<sortOrder field="name"/>
 		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
@@ -893,5 +894,82 @@
 <property name="phone" display="true" backPopulate="false"/>
 </properties>
 </lookup>
+
+	<lookup name="lookup.vendorCode.adv">
+		<!-- The parameters we will be querying for -->
+		<window width="800" height="500" displayTitle="VendorCode Lookup"/>
+		<searchCriteria blankForwardPopulate="false">
+			<criteria name="name" startsSearch="true" labelKey="vendor.name" mapping="vendor.name"/>
+			<criteria name="code" startsSearch="true" labelKey="vendorId" mapping="vendorId"/>
+			<!--criteria name="tbdString2" visible="false" startsSearch="true" mapping="AFENumber" type="String"/-->
+			<!--criteria name="address1" startsSearch="false" labelKey="vendor.address1"/>
+			<criteria name="city" startsSearch="false" labelKey="vendor.city"/>
+			<criteria name="postalCode" startsSearch="false" labelKey="vendor.postalCode"/-->
+			<criteria name="systemOriginator.code" startsSearch="true" visible="false" mapping="vendorERPId"/>
+			<criteria name="deleteFlag" startsSearch="false" labelKey="vendor.deleteFlag" mapping="vendor.deleteFlag" isCheckbox="true" />
+		</searchCriteria>
+		<sortOrder field="name"/>
+		<provider class="com.miriasystems.ui.providers.VendorNameLookupProvider"/>
+		<!--	It is important to understand the context of the properties here.
+				The name attribute refers to a property of the VendorAccounting object.
+				The rootName attribute refers to a property of APDocumentHeader.
+		-->
+		<properties>
+			<property name="code" display="true" rootName="vendorId" backPopulate="true" labelKey="vendorId"/>
+			<property name="name" display="true" rootName="vendor.name" backPopulate="true" labelKey="vendor.name" styleClass="threehundred"/>
+			<property name="address1" display="true" rootName="vendor.address1" backPopulate="true" labelKey="vendor.address1"/>
+			<property name="city" display="true" rootName="vendor.city" backPopulate="true" labelKey="vendor.city"/>
+			<property name="state" display="true" rootName="vendor.state" backPopulate="true" labelKey="vendor.state"/>
+			<property name="approvalCode" display="true" rootName="routingCode" backPopulate="true" labelKey="vendor.approvalCode" />
+			<property name="deleteFlag" display="true" rootName="vendor.deleteFlag" backPopulate="false" labelKey="vendor.deleteFlag.adv" />
+			<property name="tbdString1" display="false" rootName="department" backPopulate="true" labelKey="vendor.tbdString1" />
+			<property name="name2" display="false" rootName="vendor.name2" backPopulate="true" labelKey="vendor.name2"/>
+			<property name="address2" display="false" rootName="vendor.address2" backPopulate="true" labelKey="vendor.address2"/>
+			<property name="name2" display="false" rootName="vendor.address3" backPopulate="true" labelKey="vendor.address3"/>
+			<property name="address4" display="false" rootName="vendor.address4" backPopulate="true" labelKey="vendor.address4"/>
+			<property name="postalCode" display="false" rootName="vendor.postalCode" backPopulate="true" labelKey="vendor.postalCode"/>
+			<property name="currency.code" display="false" backPopulate="true" labelKey="vendor.currency.code"/>
+			<property name="company.code" display="false" backPopulate="true" labelKey="vendor.company.code" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" labelKey="vendor.status"/>
+			<property name="postBlock" display="false" rootName="vendor.postBlock" backPopulate="true" labelKey="vendor.postBlock"/>
+			<property name="payBlock" display="false" rootName="vendor.payBlock" backPopulate="true" labelKey="vendor.payBlock"/>
+			<property name="payBlock" display="false" rootName="retentionBoxId" backPopulate="true"/>
+			<property name="country.name" display="false" rootName="vendor.country.name" backPopulate="true" />
+			<property name="contact" display="false" rootName="vendor.contact" backPopulate="true" />
+			<property name="phone" display="false" rootName="vendor.phone" backPopulate="true" />
+			<property name="fax" display="false" rootName="vendor.fax" backPopulate="true" />
+			<property name="email" display="false" rootName="vendor.email" backPopulate="true" />
+			<property name="taxId" display="false" rootName="vendor.taxId" backPopulate="true" />	
+			<property name="ten99Code" display="false" rootName="vendor.ten99Code" backPopulate="true"/>
+			<property name="ten99Code" display="false" rootName="tbdString4" backPopulate="true"/>
+			<property name="bankName" display="false" rootName="vendor.bankName" backPopulate="true" />
+			<property name="bankAccountNumber" display="false" rootName="vendor.bankAccountNumber" backPopulate="true" />
+			<property name="payToCode" display="false" rootName="vendor.payToCode" backPopulate="true" />
+			<property name="status" display="false" rootName="vendor.status" backPopulate="true" />
+			<property name="paymentTerm.code" display="false" rootName="vendor.paymentTerm.code" backPopulate="false" />
+			<property name="paymentTerm.description" display="false" rootName="paymentTerm.description" backPopulate="true"/>
+			<property name="paymentTerm.code" display="false" rootName="paymentTermId" backPopulate="true" />
+			<property name="paymentType.code" display="false" rootName="paymentTypeId" backPopulate="true" />
+			<property name="systemOriginator.code" display="false" rootName="vendorERPId" backPopulate="true" />
+			
+			<property name="paymentTerm.discount1" display="false" rootName="discountAmount" backPopulate="true" labelKey="paymentTerm.discount1" />			
+			<property name="paymentTerm.tbdDate2" display="false" rootName="tbdDate2" backPopulate="true" labelKey="paymentTerm.tbdDate2"/>
+
+			<property name="tbdDate1" display="false" rootName="vendor.tbdDate1" backPopulate="true"/>
+			<property name="tbdDate2" display="false" rootName="vendor.tbdDate2`" backPopulate="true"/>
+			<property name="tbdNumber1" display="false" rootName="vendor.tbdNumber1" backPopulate="true"/>
+			<property name="tbdNumber2" display="false" rootName="vendor.tbdNumber2" backPopulate="true"/>
+			<property name="tbdCurrency1" display="false" rootName="vendor.tbdCurrency1" backPopulate="true"/>
+			<property name="tbdCurrency2" display="false" rootName="vendor.tbdCurrency2" backPopulate="true"/>
+			<property name="tbdQuantity1" display="false" rootName="vendor.tbdQuantity1" backPopulate="true"/>
+			<property name="tbdQuantity2" display="false" rootName="vendor.tbdQuantity2" backPopulate="true"/>
+			<property name="tbdString2" display="false" rootName="buyerName" backPopulate="true"/>
+			<property name="tbdString3" display="false" rootName="vendor.tbdString3" backPopulate="true"/>
+			<property name="tbdString4" display="false" rootName="vendor.tbdString4" backPopulate="true"/>
+			<property name="code" display="false" backPopulate="true" rootName="vendorId" labelKey="vendorId"/>
+
+			
+		</properties>
+	</lookup>
 
 </lookups>

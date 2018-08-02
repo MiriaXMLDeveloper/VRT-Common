@@ -503,6 +503,8 @@
 			<label name="vendorAddress.address3" value="Remit To Address 3"/>
 			<label name="vendorAddress.address4" value="Remit To Address 4"/>
 			<label name="vendorAddress.city" value="Remit To City"/>
+			<label name="vendor.deleteFlag" value="Include Inactive"/>
+			<label name="vendor.deleteFlag.adv" value="Inactive"/>
 			<label name="vendorAddress.state" value="Remit To State"/>
 			<label name="vendorAddress.postalCode" value="Remit To Zip Code"/>
 			<label name="vendorAddress.contact" value="Remit To Contact Name"/>
