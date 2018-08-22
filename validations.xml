@@ -175,6 +175,15 @@ A valid vendor is a vendor which can be found in the ERP system and which has no
         </injections>
 	</validation>
 	
+		<validation name="validation.duplicateITInvoiceCheck" class="com.miriasystems.validation.impl.ILogConfiguredDuplicateInvoiceITValidation" failOnMissingParameters="false">
+		<!-- This will call the ILOG DuplicateInvoice ruleset to determine if this is a duplicate document.-->
+		<errorBuilder class="com.miriasystems.validation.impl.DuplicateInvoiceErrorBuilder"/>
+        <injections>
+            <bean springName="localJrulesFacade" property="jrulesFacade"/>
+            <bean springName="persistenceRemoteDelegate" property="persistenceFacade"/>
+        </injections>
+	</validation>
+	
 	<validation name="validation.duplicateInvoiceCheckWorkflow" class="com.miriasystems.validation.impl.ILogConfiguredDuplicateInvoiceValidation" failOnMissingParameters="false">
 		<!-- This will call the ILOG DuplicateInvoice ruleset to determine if this is a duplicate document. -->
 		<errorBuilder class="com.miriasystems.validation.impl.DuplicateInvoiceWorkflowErrorBuilder"/>
